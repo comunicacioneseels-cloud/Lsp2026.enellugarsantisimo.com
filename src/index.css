@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Fraunces', Georgia, Cambria, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --color-brand-indigo: #2D2B50;
+  --color-brand-purple: #321078;
+  --color-brand-coral: #FF6B5E;
+  --color-brand-green: #00E51B;
+  --color-brand-turquoise: #35D5C5;
+  --color-brand-orange: #FF8A00;
+  --color-brand-yellow: #FFD000;
+  --color-brand-cream: #FDFBF7;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+}

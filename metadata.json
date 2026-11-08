@@ -1,0 +1,6 @@
+{
+  "name": "Lives Saved Project",
+  "description": "Social initiative empowering children and families in Bocachica, Cartagena through education, health, and faith.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
