@@ -19,11 +19,17 @@ import {
   SubscriptionPlan,
 } from '../types';
 
+export const OFFICIAL_DONATION_URL = 'https://enellugarsantisimo.com/app/donate-sponsor/donate-sponsor.html#';
+
 interface AppContextType {
   language: 'es' | 'en';
   setLanguage: (lang: 'es' | 'en') => void;
   currency: Currency;
   setCurrency: (curr: Currency) => void;
+
+  // Donation portal redirection
+  donationUrl: string;
+  openDonationPortal: () => void;
 
   // Multi-page navigation state
   currentPage: AppPage;
@@ -241,6 +247,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     );
   };
 
+  const openDonationPortal = () => {
+    window.open(OFFICIAL_DONATION_URL, '_blank', 'noopener,noreferrer');
+  };
+
   const selectDonationPlan = (
     amount: number,
     curr: Currency,
@@ -257,8 +267,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     });
     setCurrency(curr);
 
-    // Navigate to Apóyanos page and focus on donation form
-    navigateToPage('apoyanos', 'donar');
+    // Open official donation portal
+    openDonationPortal();
   };
 
   const addDonationRecord = (record: DonationRecord) => {
@@ -316,6 +326,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         setLanguage,
         currency,
         setCurrency,
+        donationUrl: OFFICIAL_DONATION_URL,
+        openDonationPortal,
         currentPage,
         setCurrentPage,
         navigateToPage,

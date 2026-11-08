@@ -335,6 +335,27 @@ export const DonationSection: React.FC = () => {
                 /* DONATION FORM */
                 <form onSubmit={handleSubmit} className="space-y-6">
                   
+                  {/* Official Direct Portal Button */}
+                  <div className="p-4 rounded-2xl bg-[#FF6B5E]/10 border border-[#FF6B5E]/30 flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <div className="text-center sm:text-left">
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#FF6B5E] block">
+                        Portal Oficial Directo
+                      </span>
+                      <p className="text-xs text-stone-700">
+                        Accede a la plataforma oficial de donación de la Iglesia En el Lugar Santísimo.
+                      </p>
+                    </div>
+                    <a
+                      href="https://enellugarsantisimo.com/app/donate-sponsor/donate-sponsor.html#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-[#FF6B5E] hover:bg-[#ff5747] active:scale-[0.98] rounded-xl shadow-md transition-all whitespace-nowrap cursor-pointer shrink-0"
+                    >
+                      <span>Ir al portal de donación</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+
                   {/* Frequency Toggle */}
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-stone-500 mb-2">

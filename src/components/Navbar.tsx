@@ -5,7 +5,7 @@ import { AppPage } from '../types';
 import { Logo } from './Logo';
 
 export const Navbar: React.FC = () => {
-  const { currentPage, navigateToPage, setIsAdminOpen, language, setLanguage } = useApp();
+  const { currentPage, navigateToPage, setIsAdminOpen, language, setLanguage, donationUrl } = useApp();
   const [programsDropdownOpen, setProgramsDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -186,14 +186,16 @@ export const Navbar: React.FC = () => {
             <Settings className="w-4 h-4" />
           </button>
 
-          {/* DONA AHORA ↗ (Coral Button exactly as in mockup) */}
-          <button
-            onClick={() => handleNav('apoyanos')}
+          {/* DONA AHORA ↗ (Coral Button linking to official donation portal) */}
+          <a
+            href={donationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-5 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white bg-[#FF6B5E] hover:bg-[#ff5747] active:scale-[0.98] rounded-xl shadow-md shadow-[#FF6B5E]/30 transition-all cursor-pointer whitespace-nowrap"
           >
             <span>DONA AHORA</span>
             <ArrowUpRight className="w-4 h-4" />
-          </button>
+          </a>
 
           {/* Mobile hamburger toggle */}
           <button
@@ -285,6 +287,18 @@ export const Navbar: React.FC = () => {
           >
             APÓYANOS
           </button>
+
+          <div className="pt-3 border-t border-white/10">
+            <a
+              href={donationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 text-xs font-bold uppercase tracking-wider text-white bg-[#FF6B5E] hover:bg-[#ff5747] active:scale-[0.98] rounded-xl shadow-md transition-all cursor-pointer"
+            >
+              <span>DONA AHORA</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </div>
         </div>
       )}
     </header>
