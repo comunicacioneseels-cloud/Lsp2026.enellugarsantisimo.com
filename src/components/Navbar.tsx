@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { ChevronDown, ArrowUpRight, Menu, X, Settings } from 'lucide-react';
+import { ChevronDown, ArrowUpRight, Menu, X } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { AppPage } from '../types';
 import { Logo } from './Logo';
@@ -176,16 +176,6 @@ export const Navbar: React.FC = () => {
         {/* Right CTA Button & Utilities (Matching Mockup's DONA AHORA ↗) */}
         <div className="flex items-center gap-3 shrink-0">
           
-          {/* Admin panel icon */}
-          <button
-            onClick={() => setIsAdminOpen(true)}
-            className="p-2 text-white/60 hover:text-white hover:bg-white/10 rounded-lg transition-colors cursor-pointer"
-            title="Panel de administración"
-            aria-label="Abrir panel administrativo"
-          >
-            <Settings className="w-4 h-4" />
-          </button>
-
           {/* DONA AHORA ↗ (Coral Button linking to official donation portal) */}
           <a
             href={donationUrl}

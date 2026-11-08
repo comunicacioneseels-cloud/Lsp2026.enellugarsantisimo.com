@@ -12,29 +12,41 @@ export type AppPage =
 
 export type ProjectStatus = 'Planeado' | 'En ejecución' | 'Finalizado';
 
+export interface ProgramImage {
+  src: string;
+  title: string;
+  caption: string;
+}
+
 export interface SocialProgram {
   id: string;
+  orderNumber: number;
   title: string;
   category: string;
   color: string; // hex
   iconName: string;
   shortDescription: string;
+  bulletPoints: string[];
   fullDescription: string;
   curriculum: string[];
   schedule: string;
   beneficiaries: string;
   impactObjective: string;
+  images: ProgramImage[];
 }
 
 export interface NewProgram2026 {
   id: string;
   number: string;
+  orderNumber: number;
   title: string;
   tagline: string;
   color: string;
+  bulletPoints: string[];
   description: string;
   opportunities: string[];
   status: 'Lanzamiento 2026' | 'Fase de equipamiento' | 'Convocatoria abierta';
+  images: ProgramImage[];
 }
 
 export interface StrategicProject {

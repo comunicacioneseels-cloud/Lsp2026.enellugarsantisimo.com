@@ -35,12 +35,18 @@ export const initialOrganizationInfo: OrganizationInfo = {
 export const socialPrograms: SocialProgram[] = [
   {
     id: 'refuerzo-academico',
+    orderNumber: 1,
     title: 'Refuerzo Académico',
     category: 'Educación',
-    color: '#35D5C5', // Turquesa
+    color: '#FFA000', // Naranja/Ámbar de la maqueta
     iconName: 'BookOpen',
     shortDescription:
-      'Acompañamiento escolar integral, tutoría en tareas, lectura comprensiva, matemáticas, inglés, español y ciencias sociales.',
+      'Acompañamiento personalizado en lectura, matemáticas, ciencias y tareas escolares para cerrar brechas educativas.',
+    bulletPoints: [
+      'Brindamos acompañamiento personalizado en lectura, matemáticas, ciencias y tareas escolares.',
+      'Realizamos evaluaciones continuas, seguimiento individual y orientación a padres para fortalecer hábitos de estudio en casa.',
+      'Este programa busca cerrar las brechas educativas y despertar el potencial académico de cada niño.',
+    ],
     fullDescription:
       'Proporcionamos un entorno seguro y estimulante después de la jornada escolar, donde docentes y tutores voluntarios nivelan los conocimientos de los niños, fortalecen sus hábitos de estudio y previenen la deserción escolar temprana en la isla de Bocachica.',
     curriculum: [
@@ -54,15 +60,42 @@ export const socialPrograms: SocialProgram[] = [
     beneficiaries: '120 niños y niñas entre 6 y 14 años',
     impactObjective:
       'Elevar el rendimiento escolar, reducir la tasa de repitencia y abrir puertas a educación media y técnica.',
+    images: [
+      {
+        src: '/assets/aistudio/tutora_refuerzo_escolar.jpg',
+        title: 'Tutoría Personalizada en Cuadernos',
+        caption: 'Acompañamiento individual de tutores con libretas y guías de estudio.',
+      },
+      {
+        src: '/assets/aistudio/nina_refuerzo_paz.png',
+        title: 'Motivación y Alegría Escolar',
+        caption: 'Niña de Bocachica feliz en su jornada de estudio y superación académica.',
+      },
+      {
+        src: '/assets/aistudio/20210223_144925_2ca24bc9.jpg',
+        title: 'Trabajo en Equipo y Cooperación',
+        caption: 'Grupo de niños compartiendo lápices de colores y realizando tareas juntos.',
+      },
+      {
+        src: '/assets/aistudio/regenerated_image_1794131942857.jpg',
+        title: 'Círculo de Refuerzo y Expresión',
+        caption: 'Jornada pedagógica continua para cerrar brechas de aprendizaje.',
+      },
+    ],
   },
   {
     id: 'artes-creatividad',
+    orderNumber: 2,
     title: 'Artes y Creatividad',
     category: 'Cultura & Expresión',
-    color: '#FF8A00', // Naranja
+    color: '#00CDBE', // Turquesa/Cian de la maqueta
     iconName: 'Palette',
     shortDescription:
-      'Música, percusión tradicional, artes plásticas, danza y desarrollo creativo para descubrir vocaciones y canalizar emociones.',
+      'Talleres de música, danza, dibujo y expresión artística para fomentar disciplina, autoestima y sanación emocional.',
+    bulletPoints: [
+      'Impulsamos talleres de música, danza, dibujo y expresión artística para fomentar creatividad, disciplina, autoestima y sanación emocional.',
+      'El arte se convierte en un espacio seguro para soñar y transformar la realidad.',
+    ],
     fullDescription:
       'A través del arte conectamos con las ricas tradiciones culturales de Bocachica y dotamos a los jóvenes de herramientas para expresarse sanamente. Clases de percusión, guitarra, canto, pintura y teatro transforman el tiempo libre en desarrollo de talentos.',
     curriculum: [
@@ -76,15 +109,42 @@ export const socialPrograms: SocialProgram[] = [
     beneficiaries: '85 niños, niñas y adolescentes',
     impactObjective:
       'Fomentar la autoestima, la identidad cultural bocachiquera y prevenir la vinculación a dinámicas de riesgo.',
+    images: [
+      {
+        src: '/assets/aistudio/ninos_evento_comunitario.png',
+        title: 'Celebración y Talentos Comunitarios',
+        caption: 'Niños y jóvenes en festival comunitario de artes con camisetas del proyecto.',
+      },
+      {
+        src: '/assets/aistudio/image_5938a5fc.png',
+        title: 'Danza y Expresión Corporal al Aire Libre',
+        caption: 'Jornadas dinámicas de movimiento corporal, ritmo y danza en la terraza.',
+      },
+      {
+        src: '/assets/aistudio/regenerated_image_1794131952643.jpg',
+        title: 'Taller de Expresión Plástica y Pintura',
+        caption: 'Desarrollo de habilidades creativas, motricidad fina y expresión artística.',
+      },
+      {
+        src: '/assets/aistudio/regenerated_image_1794131957589.jpg',
+        title: 'Espacio Seguro para Soñar',
+        caption: 'Descubriendo vocaciones y transformando la realidad mediante el arte.',
+      },
+    ],
   },
   {
     id: 'educacion-cristiana',
+    orderNumber: 3,
     title: 'Educación Cristiana',
     category: 'Fe & Valores',
-    color: '#321078', // Morado profundo
+    color: '#FF4D00', // Naranja rojizo / Coral de la maqueta
     iconName: 'HeartHandshake',
     shortDescription:
-      'Discipulado, consejería pastoral, grupos de vida y estudio bíblico formativo para fundamentar la vida en principios de fe y amor.',
+      'Acompañamiento del desarrollo espiritual mediante la enseñanza de valores, propósito, identidad y esperanza.',
+    bulletPoints: [
+      'Acompañamos el desarrollo espiritual mediante la enseñanza de valores, propósito, identidad y esperanza.',
+      'Fortalecemos el carácter y guiamos a los niños hacia una vida con fe y propósito.',
+    ],
     fullDescription:
       'Como iniciativa de la Iglesia En el Lugar Santísimo, creemos que la verdadera transformación nace del corazón. Guiamos a niños, jóvenes y familias en el conocimiento de Dios, cultivando valores de servicio, perdón, integridad y esperanza viva.',
     curriculum: [
@@ -98,15 +158,42 @@ export const socialPrograms: SocialProgram[] = [
     beneficiaries: 'Comunidad abierta, niños, jóvenes y padres',
     impactObjective:
       'Cimentar principios espirituales sólidos que restauren vidas y den un propósito trascendente a cada individuo.',
+    images: [
+      {
+        src: '/assets/aistudio/IMG_0211.JPG',
+        title: 'Niños Unidos en Oración Comunitaria',
+        caption: 'Tiempos devocionales con manitas juntas y corazones reverentes ante Dios.',
+      },
+      {
+        src: '/assets/aistudio/IMG_0220.JPG',
+        title: 'Fe Sincera y Oración Personal',
+        caption: 'Niño en reverencia y comunión espiritual sembrando principios eternos.',
+      },
+      {
+        src: '/assets/aistudio/20210221_182243.jpg',
+        title: 'Alabanza y Adoración Musical Infantil',
+        caption: 'Expresión musical de alabanza en la iglesia con niños e instrumentos.',
+      },
+      {
+        src: '/assets/aistudio/Inicio_Contruccion_ProyectoBocachicaETP160.jpg',
+        title: 'Enseñanza Bíblica y Comunidad',
+        caption: 'Comunidad e infancia congregadas frente a la Palabra de Dios y valores.',
+      },
+    ],
   },
   {
     id: 'trabajo-social',
+    orderNumber: 4,
     title: 'Trabajo Social',
     category: 'Comunidad',
-    color: '#FF6B5E', // Coral
+    color: '#5800A8', // Morado profundo / Púrpura de la maqueta
     iconName: 'Users',
     shortDescription:
-      'Acompañamiento familiar domiciliario, mediación comunitaria y atención focalizada a necesidades urgentes y vulnerabilidad.',
+      'Intervención en situaciones familiares complejas mediante visitas domiciliarias, orientación en crisis y apoyo.',
+    bulletPoints: [
+      'Intervenimos en situaciones familiares complejas mediante visitas domiciliarias, orientación en crisis y articulación con redes institucionales.',
+      'Buscamos fortalecer los hogares y proteger el bienestar de los niños.',
+    ],
     fullDescription:
       'Nuestras trabajadoras sociales visitan los hogares de Bocachica para diagnosticar situaciones de riesgo, apoyar en la consecución de documentos de identidad, coordinar ayudas de emergencia y conectar a las familias con redes de apoyo institucional.',
     curriculum: [
@@ -120,37 +207,90 @@ export const socialPrograms: SocialProgram[] = [
     beneficiaries: 'Más de 140 familias de Bocachica',
     impactObjective:
       'Garantizar la protección de derechos fundamentales y brindar un puente humano de acompañamiento constante.',
+    images: [
+      {
+        src: '/assets/aistudio/IMG_0125.JPG',
+        title: 'Visita Domiciliaria a Familias',
+        caption: 'Acompañamiento directo a padres e hijos reunidos en su hogar.',
+      },
+      {
+        src: '/assets/aistudio/IMG_0121.JPG',
+        title: 'Atención a Madres e Hijos',
+        caption: 'Entrega de paquetes de apoyo familiar y seguimiento a necesidades.',
+      },
+      {
+        src: '/assets/aistudio/IMG_0111.JPG',
+        title: 'Entornos Protectores para la Niñez',
+        caption: 'Garantizando hogares seguros y afectuosos para los menores.',
+      },
+      {
+        src: '/assets/aistudio/mujeres_cocina_bocachica.png',
+        title: 'Redes de Solidaridad Comunitaria',
+        caption: 'Trabajo colaborativo con mujeres líderes de la comunidad.',
+      },
+    ],
   },
   {
     id: 'psicologia',
+    orderNumber: 5,
     title: 'Psicología',
     category: 'Salud Mental',
-    color: '#35D5C5', // Turquesa
+    color: '#004CE8', // Azul royal de la maqueta
     iconName: 'Smile',
     shortDescription:
-      'Orientación y acompañamiento psicosocial individual y grupal, manejo del duelo, resolución de conflictos y salud emocional.',
+      'Apoyo psicológico profesional para ayudar a manejar y superar los traumas generados por diversas circunstancias.',
+    bulletPoints: [
+      'Damos apoyo psicológico profesional a las personas de la comunidad a fin de ayudar a manejar y superar los traumas generados por diversas circunstancias de sus vidas.',
+    ],
     fullDescription:
       'Brindamos un espacio seguro, confidencial y profesional para que niños y jóvenes procesen heridas emocionales, traumas comunitarios y dilemas personales, promoviendo el bienestar mental y la resiliencia.',
     curriculum: [
       'Atención psicosocial individual para niños y adolescentes',
       'Talleres de inteligencia emocional y regulación de la ira',
-      'Prevención de consumo de sustancias y conductas de riesgo',
+      'Prevención de conductas de riesgo y fortalecimiento de identidad',
       'Acompañamiento en procesos de duelo y pérdida',
       'Estrategias de resolución pacífica de conflictos en el aula',
     ],
-    schedule: 'Martes y Jueves · Previa remisión y valoración',
+    schedule: 'Martes y Jueves · Previa valoración',
     beneficiaries: '60 usuarios en seguimiento activo',
     impactObjective:
       'Sanar heridas emocionales, fomentar la paz mental y empoderar a los jóvenes en la toma de decisiones asertivas.',
+    images: [
+      {
+        src: '/assets/aistudio/hero_bocachica_child.jpg',
+        title: 'Bienestar y Autoestima Infantil',
+        caption: 'Sonrisas sanas y superación de heridas emocionales en la niñez.',
+      },
+      {
+        src: '/assets/aistudio/MAQUETA_Lsp_website_-_Espa_ol_3933623a.png',
+        title: 'Orientación Psicosocial Profesional',
+        caption: 'Escucha activa y acompañamiento para procesar circunstancias difíciles.',
+      },
+      {
+        src: '/assets/aistudio/nina_refuerzo_paz.png',
+        title: 'Resiliencia y Sanación Emocional',
+        caption: 'Desarrollando herramientas de paz mental y seguridad personal.',
+      },
+      {
+        src: '/assets/aistudio/padrino_children_hope.jpg',
+        title: 'Acompañamiento Continuo',
+        caption: 'Espacios de confianza y afecto para cada niño y adolescente.',
+      },
+    ],
   },
   {
     id: 'nutricion-higiene',
+    orderNumber: 6,
     title: 'Nutrición e Higiene',
     category: 'Bienestar',
-    color: '#00E51B', // Verde brillante
+    color: '#C800D8', // Magenta / Orquídea de la maqueta
     iconName: 'Apple',
     shortDescription:
-      'Educación en hábitos saludables, seguridad alimentaria, refrigerios nutritivos diarios y prevención de enfermedades transmitidas por agua.',
+      'Refrigerios, suplementación alimentaria, mercados, implementos de aseo y monitoreo del crecimiento infantil.',
+    bulletPoints: [
+      'Proporcionamos refrigerios, suplementación alimentaria, mercados, implementos de aseo, y monitoreo del crecimiento infantil.',
+      'También capacitamos a las familias en hábitos de alimentación saludable e higiene.',
+    ],
     fullDescription:
       'El aprendizaje requiere un cuerpo sano y bien nutrido. Suministramos refrigerios de alto valor proteico durante las jornadas de refuerzo y educamos a las familias en manipulación higiénica del agua en un contexto insular con desafíos de saneamiento.',
     curriculum: [
@@ -164,15 +304,42 @@ export const socialPrograms: SocialProgram[] = [
     beneficiaries: '200+ raciones alimenticias por semana',
     impactObjective:
       'Erradicar el hambre en las horas de estudio, optimizar el desarrollo físico y prevenir infecciones comunes.',
+    images: [
+      {
+        src: '/assets/aistudio/familia_huevos_mercado.jpg',
+        title: 'Entrega de Mercados y Proteína',
+        caption: 'Mercados completos y cubetas de huevos entregados a familias de Bocachica.',
+      },
+      {
+        src: '/assets/aistudio/IMG_1303.jpg',
+        title: 'Taller de Nutrición y Cocina Saludable',
+        caption: 'Capacitación comunitaria en manipulación higiénica y preparación de alimentos.',
+      },
+      {
+        src: '/assets/aistudio/mujeres_cocina_bocachica.png',
+        title: 'Cocina Comunitaria y Refrigerios Diarios',
+        caption: 'Preparación de raciones y refrigerios nutritivos diarios para los niños.',
+      },
+      {
+        src: '/assets/aistudio/regenerated_image_1794116230391.jpg',
+        title: 'Monitoreo de Crecimiento y Salud Integral',
+        caption: 'Seguimiento de peso, talla y hábitos de higiene preventiva en la isla.',
+      },
+    ],
   },
   {
     id: 'escuela-de-padres',
+    orderNumber: 7,
     title: 'Escuela de Padres',
     category: 'Familia',
-    color: '#FFD000', // Amarillo
+    color: '#00D014', // Verde brillante de la maqueta
     iconName: 'Home',
     shortDescription:
-      'Formación familiar, pautas de crianza positiva, comunicación asertiva en el hogar y fortalecimiento de los lazos afectivos.',
+      'Formación en herramientas de crianza respetuosa, comunicación asertiva, manejo de límites y restauración familiar.',
+    bulletPoints: [
+      'Formamos a padres y cuidadores en herramientas de crianza respetuosa, comunicación asertiva, manejo de límites y fortalecimiento familiar.',
+      'Una comunidad se transforma cuando sus familias son restauradas.',
+    ],
     fullDescription:
       'Transformar a un niño implica transformar su entorno familiar. En la Escuela de Padres creamos espacios de diálogo, escucha y capacitación donde madres, padres y cuidadores adquieren herramientas para guiar a sus hijos con amor, paciencia y firmeza.',
     curriculum: [
@@ -186,6 +353,28 @@ export const socialPrograms: SocialProgram[] = [
     beneficiaries: '90 padres y cuidadores activos',
     impactObjective:
       'Construir hogares estables, afectuosos y protectores que respalden el crecimiento integral de cada niño.',
+    images: [
+      {
+        src: '/assets/aistudio/IMG_0125.JPG',
+        title: 'Padres e Hijos en Convivencia Pacífica',
+        caption: 'Paternidad amorosa, diálogo asertivo y presencia formativa en el hogar.',
+      },
+      {
+        src: '/assets/aistudio/familia_huevos_mercado.jpg',
+        title: 'Madres y Cuidadores Fortalecidos',
+        caption: 'Familias unidas aprendiendo a respaldar el crecimiento integral de sus hijos.',
+      },
+      {
+        src: '/assets/aistudio/IMG_0111.JPG',
+        title: 'Pautas de Crianza Afectuosa',
+        caption: 'Construyendo hogares sin violencia donde los niños crecen seguros y amados.',
+      },
+      {
+        src: '/assets/aistudio/ninos_evento_comunitario.png',
+        title: 'Comunidad y Familias Restauradas',
+        caption: 'Celebrando el impacto visible de hogares sanos en la transformación comunitaria.',
+      },
+    ],
   },
 ];
 
@@ -193,50 +382,129 @@ export const newPrograms2026: NewProgram2026[] = [
   {
     id: 'emprendimiento',
     number: '01',
-    title: 'Emprendimiento Comunitario',
-    tagline: 'Creación de negocios locales y autonomía económica',
-    color: '#FF8A00',
+    orderNumber: 1,
+    title: 'Emprendimiento',
+    tagline: 'Negocios locales y autonomía económica',
+    color: '#FFA000', // Ámbar / Naranja de la maqueta
+    bulletPoints: [
+      'Formación para pequeños negocios, habilidades comerciales, administración básica y creación de modelos de negocio sostenibles.',
+    ],
     description:
-      'Capacitación práctica para jóvenes y madres de Bocachica en formulación de proyectos productivos, comercialización de productos artesanales, gastronomía local y modelos de microempresa sostenible.',
+      'Formación para pequeños negocios, habilidades comerciales, administración básica y creación de modelos de negocio sostenibles para jóvenes y familias de Bocachica.',
     opportunities: [
       'Modelos de negocio sostenibles para el entorno insular',
       'Finanzas básicas, fijación de precios y ahorro comunitario',
-      'Marketing digital simple y ventas a visitantes de Cartagena',
-      'Capital semilla inicial para los proyectos más destacados',
+      'Marketing comercial y ventas a visitantes de Cartagena',
+      'Acompañamiento y capital semilla para proyectos destacados',
     ],
     status: 'Lanzamiento 2026',
+    images: [
+      {
+        src: '/assets/aistudio/IMG_1303.jpg',
+        title: 'Taller de Emprendimiento y Repostería',
+        caption: 'Capacitación comunitaria en producción de alimentos y comercialización.',
+      },
+      {
+        src: '/assets/aistudio/mujeres_cocina_bocachica.png',
+        title: 'Líderes y Madres Emprendedoras',
+        caption: 'Redes colaborativas de apoyo productivo entre mujeres de la isla.',
+      },
+      {
+        src: '/assets/aistudio/familia_huevos_mercado.jpg',
+        title: 'Comercio Local y Provisión de Insumos',
+        caption: 'Generación de autonomía económica y abastecimiento familiar.',
+      },
+      {
+        src: '/assets/aistudio/community_learning_bocachica.jpg',
+        title: 'Formación en Gestión de Negocios',
+        caption: 'Capacitación práctica en administración y modelos sostenibles.',
+      },
+    ],
   },
   {
     id: 'habilidades-tecnicas',
     number: '02',
-    title: 'Habilidades Técnicas Virtuales',
-    tagline: 'Conectando la isla con el mundo a través de la red',
-    color: '#35D5C5',
+    orderNumber: 2,
+    title: 'Habilidades Técnicas a Través de la Virtualidad',
+    tagline: 'Formación técnica remota certificable',
+    color: '#00CDBE', // Turquesa / Cian de la maqueta
+    bulletPoints: [
+      'Capacitación certificable en áreas técnicas como electricidad básica, hotelería, marketing digital, primeros auxilios, oficios turísticos y más.',
+    ],
     description:
-      'Ruta formativa remota en alianza con institutos técnicos para certificar a jóvenes en habilidades laborales de alta demanda que puedan desempeñarse a distancia o en el sector turístico y de servicios.',
+      'Capacitación certificable en áreas técnicas como electricidad básica, hotelería, marketing digital, primeros auxilios, oficios turísticos y más, conectando a la isla con nuevas oportunidades de empleo.',
     opportunities: [
-      'Conexión satelital de alta velocidad en el nuevo centro',
+      'Conexión satelital de alta velocidad en el nuevo centro comunitario',
       'Convenios de certificación técnica virtual avalada',
-      'Mentorías virtuales uno a uno con profesionales voluntarios',
-      'Inglés técnico aplicado al comercio y hotelería',
+      'Electricidad básica, primeros auxilios y oficios técnicos',
+      'Hotelería, marketing digital y servicios turísticos aplicados',
     ],
     status: 'Fase de equipamiento',
+    images: [
+      {
+        src: '/assets/aistudio/auditorium_architecture_plan_1794103983290.jpg',
+        title: 'Nuevas Aulas Técnicas Virtuales',
+        caption: 'Plano del auditorio y salones tecnológicos para formación remota.',
+      },
+      {
+        src: '/assets/aistudio/tutora_refuerzo_escolar.jpg',
+        title: 'Tutorías y Mentorías Guiadas',
+        caption: 'Acompañamiento personalizado en el aprendizaje de competencias laborales.',
+      },
+      {
+        src: '/assets/aistudio/ninos_evento_comunitario.png',
+        title: 'Juventud Preparada para el Trabajo',
+        caption: 'Jóvenes de Bocachica con certificación laboral y vocacional.',
+      },
+      {
+        src: '/assets/aistudio/bocachica_island_coast.jpg',
+        title: 'Oficios Náuticos y Turísticos',
+        caption: 'Formación técnica adaptada al contexto marítimo e insular.',
+      },
+    ],
   },
   {
     id: 'sistemas-digitales',
     number: '03',
-    title: 'Sistemas y Herramientas Digitales',
-    tagline: 'Cerrando la brecha digital en la juventud insular',
-    color: '#321078',
+    orderNumber: 3,
+    title: 'Curso de Sistemas y Herramientas Digitales',
+    tagline: 'Informática básica y competencias digitales',
+    color: '#FF4500', // Coral / Rojo-Naranja de la maqueta
+    bulletPoints: [
+      'Formación en informática básica, competencias digitales, ofimática e Internet seguro.',
+      'Será clave para jóvenes y adultos que buscan oportunidades laborales y crecimiento profesional.',
+    ],
     description:
-      'Aulas de cómputo para la alfabetización informática, manejo de suite ofimática, navegación segura en internet, herramientas de diseño gráfico básico y lógica de programación inicial.',
+      'Formación en informática básica, competencias digitales, ofimática e Internet seguro. Será clave para jóvenes y adultos que buscan oportunidades laborales y crecimiento profesional.',
     opportunities: [
       'Aula de cómputo con estaciones de trabajo individuales',
-      'Dominio de procesadores de texto, hojas de cálculo y presentaciones',
-      'Introducción al diseño gráfico digital (Canva, herramientas web)',
-      'Pensamiento computacional y nociones de programación web',
+      'Dominio de procesadores de texto, hojas de cálculo y ofimática',
+      'Navegación segura, internet productivo y herramientas digitales',
+      'Apertura a trabajos remotos y crecimiento profesional',
     ],
     status: 'Lanzamiento 2026',
+    images: [
+      {
+        src: '/assets/aistudio/tutora_refuerzo_escolar.jpg',
+        title: 'Alfabetización Informática Guiada',
+        caption: 'Aprender computación paso a paso con acompañamiento docente.',
+      },
+      {
+        src: '/assets/aistudio/nina_refuerzo_paz.png',
+        title: 'Acceso a la Era Digital',
+        caption: 'Niños y jóvenes con acceso a tecnología y conocimiento global.',
+      },
+      {
+        src: '/assets/aistudio/20210223_144925_2ca24bc9.jpg',
+        title: 'Trabajo Digital en Equipo',
+        caption: 'Talleres colaborativos y proyectos informáticos prácticos.',
+      },
+      {
+        src: '/assets/aistudio/IMG_0198.JPG',
+        title: 'Juventud Transformando su Futuro',
+        caption: 'Nuevas generaciones de Bocachica con herramientas de superación.',
+      },
+    ],
   },
 ];
 

@@ -20,7 +20,7 @@ interface SlideImage {
 }
 
 export const IniciativaSocialPage: React.FC = () => {
-  const { navigateToPage, openDonationPortal } = useApp();
+  const { navigateToPage } = useApp();
 
   // Active pillar selection for the 4 button bars
   const [activePillar, setActivePillar] = useState<PillarType>('educacion');
@@ -54,79 +54,115 @@ export const IniciativaSocialPage: React.FC = () => {
     setLightboxData((prev) => ({ ...prev, isOpen: false }));
   };
 
-  // 1. Eje EDUCACIÓN - 4 Fotografías oficiales suministradas
+  // 1. EJE EDUCACIÓN (4 IMÁGENES)
   const educacionSlides: SlideImage[] = [
     {
-      src: '/assets/aistudio/20210223_144923_13710feb.jpg',
+      src: '/assets/aistudio/regenerated_image_1794131942857.jpg',
       alt: 'Niños de Bocachica sentados en círculo dibujando y escribiendo en sus cuadernos',
-      title: 'Taller de creatividad y lectoescritura',
+      title: 'Taller de Creatividad y Lectoescritura',
       caption: 'Niños de Bocachica concentrados en sus libretas durante la jornada de refuerzo escolar y expresión artística.',
     },
     {
       src: '/assets/aistudio/20210223_144925_2ca24bc9.jpg',
       alt: 'Grupo de niños compartiendo lápices de colores y trabajando en equipo',
-      title: 'Acompañamiento pedagógico y trabajo en equipo',
+      title: 'Acompañamiento Pedagógico y Trabajo en Equipo',
       caption: 'Sesiones personalizadas de tutoría académica que fomentan la colaboración, la disciplina y el amor por el estudio.',
     },
     {
-      src: '/assets/aistudio/20210223_144830_b9dda026.jpg',
+      src: '/assets/aistudio/regenerated_image_1794131952643.jpg',
       alt: 'Actividad formativa de desarrollo cognitivo y tareas escolares',
-      title: 'Refuerzo escolar y habilidades básicas',
+      title: 'Refuerzo Escolar y Habilidades Básicas',
       caption: 'Apoyo extracurricular continuo para cerrar las brechas educativas de lectura, escritura y matemáticas en la isla.',
     },
     {
-      src: '/assets/aistudio/WhatsApp_Image_2026-01-14_at_10.25.30_AM__2__70da4a9c.jpeg',
+      src: '/assets/aistudio/regenerated_image_1794131957589.jpg',
       alt: 'Niña de Bocachica sonriendo alegremente mientras realiza sus ejercicios escolares',
-      title: 'Alegría y motivación en cada clase',
+      title: 'Alegría y Motivación en Cada Clase',
       caption: 'Una sonrisa que refleja esperanza y entusiasmo por aprender cada semana en un espacio seguro y afectivo.',
     },
   ];
 
-  // 2. Eje BIENESTAR - 4 Fotografías oficiales suministradas por el usuario
-  const bienestarSlides: SlideImage[] = [
+  // 2. EJE FAMILIA (4 IMÁGENES DE FAMILIAS)
+  const familiaSlides: SlideImage[] = [
     {
-      src: '/assets/aistudio/IMG_0125.JPG',
-      alt: 'Padre e hijos reunidos en su hogar durante visita de bienestar y acompañamiento psicosocial',
-      title: 'Acompañamiento Familiar en el Hogar (IMG_0125)',
-      caption: 'Visitas domiciliarias de acompañamiento integral a cada hogar, fortaleciendo la salud emocional, la convivencia y la estabilidad de las familias de Bocachica.',
+      src: '/assets/aistudio/IMG_0111.JPG',
+      alt: 'Hermanos en el umbral de su hogar en Bocachica compartiendo juego con afecto y protección',
+      title: 'Hermanos y Hogar Seguro',
+      caption: 'Espacios afectivos y seguros donde los niños de Bocachica crecen protegidos en el seno de su familia.',
     },
     {
       src: '/assets/aistudio/IMG_0121.JPG',
-      alt: 'Madre con sus hijos en el hogar recibiendo paquete de seguridad alimentaria',
-      title: 'Seguridad Alimentaria y Apoyo a Madres (IMG_0121)',
-      caption: 'Entrega periódica de mercados nutricionales y seguimiento cercano a madres cabeza de hogar para asegurar una alimentación digna y nutritiva.',
+      alt: 'Madre comunitaria con sus hijos recibiendo mercado familiar y apoyo alimentario en su hogar',
+      title: 'Madre con Hijos y Seguridad Alimentaria',
+      caption: 'Acompañamiento a madres cabeza de hogar con paquetes de nutrición y fortalecimiento de los lazos familiares.',
     },
     {
-      src: '/assets/aistudio/IMG_0111.JPG',
-      alt: 'Dos pequeños hermanos jugando con alegría y ternura en el umbral de su hogar',
-      title: 'Protección y Espacios Seguros para la Infancia (IMG_0111)',
-      caption: 'Garantizando entornos seguros y afectivos donde los niños y niñas de Bocachica puedan crecer protegidos, felices y con oportunidades de desarrollo.',
+      src: '/assets/aistudio/IMG_0125.JPG',
+      alt: 'Padre de familia reunido con sus hijos en la mesa del hogar en diálogo y convivencia pacífica',
+      title: 'Padre con Hijos en Convivencia Familiar',
+      caption: 'Presencia de los padres en el hogar, comunicación amorosa y respaldo emocional para cada miembro de la familia.',
     },
     {
       src: '/assets/aistudio/IMG_1303.jpg',
-      alt: 'Grupo de cinco voluntarias y jóvenes en taller de repostería y nutrición con bandejas de galletas',
-      title: 'Taller Comunitario de Repostería y Nutrición (IMG_1303)',
-      caption: 'Jóvenes y madres aprendiendo habilidades culinarias productivas, pautas de nutrición balanceada y desarrollo vocacional sostenible en la comunidad.',
+      alt: 'Madres y jóvenes de Bocachica en taller de repostería con bandejas de galletas horneadas',
+      title: 'Taller Comunitario de Repostería Familiar',
+      caption: 'Capacitación productiva para mujeres y familias, impulsando el sustento digno y el desarrollo económico.',
     },
   ];
 
-  // 3. Eje FAMILIA - Preparado para recibir galería
-  const familiaSlides: SlideImage[] = [
+  // 3. EJE BIENESTAR (4 IMÁGENES DE LOS NIÑOS SALTANDO)
+  const bienestarSlides: SlideImage[] = [
     {
-      src: '/assets/aistudio/mujeres_cocina_bocachica.png',
-      alt: 'Madres y familias de Bocachica colaborando unidas',
-      title: 'Fortalecimiento de vínculos familiares',
-      caption: 'Acompañamiento integral a madres comunitarias y familias para fortalecer la crianza positiva y los hogares seguros.',
+      src: '/assets/aistudio/IMG_0193.JPG',
+      alt: 'Niños de Bocachica saltando con brazos en alto en la terraza al aire libre',
+      title: 'Saltos de Alegría y Recreación al Aire Libre',
+      caption: 'Jornadas recreativas donde los niños saltan, bailan y expresan plenamente su alegría y energía en un espacio seguro.',
+    },
+    {
+      src: '/assets/aistudio/IMG_0198.JPG',
+      alt: 'Niño saltando alto en el centro con entusiasmo y dinamismo en taller recreativo',
+      title: 'Dinamismo, Movimiento y Salud Física',
+      caption: 'Actividades de expresión corporal y ejercicios físicos que promueven la salud cardiovascular y la autoestima.',
+    },
+    {
+      src: '/assets/aistudio/IMG_0192.JPG',
+      alt: 'Niños cantando, bailando y saltando en ronda con alegría en la terraza',
+      title: 'Danza, Canto y Bienestar Emocional',
+      caption: 'Música y dinámicas grupales que refuerzan el compañerismo, la risa y el bienestar emocional de los niños.',
+    },
+    {
+      src: '/assets/aistudio/image_5938a5fc.png',
+      alt: 'Niños saltando juntos con los brazos extendidos hacia el cielo',
+      title: 'Celebración y Derecho a Jugar',
+      caption: 'Recuperando el derecho fundamental a la infancia, el juego espontáneo y la sonrisa de cada niño en la isla.',
     },
   ];
 
-  // 4. Eje FE - Preparado para recibir galería
+  // 4. EJE FE (4 IMÁGENES DE LOS NIÑOS ORANDO)
   const feSlides: SlideImage[] = [
     {
-      src: '/assets/aistudio/MAQUETA_Lsp_website_-_Espa_ol_3933623a.png',
-      alt: 'Niño con mirada llena de fe, esperanza y futuro',
-      title: 'Valores, principios y esperanza espiritual',
-      caption: 'Formación en principios de fe, servicio al prójimo y amor cristiano impartidos por la Iglesia En El Lugar Santísimo.',
+      src: '/assets/aistudio/IMG_0211.JPG',
+      alt: 'Niños reunidos en círculo orando a Dios con manitas juntas y corazones reverentes',
+      title: 'Niños Unidos en Oración Comunitaria',
+      caption: 'Tiempos devocionales donde los pequeños aprenden a orar juntos, pedir bendición y agradecer a Dios por sus vidas.',
+    },
+    {
+      src: '/assets/aistudio/IMG_0220.JPG',
+      alt: 'Niño con los ojos cerrados en reverencia, fe sincera y profunda devoción',
+      title: 'Fe Sincera y Oración Personal',
+      caption: 'Inculcando principios y valores cristianos que siembran fe viva, esperanza y amor al prójimo desde temprana edad.',
+    },
+    {
+      src: '/assets/aistudio/20210221_182243.jpg',
+      alt: 'Alabanza y adoración con niños cantando e instrumentos musicales en la iglesia',
+      title: 'Alabanza y Adoración con Niños',
+      caption: 'Expresión musical y canto de los niños en la iglesia local, fortaleciendo su identidad y esperanza en Dios.',
+    },
+    {
+      src: '/assets/aistudio/Inicio_Contruccion_ProyectoBocachicaETP160.jpg',
+      alt: 'Comunidad e infancia congregadas frente a la Palabra de Dios en oración constante',
+      title: 'Principios Bíblicos y Esperanza para la Comunidad',
+      caption: 'Más de 10 años de discipulado y enseñanza de la Palabra que transforma vidas y familias enteras en Bocachica.',
     },
   ];
 
@@ -135,10 +171,10 @@ export const IniciativaSocialPage: React.FC = () => {
     switch (activePillar) {
       case 'educacion':
         return educacionSlides;
-      case 'bienestar':
-        return bienestarSlides;
       case 'familia':
         return familiaSlides;
+      case 'bienestar':
+        return bienestarSlides;
       case 'fe':
         return feSlides;
     }
@@ -218,7 +254,7 @@ export const IniciativaSocialPage: React.FC = () => {
                 Es una <strong className="font-bold text-white">iniciativa social</strong> de la Iglesia En El Lugar Santísimo. Desde hace más de 10 años trabaja en Bocachica <strong className="font-bold text-white">brindando programas semanales para decenas de familias</strong>. Su misión es <strong className="font-bold text-white">romper ciclos de pobreza</strong> mediante:
               </p>
 
-              {/* Las 4 Barras de Colores con Iconos Independientes */}
+              {/* Las 4 Barras de Colores con Iconos Independientes como Imágenes */}
               <div className="flex flex-col gap-3.5 pt-2 max-w-md">
                 
                 {/* 1. EDUCACIÓN - Barra verde #00D014 */}
@@ -313,7 +349,7 @@ export const IniciativaSocialPage: React.FC = () => {
 
             </div>
 
-            {/* Columna Derecha: Imagen Maqueta 20 colocada al frente de las barras (6 cols) */}
+            {/* Columna Derecha: Imagen Maqueta 20 ubicada al frente de las barras (6 cols) */}
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group aspect-4/5 max-h-[580px] w-full bg-stone-900">
                 <img
@@ -351,7 +387,7 @@ export const IniciativaSocialPage: React.FC = () => {
           </div>
 
           {/* ========================================================================= */}
-          {/* SLIDER INDEPENDIENTE PARA CADA BARRA (EDUCACIÓN, BIENESTAR, ETC.)         */}
+          {/* SLIDER INDEPENDIENTE: 4 IMÁGENES PARA CADA UNO DE LOS 4 BOTONES           */}
           {/* ========================================================================= */}
           <div className="mt-12 pt-10 border-t border-white/15">
             
@@ -363,10 +399,10 @@ export const IniciativaSocialPage: React.FC = () => {
                   <span className="text-white uppercase font-black">{activePillar}</span>
                 </div>
                 <h3 className="font-serif text-xl sm:text-2xl text-white font-normal">
-                  {activePillar === 'educacion' && 'Registro Fotográfico: Refuerzo Escolar y Tutorías'}
-                  {activePillar === 'bienestar' && 'Registro Fotográfico: Nutrición, Familia y Acompañamiento Integral'}
-                  {activePillar === 'familia' && 'Registro Fotográfico: Fortalecimiento Familiar'}
-                  {activePillar === 'fe' && 'Registro Fotográfico: Valores y Esperanza'}
+                  {activePillar === 'educacion' && 'Registro Fotográfico: Refuerzo Escolar y Tutorías (4 Fotos)'}
+                  {activePillar === 'familia' && 'Registro Fotográfico: Familias y Hogares de Bocachica (4 Fotos)'}
+                  {activePillar === 'bienestar' && 'Registro Fotográfico: Recreación y Niños Saltando de Alegría (4 Fotos)'}
+                  {activePillar === 'fe' && 'Registro Fotográfico: Niños en Oración y Fe Comunitaria (4 Fotos)'}
                 </h3>
               </div>
 
@@ -419,7 +455,7 @@ export const IniciativaSocialPage: React.FC = () => {
                   {/* Texto de la diapositiva */}
                   <div className="absolute bottom-4 left-4 right-16 text-white z-10">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-[#00D014] block mb-0.5">
-                      {activePillar === 'bienestar' ? 'EJE BIENESTAR · FOTOGRAFÍA OFICIAL' : 'EJE EDUCACIÓN · FOTOGRAFÍA OFICIAL'}
+                      EJE {activePillar.toUpperCase()} · FOTOGRAFÍA {currentSlideIndex + 1} DE 4
                     </span>
                     <h4 className="font-bold text-sm sm:text-base text-white drop-shadow-md">
                       {currentSlide.title}
@@ -447,20 +483,20 @@ export const IniciativaSocialPage: React.FC = () => {
                 {/* Cuadro informativo según el pilar seleccionado */}
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10 space-y-1.5">
                   <span className="text-[11px] font-bold uppercase tracking-wider text-[#00D014] block">
-                    {activePillar === 'bienestar' && '4 Fotografías del Eje Bienestar'}
-                    {activePillar === 'educacion' && '4 Fotografías del Eje Educación'}
-                    {activePillar === 'familia' && 'Eje Familia'}
-                    {activePillar === 'fe' && 'Eje Fe'}
+                    {activePillar === 'educacion' && '4 Fotos de Educación'}
+                    {activePillar === 'familia' && '4 Fotos de Familias'}
+                    {activePillar === 'bienestar' && '4 Fotos de Niños Saltando'}
+                    {activePillar === 'fe' && '4 Fotos de Niños Orando'}
                   </span>
                   <p className="text-xs text-white/80 leading-relaxed">
-                    {activePillar === 'bienestar' && 'Acompañamiento familiar en casa (IMG_0125), entrega de mercados nutricionales (IMG_0121), protección infantil (IMG_0111) y taller de repostería comunitaria (IMG_1303).'}
-                    {activePillar === 'educacion' && 'Jornadas semanales de refuerzo escolar, lectura guiada, tareas y tutorías personalizadas en Bocachica.'}
-                    {activePillar === 'familia' && 'Escuela para padres, pautas de crianza positiva y mediación familiar para erradicar la violencia intrafamiliar.'}
-                    {activePillar === 'fe' && 'Formación en valores cristianos, fe viva y discipulado que restauran la esperanza de las familias.'}
+                    {activePillar === 'educacion' && 'Refuerzo escolar semanal, tutorías de lectura, matemáticas y materiales pedagógicos continuos en Bocachica.'}
+                    {activePillar === 'familia' && 'Hermanos protegidos en el hogar, madres recibiendo mercado familiar, padres presentes a la mesa y talleres comunitarios.'}
+                    {activePillar === 'bienestar' && 'Niños saltando y bailando con brazos en alto, dinámicas recreativas y espacios seguros de alegría y salud física.'}
+                    {activePillar === 'fe' && 'Niños en oración comunitaria, devoción sincera con manitas juntas, alabanza con música e instrucción en la Palabra.'}
                   </p>
                 </div>
 
-                {/* Miniaturas de selección directa */}
+                {/* 4 Miniaturas de selección directa */}
                 <div className="grid grid-cols-4 sm:grid-cols-4 lg:grid-cols-2 gap-2.5">
                   {slides.map((slide, idx) => (
                     <button

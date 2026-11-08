@@ -216,7 +216,7 @@ export const AdminModal: React.FC = () => {
                     onChange={(e) => setTargetUSD(Number(e.target.value))}
                     className="w-full p-2.5 bg-stone-50 border border-stone-300 rounded-xl text-sm font-bold tabular-nums"
                   />
-                  <span className="text-[11px] text-stone-400">Meta histórica de la maqueta: $50,000 USD</span>
+                  <span className="text-[11px] text-stone-400">Meta histórica oficial del proyecto: $50,000 USD</span>
                 </div>
 
                 <div>
@@ -521,7 +521,7 @@ export const AdminModal: React.FC = () => {
               </div>
 
               <div className="pt-2 border-t border-stone-200 flex justify-between items-center">
-                <span className="text-xs text-stone-500">¿Deseas reiniciar a los valores de la maqueta original?</span>
+                <span className="text-xs text-stone-500">¿Deseas reiniciar a los valores originales del proyecto?</span>
                 <button
                   onClick={resetToDefaults}
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-red-600 hover:bg-red-50 rounded-lg transition-colors"
