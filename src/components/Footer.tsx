@@ -1,67 +1,87 @@
 import React from 'react';
-import { Heart, MapPin, Mail, Phone, ExternalLink, ShieldCheck } from 'lucide-react';
+import { Heart, MapPin, Mail, Phone, ShieldCheck } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { AppPage } from '../types';
+import { Logo } from './Logo';
 
 export const Footer: React.FC = () => {
-  const { organizationInfo, language } = useApp();
+  const { organizationInfo, navigateToPage } = useApp();
+
+  const handleNav = (page: AppPage) => {
+    navigateToPage(page);
+  };
 
   return (
-    <footer className="bg-[#1C1A32] text-white border-t border-white/10 pt-16 pb-12">
+    <footer className="bg-[#141222] text-white border-t border-white/10 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-white/10">
           
           {/* Brand & Purpose (5 cols) */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#FF6B5E] to-[#321078] flex items-center justify-center">
-                <Heart className="w-5 h-5 text-white fill-white/80" />
-              </div>
-              <span className="font-serif font-bold text-xl tracking-tight text-white">
-                LIVES SAVED PROJECT
-              </span>
-            </div>
+            <button
+              onClick={() => handleNav('inicio')}
+              className="text-left cursor-pointer focus:outline-none"
+            >
+              <Logo variant="light" />
+            </button>
             
-            <p className="text-sm text-white/70 max-w-sm leading-relaxed">
+            <p className="text-xs sm:text-sm text-white/70 max-w-sm leading-relaxed">
               Iniciativa social de la Iglesia En el Lugar Santísimo. Más de 10 años promoviendo educación, 
               salud emocional, familia y fe en la comunidad de Bocachica, isla de Tierra Bomba.
             </p>
 
-            <div className="text-xs text-white/50 space-y-1">
+            <div className="text-xs text-white/50 space-y-1 pt-1">
               <p>Entidad: {organizationInfo.legalName}</p>
               <p>NIT: {organizationInfo.nit}</p>
             </div>
           </div>
 
-          {/* Quick Links (3 cols) */}
+          {/* Quick Links to Independent Pages (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
             <span className="text-xs font-bold uppercase tracking-wider text-[#35D5C5] block mb-2">
-              Navegación
+              Páginas del Sitio
             </span>
             <ul className="space-y-2 text-xs sm:text-sm text-white/75">
               <li>
-                <a href="#hero" className="hover:text-white transition-colors">Inicio</a>
+                <button onClick={() => handleNav('inicio')} className="hover:text-white transition-colors cursor-pointer text-left">
+                  Inicio
+                </button>
               </li>
               <li>
-                <a href="#nosotros" className="hover:text-white transition-colors">Quiénes Somos</a>
+                <button onClick={() => handleNav('iniciativa-social')} className="hover:text-white transition-colors cursor-pointer text-left">
+                  Iniciativa Social
+                </button>
               </li>
               <li>
-                <a href="#bocachica" className="hover:text-white transition-colors">Comunidad de Bocachica</a>
+                <button onClick={() => handleNav('programas-actuales')} className="hover:text-white transition-colors cursor-pointer text-left">
+                  Programas Actuales (1 a 7)
+                </button>
               </li>
               <li>
-                <a href="#programas" className="hover:text-white transition-colors">Programas Sociales</a>
+                <button onClick={() => handleNav('nuevos-programas')} className="hover:text-white transition-colors cursor-pointer text-left">
+                  Nuevos Programas (2026)
+                </button>
               </li>
               <li>
-                <a href="#programas-2026" className="hover:text-white transition-colors">Nuevos Programas 2026</a>
+                <button onClick={() => handleNav('proyectos')} className="hover:text-white transition-colors cursor-pointer text-left">
+                  Proyectos & Auditorio
+                </button>
               </li>
               <li>
-                <a href="#proyectos" className="hover:text-white transition-colors">Auditorio y Proyectos</a>
+                <button onClick={() => handleNav('planes-suscripcion')} className="hover:text-white transition-colors cursor-pointer text-left">
+                  Planes de Suscripción
+                </button>
               </li>
               <li>
-                <a href="#planes" className="hover:text-white transition-colors">Planes de Apadrinamiento</a>
+                <button onClick={() => handleNav('plan-padrino')} className="hover:text-white transition-colors cursor-pointer text-left">
+                  Plan Padrino Salva Vidas
+                </button>
               </li>
               <li>
-                <a href="#donar" className="hover:text-white transition-colors">Canal Oficial de Donación</a>
+                <button onClick={() => handleNav('apoyanos')} className="hover:text-white transition-colors cursor-pointer text-left font-bold text-[#FF6B5E]">
+                  Apóyanos (Donaciones)
+                </button>
               </li>
             </ul>
           </div>
@@ -108,12 +128,17 @@ export const Footer: React.FC = () => {
         {/* Bottom Credits */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
           <div>
-            © {new Date().getFullYear()} Lives Saved Project · Todos los derechos reservados.
+            © {new Date().getFullYear()} Lives Saved Project · Iglesia En el Lugar Santísimo.
           </div>
           <div className="flex items-center gap-4">
             <span className="text-white/40">Bocachica, Cartagena, Colombia</span>
             <span className="text-white/20" aria-hidden="true">·</span>
-            <a href="#hero" className="hover:text-white transition-colors">Volver arriba ↑</a>
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="hover:text-white transition-colors cursor-pointer"
+            >
+              Volver arriba ↑
+            </button>
           </div>
         </div>
 

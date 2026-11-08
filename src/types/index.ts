@@ -1,5 +1,15 @@
 export type Currency = 'COP' | 'USD';
 
+export type AppPage =
+  | 'inicio'
+  | 'iniciativa-social'
+  | 'programas-actuales'
+  | 'nuevos-programas'
+  | 'proyectos'
+  | 'planes-suscripcion'
+  | 'plan-padrino'
+  | 'apoyanos';
+
 export type ProjectStatus = 'Planeado' | 'En ejecución' | 'Finalizado';
 
 export interface SocialProgram {

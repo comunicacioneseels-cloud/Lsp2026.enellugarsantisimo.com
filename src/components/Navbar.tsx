@@ -1,158 +1,290 @@
-import React, { useState } from 'react';
-import { Menu, X, Settings, Heart } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { ChevronDown, ArrowUpRight, Menu, X, Settings } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { AppPage } from '../types';
+import { Logo } from './Logo';
 
 export const Navbar: React.FC = () => {
-  const { language, setLanguage, setIsAdminOpen } = useApp();
+  const { currentPage, navigateToPage, setIsAdminOpen, language, setLanguage } = useApp();
+  const [programsDropdownOpen, setProgramsDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const navLinks = [
-    { label: language === 'es' ? 'Nosotros' : 'About', href: '#nosotros' },
-    { label: 'Bocachica', href: '#bocachica' },
-    { label: language === 'es' ? 'Programas' : 'Programs', href: '#programas' },
-    { label: '2026', href: '#programas-2026' },
-    { label: language === 'es' ? 'Proyectos' : 'Projects', href: '#proyectos' },
-    { label: language === 'es' ? 'Padrinos' : 'Sponsors', href: '#padrinos' },
-  ];
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setProgramsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleNav = (page: AppPage) => {
+    navigateToPage(page);
+    setMobileMenuOpen(false);
+    setProgramsDropdownOpen(false);
+  };
+
+  const isProgramsActive = currentPage === 'programas-actuales' || currentPage === 'nuevos-programas';
 
   return (
-    <header className="sticky top-0 z-40 bg-[#2D2B50]/95 backdrop-blur-md border-b border-white/10 text-white transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-8">
+    <header className="sticky top-0 z-40 bg-[#1E1B2E]/95 backdrop-blur-md border-b border-white/10 text-white transition-all">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6">
         
-        {/* Zone 1: Single text element Brand wordmark */}
-        <a 
-          href="#hero" 
-          className="flex items-center gap-3 shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6B5E] rounded-lg py-1"
-          aria-label="Lives Saved Project - Inicio"
+        {/* Brand Logo - Navigates to Inicio */}
+        <button
+          onClick={() => handleNav('inicio')}
+          className="flex items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6B5E] rounded-lg py-1 transition-opacity hover:opacity-90"
+          aria-label="Ir a la página de Inicio"
         >
-          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#FF6B5E] to-[#321078] flex items-center justify-center shadow-md shadow-[#FF6B5E]/20">
-            <Heart className="w-5 h-5 text-white fill-white/80" />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-serif font-bold text-lg tracking-tight text-white group-hover:text-[#35D5C5] transition-colors whitespace-nowrap">
-              LIVES SAVED PROJECT
-            </span>
-            <span className="text-[11px] font-sans text-white/60 tracking-wider uppercase -mt-0.5 whitespace-nowrap">
-              Bocachica · Iglesia EELS
-            </span>
-          </div>
-        </a>
+          <Logo variant="light" />
+        </button>
 
-        {/* Zone 2: Navigation Links (single-line, clean typography) */}
-        <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-white/85" aria-label="Navegación principal">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="hover:text-white hover:underline underline-offset-8 decoration-[#FF6B5E] decoration-2 transition-colors whitespace-nowrap shrink-0 py-2"
+        {/* Main Desktop Navigation Menu (Matching Exact User Specification) */}
+        <nav className="hidden xl:flex items-center gap-6 2xl:gap-8 text-sm font-medium" aria-label="Navegación principal">
+          
+          {/* INICIO */}
+          <button
+            onClick={() => handleNav('inicio')}
+            className={`relative py-2 font-medium transition-colors whitespace-nowrap cursor-pointer ${
+              currentPage === 'inicio' ? 'text-white' : 'text-white/75 hover:text-white'
+            }`}
+          >
+            <span>INICIO</span>
+            {currentPage === 'inicio' && (
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FF6B5E] rounded-full" />
+            )}
+          </button>
+
+          {/* INICIATIVA SOCIAL */}
+          <button
+            onClick={() => handleNav('iniciativa-social')}
+            className={`relative py-2 font-medium transition-colors whitespace-nowrap cursor-pointer ${
+              currentPage === 'iniciativa-social' ? 'text-white' : 'text-white/75 hover:text-white'
+            }`}
+          >
+            <span>INICIATIVA SOCIAL</span>
+            {currentPage === 'iniciativa-social' && (
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FF6B5E] rounded-full" />
+            )}
+          </button>
+
+          {/* PROGRAMAS (Dropdown: Programas Actuales 1 a 7 & Nuevos programas) */}
+          <div className="relative" ref={dropdownRef}>
+            <button
+              onClick={() => setProgramsDropdownOpen(!programsDropdownOpen)}
+              className={`relative py-2 flex items-center gap-1 font-medium transition-colors whitespace-nowrap cursor-pointer ${
+                isProgramsActive ? 'text-white' : 'text-white/75 hover:text-white'
+              }`}
+              aria-expanded={programsDropdownOpen}
             >
-              {link.label}
-            </a>
-          ))}
+              <span>PROGRAMAS</span>
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform ${programsDropdownOpen ? 'rotate-180 text-[#FF6B5E]' : ''}`} />
+              {isProgramsActive && (
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FF6B5E] rounded-full" />
+              )}
+            </button>
+
+            {/* Dropdown Menu */}
+            {programsDropdownOpen && (
+              <div className="absolute top-full left-0 mt-2 w-64 bg-[#282542] rounded-2xl shadow-2xl border border-white/15 py-2 text-xs font-semibold z-50 animate-in fade-in zoom-in-95 duration-150">
+                <button
+                  onClick={() => handleNav('programas-actuales')}
+                  className={`w-full text-left px-4 py-3 hover:bg-white/10 transition-colors flex items-center justify-between ${
+                    currentPage === 'programas-actuales' ? 'text-[#FF6B5E] bg-white/5' : 'text-white/90'
+                  }`}
+                >
+                  <div>
+                    <span className="block text-sm">Programas Actuales</span>
+                    <span className="text-[11px] font-normal text-white/60">Los 7 programas en operación</span>
+                  </div>
+                  <span className="text-white/40">↳</span>
+                </button>
+                <div className="border-t border-white/10 my-1" />
+                <button
+                  onClick={() => handleNav('nuevos-programas')}
+                  className={`w-full text-left px-4 py-3 hover:bg-white/10 transition-colors flex items-center justify-between ${
+                    currentPage === 'nuevos-programas' ? 'text-[#00E51B] bg-white/5' : 'text-white/90'
+                  }`}
+                >
+                  <div>
+                    <span className="block text-sm">Nuevos Programas</span>
+                    <span className="text-[11px] font-normal text-white/60">Lanzamiento e innovación 2026</span>
+                  </div>
+                  <span className="text-white/40">↳</span>
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* PROYECTOS */}
+          <button
+            onClick={() => handleNav('proyectos')}
+            className={`relative py-2 font-medium transition-colors whitespace-nowrap cursor-pointer ${
+              currentPage === 'proyectos' ? 'text-white' : 'text-white/75 hover:text-white'
+            }`}
+          >
+            <span>PROYECTOS</span>
+            {currentPage === 'proyectos' && (
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FF6B5E] rounded-full" />
+            )}
+          </button>
+
+          {/* PLANES DE SUSCRIPCIÓN */}
+          <button
+            onClick={() => handleNav('planes-suscripcion')}
+            className={`relative py-2 font-medium transition-colors whitespace-nowrap cursor-pointer ${
+              currentPage === 'planes-suscripcion' ? 'text-white' : 'text-white/75 hover:text-white'
+            }`}
+          >
+            <span>PLANES DE SUSCRIPCIÓN</span>
+            {currentPage === 'planes-suscripcion' && (
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FF6B5E] rounded-full" />
+            )}
+          </button>
+
+          {/* PLAN PADRINO */}
+          <button
+            onClick={() => handleNav('plan-padrino')}
+            className={`relative py-2 font-medium transition-colors whitespace-nowrap cursor-pointer ${
+              currentPage === 'plan-padrino' ? 'text-white' : 'text-white/75 hover:text-white'
+            }`}
+          >
+            <span>PLAN PADRINO</span>
+            {currentPage === 'plan-padrino' && (
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FF6B5E] rounded-full" />
+            )}
+          </button>
+
+          {/* APÓYANOS */}
+          <button
+            onClick={() => handleNav('apoyanos')}
+            className={`relative py-2 font-medium transition-colors whitespace-nowrap cursor-pointer ${
+              currentPage === 'apoyanos' ? 'text-white' : 'text-white/75 hover:text-white'
+            }`}
+          >
+            <span>APÓYANOS</span>
+            {currentPage === 'apoyanos' && (
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FF6B5E] rounded-full" />
+            )}
+          </button>
+
         </nav>
 
-        {/* Zone 3: Primary Actions & Utility */}
-        <div className="hidden sm:flex items-center gap-3 shrink-0">
-          {/* Language Switcher */}
-          <div className="flex items-center text-xs font-semibold bg-white/10 rounded-md p-1 border border-white/10">
-            <button
-              onClick={() => setLanguage('es')}
-              className={`px-2 py-1 rounded transition-colors ${
-                language === 'es' ? 'bg-[#FF6B5E] text-white shadow-xs' : 'text-white/70 hover:text-white'
-              }`}
-              title="Español"
-            >
-              ES
-            </button>
-            <button
-              onClick={() => setLanguage('en')}
-              className={`px-2 py-1 rounded transition-colors ${
-                language === 'en' ? 'bg-[#FF6B5E] text-white shadow-xs' : 'text-white/70 hover:text-white'
-              }`}
-              title="English"
-            >
-              EN
-            </button>
-          </div>
-
-          {/* Admin panel trigger */}
+        {/* Right CTA Button & Utilities (Matching Mockup's DONA AHORA ↗) */}
+        <div className="flex items-center gap-3 shrink-0">
+          
+          {/* Admin panel icon */}
           <button
             onClick={() => setIsAdminOpen(true)}
-            className="p-2 text-white/75 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-            title="Panel de administración de la organización"
-            aria-label="Administración institucional"
-          >
-            <Settings className="w-4 h-4" />
-          </button>
-
-          {/* Primary CTA */}
-          <a
-            href="#donar"
-            className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-white bg-[#FF6B5E] hover:bg-[#ff5747] active:scale-[0.98] rounded-lg transition-all shadow-md shadow-[#FF6B5E]/30 whitespace-nowrap shrink-0"
-          >
-            {language === 'es' ? 'Dona ahora' : 'Donate Now'}
-          </a>
-        </div>
-
-        {/* Mobile menu button */}
-        <div className="flex items-center gap-2 sm:hidden">
-          <button
-            onClick={() => setIsAdminOpen(true)}
-            className="p-2 text-white/75 hover:text-white rounded-lg"
+            className="p-2 text-white/60 hover:text-white hover:bg-white/10 rounded-lg transition-colors cursor-pointer"
             title="Panel de administración"
+            aria-label="Abrir panel administrativo"
           >
             <Settings className="w-4 h-4" />
           </button>
+
+          {/* DONA AHORA ↗ (Coral Button exactly as in mockup) */}
+          <button
+            onClick={() => handleNav('apoyanos')}
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white bg-[#FF6B5E] hover:bg-[#ff5747] active:scale-[0.98] rounded-xl shadow-md shadow-[#FF6B5E]/30 transition-all cursor-pointer whitespace-nowrap"
+          >
+            <span>DONA AHORA</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </button>
+
+          {/* Mobile hamburger toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-white hover:bg-white/10 rounded-lg focus:outline-none"
+            className="xl:hidden p-2 text-white hover:bg-white/10 rounded-lg focus:outline-none cursor-pointer"
             aria-label="Abrir menú"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
+
         </div>
 
       </div>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#242240] border-t border-white/10 px-4 pt-3 pb-6 space-y-3">
-          <div className="flex flex-col space-y-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2 text-base font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-md"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-          <div className="pt-3 border-t border-white/10 flex items-center justify-between">
-            <div className="flex items-center gap-2 text-xs">
-              <span className="text-white/60">Idioma:</span>
-              <button
-                onClick={() => setLanguage('es')}
-                className={`px-2 py-1 rounded ${language === 'es' ? 'bg-[#FF6B5E] text-white font-bold' : 'text-white/70'}`}
-              >
-                ES
-              </button>
-              <button
-                onClick={() => setLanguage('en')}
-                className={`px-2 py-1 rounded ${language === 'en' ? 'bg-[#FF6B5E] text-white font-bold' : 'text-white/70'}`}
-              >
-                EN
-              </button>
-            </div>
-            <a
-              href="#donar"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-4 py-2 text-sm font-semibold text-white bg-[#FF6B5E] rounded-lg"
+        <div className="xl:hidden bg-[#1E1B2E] border-t border-white/10 px-4 pt-3 pb-6 space-y-2 text-sm font-medium">
+          <button
+            onClick={() => handleNav('inicio')}
+            className={`w-full text-left px-3 py-2.5 rounded-lg ${
+              currentPage === 'inicio' ? 'bg-[#FF6B5E] text-white font-bold' : 'text-white/80 hover:bg-white/5'
+            }`}
+          >
+            INICIO
+          </button>
+
+          <button
+            onClick={() => handleNav('iniciativa-social')}
+            className={`w-full text-left px-3 py-2.5 rounded-lg ${
+              currentPage === 'iniciativa-social' ? 'bg-[#FF6B5E] text-white font-bold' : 'text-white/80 hover:bg-white/5'
+            }`}
+          >
+            INICIATIVA SOCIAL
+          </button>
+
+          {/* Mobile Programas Nested Links */}
+          <div className="border-l-2 border-white/15 pl-3 ml-2 space-y-1">
+            <span className="text-xs font-bold uppercase tracking-wider text-white/50 block py-1">PROGRAMAS</span>
+            <button
+              onClick={() => handleNav('programas-actuales')}
+              className={`w-full text-left px-3 py-2 rounded-lg text-xs ${
+                currentPage === 'programas-actuales' ? 'bg-white/15 text-[#35D5C5] font-bold' : 'text-white/70'
+              }`}
             >
-              {language === 'es' ? 'Dona ahora' : 'Donate'}
-            </a>
+              ↳ Programas Actuales (1 a 7)
+            </button>
+            <button
+              onClick={() => handleNav('nuevos-programas')}
+              className={`w-full text-left px-3 py-2 rounded-lg text-xs ${
+                currentPage === 'nuevos-programas' ? 'bg-white/15 text-[#00E51B] font-bold' : 'text-white/70'
+              }`}
+            >
+              ↳ Nuevos programas (2026)
+            </button>
           </div>
+
+          <button
+            onClick={() => handleNav('proyectos')}
+            className={`w-full text-left px-3 py-2.5 rounded-lg ${
+              currentPage === 'proyectos' ? 'bg-[#FF6B5E] text-white font-bold' : 'text-white/80 hover:bg-white/5'
+            }`}
+          >
+            PROYECTOS
+          </button>
+
+          <button
+            onClick={() => handleNav('planes-suscripcion')}
+            className={`w-full text-left px-3 py-2.5 rounded-lg ${
+              currentPage === 'planes-suscripcion' ? 'bg-[#FF6B5E] text-white font-bold' : 'text-white/80 hover:bg-white/5'
+            }`}
+          >
+            PLANES DE SUSCRIPCIÓN
+          </button>
+
+          <button
+            onClick={() => handleNav('plan-padrino')}
+            className={`w-full text-left px-3 py-2.5 rounded-lg ${
+              currentPage === 'plan-padrino' ? 'bg-[#FF6B5E] text-white font-bold' : 'text-white/80 hover:bg-white/5'
+            }`}
+          >
+            PLAN PADRINO
+          </button>
+
+          <button
+            onClick={() => handleNav('apoyanos')}
+            className={`w-full text-left px-3 py-2.5 rounded-lg ${
+              currentPage === 'apoyanos' ? 'bg-[#FF6B5E] text-white font-bold' : 'text-white/80 hover:bg-white/5'
+            }`}
+          >
+            APÓYANOS
+          </button>
         </div>
       )}
     </header>

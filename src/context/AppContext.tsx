@@ -8,6 +8,7 @@ import {
   subscriptionPlans,
 } from '../data/initialData';
 import {
+  AppPage,
   Currency,
   DonationRecord,
   FinancialProgress,
@@ -23,6 +24,11 @@ interface AppContextType {
   setLanguage: (lang: 'es' | 'en') => void;
   currency: Currency;
   setCurrency: (curr: Currency) => void;
+
+  // Multi-page navigation state
+  currentPage: AppPage;
+  setCurrentPage: (page: AppPage) => void;
+  navigateToPage: (page: AppPage, scrollId?: string) => void;
 
   financialProgress: FinancialProgress;
   updateFinancialProgress: (data: Partial<FinancialProgress>) => void;
@@ -85,6 +91,51 @@ const STORAGE_KEYS = {
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<'es' | 'en'>('es');
   const [currency, setCurrency] = useState<Currency>('COP');
+
+  // Multi-page navigation state
+  const parseHashToPage = (): AppPage => {
+    const raw = window.location.hash.replace('#', '').trim();
+    const validPages: AppPage[] = [
+      'inicio',
+      'iniciativa-social',
+      'programas-actuales',
+      'nuevos-programas',
+      'proyectos',
+      'planes-suscripcion',
+      'plan-padrino',
+      'apoyanos',
+    ];
+    if (validPages.includes(raw as AppPage)) {
+      return raw as AppPage;
+    }
+    return 'inicio';
+  };
+
+  const [currentPage, setCurrentPage] = useState<AppPage>(parseHashToPage);
+
+  // Sync browser back/forward buttons & URL hash changes
+  useEffect(() => {
+    const handleHashChange = () => {
+      setCurrentPage(parseHashToPage());
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const navigateToPage = (page: AppPage, scrollId?: string) => {
+    setCurrentPage(page);
+    window.location.hash = page;
+    if (scrollId) {
+      setTimeout(() => {
+        const el = document.getElementById(scrollId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 50);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   const [financialProgress, setFinancialProgress] = useState<FinancialProgress>(() => {
     try {
@@ -206,11 +257,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     });
     setCurrency(curr);
 
-    // Smooth scroll to donation checkout section
-    const el = document.getElementById('donar');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    // Navigate to Apóyanos page and focus on donation form
+    navigateToPage('apoyanos', 'donar');
   };
 
   const addDonationRecord = (record: DonationRecord) => {
@@ -268,6 +316,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         setLanguage,
         currency,
         setCurrency,
+        currentPage,
+        setCurrentPage,
+        navigateToPage,
         financialProgress,
         updateFinancialProgress,
         organizationInfo,

@@ -4,60 +4,56 @@
  */
 
 import React from 'react';
-import { AppProvider } from './context/AppContext';
+import { AppProvider, useApp } from './context/AppContext';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { AboutSection } from './components/AboutSection';
-import { BocachicaSection } from './components/BocachicaSection';
-import { ProgramsSection } from './components/ProgramsSection';
-import { NewPrograms2026 } from './components/NewPrograms2026';
-import { ProjectsSection } from './components/ProjectsSection';
-import { ProgressSection } from './components/ProgressSection';
-import { PadrinoSection } from './components/PadrinoSection';
-import { SubscriptionPlans } from './components/SubscriptionPlans';
-import { DonationSection } from './components/DonationSection';
 import { Footer } from './components/Footer';
 import { ProgramDetailModal } from './components/ProgramDetailModal';
 import { AdminModal } from './components/AdminModal';
 
+// Independent Pages
+import { InicioPage } from './pages/InicioPage';
+import { IniciativaSocialPage } from './pages/IniciativaSocialPage';
+import { ProgramasActualesPage } from './pages/ProgramasActualesPage';
+import { NuevosProgramasPage } from './pages/NuevosProgramasPage';
+import { ProyectosPage } from './pages/ProyectosPage';
+import { PlanesSuscripcionPage } from './pages/PlanesSuscripcionPage';
+import { PlanPadrinoPage } from './pages/PlanPadrinoPage';
+import { ApoyanosPage } from './pages/ApoyanosPage';
+
+const PageRenderer: React.FC = () => {
+  const { currentPage } = useApp();
+
+  switch (currentPage) {
+    case 'iniciativa-social':
+      return <IniciativaSocialPage />;
+    case 'programas-actuales':
+      return <ProgramasActualesPage />;
+    case 'nuevos-programas':
+      return <NuevosProgramasPage />;
+    case 'proyectos':
+      return <ProyectosPage />;
+    case 'planes-suscripcion':
+      return <PlanesSuscripcionPage />;
+    case 'plan-padrino':
+      return <PlanPadrinoPage />;
+    case 'apoyanos':
+      return <ApoyanosPage />;
+    case 'inicio':
+    default:
+      return <InicioPage />;
+  }
+};
+
 export default function App() {
   return (
     <AppProvider>
-      <div className="min-h-screen flex flex-col bg-[#FDFBF7] text-[#1E1B2E]">
-        {/* Navigation Bar (Sticky 3-Zone) */}
+      <div className="min-h-screen flex flex-col bg-[#1E1B2E] text-[#1E1B2E]">
+        {/* Multi-page Top Navigation Bar */}
         <Navbar />
 
-        {/* Main Content Sections (10 Sections) */}
+        {/* Independent Active Page View */}
         <main className="flex-1">
-          {/* Sección 1: Portada Principal (Hero) */}
-          <Hero />
-
-          {/* Sección 2: Presentación de LIVES SAVED PROJECT & 4 Ejes */}
-          <AboutSection />
-
-          {/* Sección 3: Bocachica: Un pueblo en busca de oportunidades */}
-          <BocachicaSection />
-
-          {/* Sección 4: Programas Sociales Activos */}
-          <ProgramsSection />
-
-          {/* Sección 5: Nuevos Programas para 2026 */}
-          <NewPrograms2026 />
-
-          {/* Sección 6: Proyectos en Marcha & Auditorio/Salones */}
-          <ProjectsSection />
-
-          {/* Sección 7: Avances de Obra y Necesidades Pendientes */}
-          <ProgressSection />
-
-          {/* Sección 8: Conviértete en un Padrino */}
-          <PadrinoSection />
-
-          {/* Sección 9: Planes de Suscripción y Aportes */}
-          <SubscriptionPlans />
-
-          {/* Sección 10: Apoya a LIVES SAVED PROJECT (Donación Oficial & Wompi) */}
-          <DonationSection />
+          <PageRenderer />
         </main>
 
         {/* Institutional Footer */}
