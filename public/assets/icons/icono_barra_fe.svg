@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <circle cx="24" cy="24" r="22" fill="#241F3C" fill-opacity="0.1" />
+  <!-- Church and cross in dark #241F3C for white bar -->
+  <g fill="#241F3C">
+    <!-- Cross on top of steeple -->
+    <path d="M23 10h2v3h3v2h-3v4h-2v-4h-3v-2h3v-3z" />
+    <!-- Steeple roof -->
+    <path d="M24 18l-8 7h3v13h10V25h3l-8-7z" />
+    <!-- Church door -->
+    <path d="M22 38v-6c0-1.1.9-2 2-2s2 .9 2 2v6h-4z" fill="#FFFFFF" />
+  </g>
+</svg>

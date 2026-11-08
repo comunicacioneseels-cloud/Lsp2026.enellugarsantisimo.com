@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- White circular background -->
+  <circle cx="32" cy="32" r="30" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" />
+  <!-- Nutrition & Health (Hands holding Heart with Medical Cross) in #241F3C -->
+  <g fill="#241F3C">
+    <!-- Heart -->
+    <path d="M32 40.5l-1.8-1.6C22 31.8 17 27.5 17 22c0-4.4 3.5-7.8 7.9-7.8 2.5 0 4.9 1.2 6.1 3 1.2-1.8 3.6-3 6.1-3 4.4 0 7.9 3.4 7.9 7.8 0 5.5-5 9.8-13.2 16.9L32 40.5z" />
+    <!-- Medical cross inside heart in white -->
+    <path d="M30 18h4v3h3v4h-3v3h-4v-3h-3v-4h3v-3z" fill="#FFFFFF" />
+    <!-- Supporting Hands -->
+    <path d="M16 43c2.5 3 6.5 5 16 5s13.5-2 16-5l-2.5-2.5c-2 2-5 3.5-13.5 3.5s-11.5-1.5-13.5-3.5L16 43z" />
+  </g>
+</svg>

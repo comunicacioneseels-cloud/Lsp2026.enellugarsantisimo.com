@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <circle cx="24" cy="24" r="22" fill="white" fill-opacity="0.25" />
+  <!-- Heart and Health Icon in white -->
+  <path d="M24 35.5l-1.5-1.35C15.6 28 12 24.5 12 20c0-3.6 2.8-6.5 6.4-6.5 2 0 4 1 5.6 2.5 1.6-1.5 3.6-2.5 5.6-2.5 3.6 0 6.4 2.9 6.4 6.5 0 4.5-3.6 8-10.5 14.15L24 35.5z" fill="#FFFFFF" />
+  <!-- Nutrition leaf / spark -->
+  <circle cx="24" cy="21" r="2" fill="#FF5A00" />
+</svg>

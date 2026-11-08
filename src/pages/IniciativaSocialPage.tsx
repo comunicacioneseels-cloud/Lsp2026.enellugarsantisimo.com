@@ -6,14 +6,6 @@ import {
   ArrowRight,
   ArrowUpRight,
   Heart,
-  GraduationCap,
-  Users,
-  Sparkles,
-  Church,
-  Coins,
-  Activity,
-  Home,
-  CheckCircle2,
 } from 'lucide-react';
 import { useApp, OFFICIAL_DONATION_URL } from '../context/AppContext';
 import { ImageLightbox } from '../components/ImageLightbox';
@@ -62,7 +54,7 @@ export const IniciativaSocialPage: React.FC = () => {
     setLightboxData((prev) => ({ ...prev, isOpen: false }));
   };
 
-  // 4 Photos for Educación provided by user
+  // 1. Eje EDUCACIÓN - 4 Fotografías oficiales suministradas
   const educacionSlides: SlideImage[] = [
     {
       src: '/assets/aistudio/20210223_144923_13710feb.jpg',
@@ -90,7 +82,35 @@ export const IniciativaSocialPage: React.FC = () => {
     },
   ];
 
-  // Representative slides for the other 3 pillars (ready for upcoming photos from user)
+  // 2. Eje BIENESTAR - 4 Fotografías oficiales suministradas por el usuario
+  const bienestarSlides: SlideImage[] = [
+    {
+      src: '/assets/aistudio/IMG_0125.JPG',
+      alt: 'Padre e hijos reunidos en su hogar durante visita de bienestar y acompañamiento psicosocial',
+      title: 'Acompañamiento Familiar en el Hogar (IMG_0125)',
+      caption: 'Visitas domiciliarias de acompañamiento integral a cada hogar, fortaleciendo la salud emocional, la convivencia y la estabilidad de las familias de Bocachica.',
+    },
+    {
+      src: '/assets/aistudio/IMG_0121.JPG',
+      alt: 'Madre con sus hijos en el hogar recibiendo paquete de seguridad alimentaria',
+      title: 'Seguridad Alimentaria y Apoyo a Madres (IMG_0121)',
+      caption: 'Entrega periódica de mercados nutricionales y seguimiento cercano a madres cabeza de hogar para asegurar una alimentación digna y nutritiva.',
+    },
+    {
+      src: '/assets/aistudio/IMG_0111.JPG',
+      alt: 'Dos pequeños hermanos jugando con alegría y ternura en el umbral de su hogar',
+      title: 'Protección y Espacios Seguros para la Infancia (IMG_0111)',
+      caption: 'Garantizando entornos seguros y afectivos donde los niños y niñas de Bocachica puedan crecer protegidos, felices y con oportunidades de desarrollo.',
+    },
+    {
+      src: '/assets/aistudio/IMG_1303.jpg',
+      alt: 'Grupo de cinco voluntarias y jóvenes en taller de repostería y nutrición con bandejas de galletas',
+      title: 'Taller Comunitario de Repostería y Nutrición (IMG_1303)',
+      caption: 'Jóvenes y madres aprendiendo habilidades culinarias productivas, pautas de nutrición balanceada y desarrollo vocacional sostenible en la comunidad.',
+    },
+  ];
+
+  // 3. Eje FAMILIA - Preparado para recibir galería
   const familiaSlides: SlideImage[] = [
     {
       src: '/assets/aistudio/mujeres_cocina_bocachica.png',
@@ -100,15 +120,7 @@ export const IniciativaSocialPage: React.FC = () => {
     },
   ];
 
-  const bienestarSlides: SlideImage[] = [
-    {
-      src: '/assets/aistudio/image_5938a5fc.png',
-      alt: 'Recreación, bienestar y dinamismo para niños en Bocachica',
-      title: 'Nutrición, salud y esparcimiento saludable',
-      caption: 'Refrigerios nutritivos, agua potable purificada y actividades físicas que garantizan el bienestar integral infantil.',
-    },
-  ];
-
+  // 4. Eje FE - Preparado para recibir galería
   const feSlides: SlideImage[] = [
     {
       src: '/assets/aistudio/MAQUETA_Lsp_website_-_Espa_ol_3933623a.png',
@@ -118,15 +130,15 @@ export const IniciativaSocialPage: React.FC = () => {
     },
   ];
 
-  // Get active slides based on selected pillar
+  // Selector de diapositivas según el pilar activo
   const getActiveSlides = (): SlideImage[] => {
     switch (activePillar) {
       case 'educacion':
         return educacionSlides;
-      case 'familia':
-        return familiaSlides;
       case 'bienestar':
         return bienestarSlides;
+      case 'familia':
+        return familiaSlides;
       case 'fe':
         return feSlides;
     }
@@ -151,7 +163,7 @@ export const IniciativaSocialPage: React.FC = () => {
   return (
     <div className="bg-[#181528] text-white min-h-screen">
       
-      {/* Lightbox for full-resolution inspection */}
+      {/* Lightbox para ampliar cualquier foto a pantalla completa */}
       <ImageLightbox
         isOpen={lightboxData.isOpen}
         onClose={closeLightbox}
@@ -160,7 +172,7 @@ export const IniciativaSocialPage: React.FC = () => {
         caption={lightboxData.caption}
       />
 
-      {/* Breadcrumb Navigation */}
+      {/* Navegación tipo Breadcrumb */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
         <div className="flex items-center gap-2 text-xs text-white/60">
           <button
@@ -174,17 +186,17 @@ export const IniciativaSocialPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Main Container */}
+      {/* Contenedor Principal */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 space-y-12 sm:space-y-16">
         
         {/* ========================================================================= */}
-        {/* SECTION 1: EXACT RECREATION OF MAQUETA_Lsp_website_-_Espa_ol_bc6b9292.png */}
+        {/* SECCIÓN 1: LIVES SAVED PROJECT + 4 BARRAS + FOTO FRENTE A LAS BARRAS      */}
         {/* ========================================================================= */}
         <section 
           className="bg-[#241F3C] rounded-3xl border border-white/10 p-6 sm:p-10 lg:p-12 shadow-2xl relative overflow-hidden"
           aria-label="Presentación de Lives Saved Project"
         >
-          {/* Ambient subtle glow */}
+          {/* Resplandor ambiental de fondo */}
           <div 
             className="absolute top-0 right-1/4 w-96 h-96 bg-[#00D014]/10 rounded-full blur-[140px] pointer-events-none" 
             aria-hidden="true" 
@@ -192,24 +204,24 @@ export const IniciativaSocialPage: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            {/* Left Column: Typography, Narrative & 4 Colored Action Bars (6 cols) */}
+            {/* Columna Izquierda: Texto tipográfico independiente y 4 Barras de Colores (6 cols) */}
             <div className="lg:col-span-6 flex flex-col justify-center space-y-6">
               
-              {/* Green Headline: LIVES SAVED PROJECT */}
+              {/* Título en verde brillante */}
               <h1 className="font-sans font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-[#00D014] leading-[1.05]">
                 LIVES SAVED<br />
                 PROJECT
               </h1>
 
-              {/* Exact Description text with bold highlights */}
+              {/* Párrafo explicativo con palabras clave independientes */}
               <p className="text-white text-sm sm:text-base leading-relaxed max-w-xl font-normal">
                 Es una <strong className="font-bold text-white">iniciativa social</strong> de la Iglesia En El Lugar Santísimo. Desde hace más de 10 años trabaja en Bocachica <strong className="font-bold text-white">brindando programas semanales para decenas de familias</strong>. Su misión es <strong className="font-bold text-white">romper ciclos de pobreza</strong> mediante:
               </p>
 
-              {/* The 4 Colored Bars as Interactive Buttons */}
+              {/* Las 4 Barras de Colores con Iconos Independientes */}
               <div className="flex flex-col gap-3.5 pt-2 max-w-md">
                 
-                {/* 1. EDUCACIÓN - Green #00D014 */}
+                {/* 1. EDUCACIÓN - Barra verde #00D014 */}
                 <button
                   type="button"
                   onClick={() => handlePillarChange('educacion')}
@@ -223,20 +235,15 @@ export const IniciativaSocialPage: React.FC = () => {
                 >
                   <span className="drop-shadow-xs">EDUCACIÓN</span>
                   
-                  {/* Editable SVG Icon: Graduation Cap & Books */}
-                  <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0">
-                    <svg 
-                      className="w-6 h-6 text-white" 
-                      viewBox="0 0 24 24" 
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z" />
-                    </svg>
-                  </div>
+                  {/* Icono independiente como imagen SVG */}
+                  <img
+                    src="/assets/icons/icono_barra_educacion.svg"
+                    alt="Icono Educación"
+                    className="w-10 h-10 shrink-0 drop-shadow-sm"
+                  />
                 </button>
 
-                {/* 2. FAMILIA - Electric Purple #7000FF */}
+                {/* 2. FAMILIA - Barra morada #7000FF */}
                 <button
                   type="button"
                   onClick={() => handlePillarChange('familia')}
@@ -250,20 +257,15 @@ export const IniciativaSocialPage: React.FC = () => {
                 >
                   <span className="drop-shadow-xs">FAMILIA</span>
                   
-                  {/* Editable SVG Icon: Family inside home */}
-                  <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0">
-                    <svg 
-                      className="w-6 h-6 text-white" 
-                      viewBox="0 0 24 24" 
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path d="M12 3L2 12H5V20H19V12H22L12 3M12 7.7C13.1 7.7 14 8.6 14 9.7C14 10.8 13.1 11.7 12 11.7C10.9 11.7 10 10.8 10 9.7C10 8.6 10.9 7.7 12 7.7M16 18H8V16.6C8 15.3 10.7 14.6 12 14.6C13.3 14.6 16 15.3 16 16.6V18Z" />
-                    </svg>
-                  </div>
+                  {/* Icono independiente como imagen SVG */}
+                  <img
+                    src="/assets/icons/icono_barra_familia.svg"
+                    alt="Icono Familia"
+                    className="w-10 h-10 shrink-0 drop-shadow-sm"
+                  />
                 </button>
 
-                {/* 3. BIENESTAR - Vibrant Orange #FF5A00 */}
+                {/* 3. BIENESTAR - Barra naranja #FF5A00 */}
                 <button
                   type="button"
                   onClick={() => handlePillarChange('bienestar')}
@@ -277,20 +279,15 @@ export const IniciativaSocialPage: React.FC = () => {
                 >
                   <span className="drop-shadow-xs">BIENESTAR</span>
                   
-                  {/* Editable SVG Icon: Heart, Health & Nutrition */}
-                  <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0">
-                    <svg 
-                      className="w-6 h-6 text-white" 
-                      viewBox="0 0 24 24" 
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z" />
-                    </svg>
-                  </div>
+                  {/* Icono independiente como imagen SVG */}
+                  <img
+                    src="/assets/icons/icono_barra_bienestar.svg"
+                    alt="Icono Bienestar"
+                    className="w-10 h-10 shrink-0 drop-shadow-sm"
+                  />
                 </button>
 
-                {/* 4. FE - Clean White #FFFFFF */}
+                {/* 4. FE - Barra blanca #FFFFFF */}
                 <button
                   type="button"
                   onClick={() => handlePillarChange('fe')}
@@ -304,47 +301,42 @@ export const IniciativaSocialPage: React.FC = () => {
                 >
                   <span>FE</span>
                   
-                  {/* Editable SVG Icon: Church with Cross */}
-                  <div className="w-10 h-10 rounded-full bg-[#241F3C]/10 flex items-center justify-center shrink-0">
-                    <svg 
-                      className="w-6 h-6 text-[#241F3C]" 
-                      viewBox="0 0 24 24" 
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path d="M11 2H13V5H15V7H13V9H17V11L12 8L7 11V9H11V7H9V5H11V2M5 13H19V21H5V13M10 16V21H14V16H10Z" />
-                    </svg>
-                  </div>
+                  {/* Icono independiente como imagen SVG */}
+                  <img
+                    src="/assets/icons/icono_barra_fe.svg"
+                    alt="Icono Fe"
+                    className="w-10 h-10 shrink-0 drop-shadow-sm"
+                  />
                 </button>
 
               </div>
 
             </div>
 
-            {/* Right Column: Independent Photo of Three Women in Bocachica (6 cols) */}
+            {/* Columna Derecha: Imagen Maqueta 20 colocada al frente de las barras (6 cols) */}
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group aspect-4/5 max-h-[580px] w-full bg-stone-900">
                 <img
                   src="/assets/aistudio/mujeres_cocina_bocachica.png"
-                  alt="Madres comunitarias de Bocachica sonrientes preparando alimentos en la cocina comunitaria"
+                  alt="Madres comunitarias de Bocachica sonrientes preparando alimentos en la cocina comunitaria (Maqueta 20)"
                   className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
 
-                {/* Gradient vignette for readability and depth */}
+                {/* Degradado para dar profundidad visual */}
                 <div 
                   className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" 
                   aria-hidden="true"
                 />
 
-                {/* Exact "Ampliar foto" button in bottom right corner */}
+                {/* Botón de ampliar foto */}
                 <button
                   type="button"
                   onClick={() =>
                     openLightbox(
                       '/assets/aistudio/mujeres_cocina_bocachica.png',
-                      'Madres comunitarias de Bocachica',
-                      'Madres y líderes comunitarias de Bocachica preparando alimentos con alegría y vocación de servicio para los niños.'
+                      'Madres comunitarias de Bocachica (Maqueta 20)',
+                      'Madres y líderes comunitarias de Bocachica preparando alimentos con alegría y vocación de servicio para los niños en el programa de nutrición y bienestar.'
                     )
                   }
                   className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-3 py-1.5 bg-black/80 hover:bg-black text-white text-xs font-semibold rounded-md backdrop-blur-md border border-white/20 transition-all cursor-pointer shadow-lg active:scale-95"
@@ -359,7 +351,7 @@ export const IniciativaSocialPage: React.FC = () => {
           </div>
 
           {/* ========================================================================= */}
-          {/* INTERACTIVE SLIDER SECTION (Displaying the 4 images below for EDUCACIÓN) */}
+          {/* SLIDER INDEPENDIENTE PARA CADA BARRA (EDUCACIÓN, BIENESTAR, ETC.)         */}
           {/* ========================================================================= */}
           <div className="mt-12 pt-10 border-t border-white/15">
             
@@ -371,13 +363,14 @@ export const IniciativaSocialPage: React.FC = () => {
                   <span className="text-white uppercase font-black">{activePillar}</span>
                 </div>
                 <h3 className="font-serif text-xl sm:text-2xl text-white font-normal">
-                  {activePillar === 'educacion' 
-                    ? 'Registro Fotográfico: Refuerzo Escolar y Tutorías'
-                    : `Registro Fotográfico: Eje ${activePillar.toUpperCase()}`}
+                  {activePillar === 'educacion' && 'Registro Fotográfico: Refuerzo Escolar y Tutorías'}
+                  {activePillar === 'bienestar' && 'Registro Fotográfico: Nutrición, Familia y Acompañamiento Integral'}
+                  {activePillar === 'familia' && 'Registro Fotográfico: Fortalecimiento Familiar'}
+                  {activePillar === 'fe' && 'Registro Fotográfico: Valores y Esperanza'}
                 </h3>
               </div>
 
-              {/* Slider Controls (Prev / Next & Counter) */}
+              {/* Controles de Navegación del Slider */}
               <div className="flex items-center gap-3 self-end sm:self-auto">
                 <span className="text-xs text-white/70 font-mono">
                   {currentSlideIndex + 1} / {slides.length}
@@ -404,10 +397,10 @@ export const IniciativaSocialPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Slider Main Stage */}
+            {/* Escenario Principal del Slider */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
               
-              {/* Featured Active Image with Lightbox Zoom Button (8 cols) */}
+              {/* Fotografía Destacada con Botón de Zoom (8 cols) */}
               <div className="lg:col-span-8">
                 <div className="relative rounded-2xl overflow-hidden bg-stone-900 border border-white/15 aspect-16/10 sm:aspect-16/9 shadow-xl group">
                   <img
@@ -417,23 +410,26 @@ export const IniciativaSocialPage: React.FC = () => {
                     referrerPolicy="no-referrer"
                   />
 
-                  {/* Overlay vignette */}
+                  {/* Degradado para texto superpuesto */}
                   <div 
-                    className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" 
+                    className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" 
                     aria-hidden="true" 
                   />
 
-                  {/* Caption on image */}
+                  {/* Texto de la diapositiva */}
                   <div className="absolute bottom-4 left-4 right-16 text-white z-10">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#00D014] block mb-0.5">
+                      {activePillar === 'bienestar' ? 'EJE BIENESTAR · FOTOGRAFÍA OFICIAL' : 'EJE EDUCACIÓN · FOTOGRAFÍA OFICIAL'}
+                    </span>
                     <h4 className="font-bold text-sm sm:text-base text-white drop-shadow-md">
                       {currentSlide.title}
                     </h4>
-                    <p className="text-xs sm:text-sm text-white/80 line-clamp-2 mt-0.5 drop-shadow-xs">
+                    <p className="text-xs sm:text-sm text-white/85 line-clamp-2 mt-0.5 drop-shadow-xs">
                       {currentSlide.caption}
                     </p>
                   </div>
 
-                  {/* Zoom button on slider */}
+                  {/* Botón de ampliar en la diapositiva */}
                   <button
                     type="button"
                     onClick={() => openLightbox(currentSlide.src, currentSlide.alt, currentSlide.caption)}
@@ -445,31 +441,26 @@ export const IniciativaSocialPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Thumbnails Navigation & Description Panel (4 cols) */}
+              {/* Panel Lateral: Miniaturas Interactivas y Llamada a Donar (4 cols) */}
               <div className="lg:col-span-4 flex flex-col justify-between space-y-4">
                 
-                {/* Notice for education or other pillars */}
-                {activePillar === 'educacion' ? (
-                  <div className="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#00D014] block">
-                      4 Fotografías del Programa Educativo
-                    </span>
-                    <p className="text-xs text-white/80 leading-relaxed">
-                      Haz clic en cualquiera de las miniaturas para visualizar los diferentes momentos de aprendizaje semanal con los niños en Bocachica.
-                    </p>
-                  </div>
-                ) : (
-                  <div className="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#FF5A00] block">
-                      Espacio para nuevas fotos
-                    </span>
-                    <p className="text-xs text-white/80 leading-relaxed">
-                      Fotografías del eje <strong className="text-white uppercase">{activePillar}</strong>. En breve se habilitará la galería completa enviada por la comunidad.
-                    </p>
-                  </div>
-                )}
+                {/* Cuadro informativo según el pilar seleccionado */}
+                <div className="p-4 rounded-xl bg-white/5 border border-white/10 space-y-1.5">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#00D014] block">
+                    {activePillar === 'bienestar' && '4 Fotografías del Eje Bienestar'}
+                    {activePillar === 'educacion' && '4 Fotografías del Eje Educación'}
+                    {activePillar === 'familia' && 'Eje Familia'}
+                    {activePillar === 'fe' && 'Eje Fe'}
+                  </span>
+                  <p className="text-xs text-white/80 leading-relaxed">
+                    {activePillar === 'bienestar' && 'Acompañamiento familiar en casa (IMG_0125), entrega de mercados nutricionales (IMG_0121), protección infantil (IMG_0111) y taller de repostería comunitaria (IMG_1303).'}
+                    {activePillar === 'educacion' && 'Jornadas semanales de refuerzo escolar, lectura guiada, tareas y tutorías personalizadas en Bocachica.'}
+                    {activePillar === 'familia' && 'Escuela para padres, pautas de crianza positiva y mediación familiar para erradicar la violencia intrafamiliar.'}
+                    {activePillar === 'fe' && 'Formación en valores cristianos, fe viva y discipulado que restauran la esperanza de las familias.'}
+                  </p>
+                </div>
 
-                {/* Thumbnails list */}
+                {/* Miniaturas de selección directa */}
                 <div className="grid grid-cols-4 sm:grid-cols-4 lg:grid-cols-2 gap-2.5">
                   {slides.map((slide, idx) => (
                     <button
@@ -496,7 +487,7 @@ export const IniciativaSocialPage: React.FC = () => {
                   ))}
                 </div>
 
-                {/* Support CTA link */}
+                {/* Botón directo a la donación oficial */}
                 <div className="pt-2">
                   <a
                     href={OFFICIAL_DONATION_URL}
@@ -519,7 +510,8 @@ export const IniciativaSocialPage: React.FC = () => {
 
 
         {/* ========================================================================= */}
-        {/* SECTION 2: EXACT RECREATION OF image_b408a38b.png                         */}
+        {/* SECCIÓN 2: BOCACHICA: UN PUEBLO EN BUSCA DE OPORTUNIDADES                 */}
+        {/* CON ICONOS BLANCOS COMO IMÁGENES INDEPENDIENTES Y FOTO DEBAJO O AL FRENTE */}
         {/* ========================================================================= */}
         <section 
           className="bg-[#241F3C] rounded-3xl border border-white/10 p-6 sm:p-10 lg:p-12 shadow-2xl relative overflow-hidden"
@@ -528,13 +520,12 @@ export const IniciativaSocialPage: React.FC = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            {/* Left Column: Context Grid and Narrative (7 cols) */}
+            {/* Columna Izquierda: Encabezado contextual y cuadrícula 2x2 (7 cols) */}
             <div className="lg:col-span-7 flex flex-col justify-center space-y-6">
               
-              {/* Header block: Title in green + white, and population summary */}
+              {/* Título en verde + blanco y resumen poblacional */}
               <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
                 
-                {/* Main Section Title (7 cols) */}
                 <div className="md:col-span-7">
                   <h2 className="font-sans font-black text-2xl sm:text-3xl lg:text-4xl uppercase tracking-tight leading-[1.1]">
                     <span className="text-[#00D014] block">BOCACHICA:</span>
@@ -542,7 +533,6 @@ export const IniciativaSocialPage: React.FC = () => {
                   </h2>
                 </div>
 
-                {/* Population note (5 cols) */}
                 <div className="md:col-span-5 md:pl-2">
                   <p className="text-white/80 text-xs sm:text-sm leading-relaxed">
                     Con aproximadamente <strong className="text-white font-bold">8.000 habitantes</strong>, Bocachica enfrenta desafíos estructurales que limitan el desarrollo integral de sus niños y jóvenes.
@@ -551,18 +541,20 @@ export const IniciativaSocialPage: React.FC = () => {
 
               </div>
 
-              {/* Divider line */}
+              {/* Línea divisoria */}
               <div className="w-full h-px bg-white/15 my-2" aria-hidden="true" />
 
-              {/* 4 Thematic Context Blocks with White Circular Icons (2x2 Grid) */}
+              {/* Cuadrícula 2x2 con los 4 iconos blancos independientes como imágenes */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 pt-2">
                 
                 {/* 1. Economía */}
                 <div className="flex items-start gap-4">
-                  {/* White circular icon: Coins */}
-                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shrink-0 shadow-md">
-                    <Coins className="w-6 h-6 text-[#241F3C]" />
-                  </div>
+                  {/* Icono blanco como imagen independiente */}
+                  <img
+                    src="/assets/icons/icono_economia.svg"
+                    alt="Icono Economía"
+                    className="w-12 h-12 shrink-0 drop-shadow-md"
+                  />
                   <div className="space-y-1">
                     <h3 className="font-bold text-white text-base">Economía</h3>
                     <p className="text-white/85 text-xs sm:text-[13px] leading-relaxed">
@@ -573,10 +565,12 @@ export const IniciativaSocialPage: React.FC = () => {
 
                 {/* 2. Educación */}
                 <div className="flex items-start gap-4">
-                  {/* White circular icon: Graduation Cap */}
-                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shrink-0 shadow-md">
-                    <GraduationCap className="w-6 h-6 text-[#241F3C]" />
-                  </div>
+                  {/* Icono blanco como imagen independiente */}
+                  <img
+                    src="/assets/icons/icono_educacion.svg"
+                    alt="Icono Educación"
+                    className="w-12 h-12 shrink-0 drop-shadow-md"
+                  />
                   <div className="space-y-1">
                     <h3 className="font-bold text-white text-base">Educación</h3>
                     <p className="text-white/85 text-xs sm:text-[13px] leading-relaxed">
@@ -587,10 +581,12 @@ export const IniciativaSocialPage: React.FC = () => {
 
                 {/* 3. Nutrición y Salud */}
                 <div className="flex items-start gap-4">
-                  {/* White circular icon: Health / Hands holding Heart */}
-                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shrink-0 shadow-md">
-                    <Activity className="w-6 h-6 text-[#241F3C]" />
-                  </div>
+                  {/* Icono blanco como imagen independiente */}
+                  <img
+                    src="/assets/icons/icono_salud.svg"
+                    alt="Icono Nutrición y Salud"
+                    className="w-12 h-12 shrink-0 drop-shadow-md"
+                  />
                   <div className="space-y-1">
                     <h3 className="font-bold text-white text-base">Nutrición y Salud</h3>
                     <p className="text-white/85 text-xs sm:text-[13px] leading-relaxed">
@@ -601,10 +597,12 @@ export const IniciativaSocialPage: React.FC = () => {
 
                 {/* 4. Dinámica Familiar */}
                 <div className="flex items-start gap-4">
-                  {/* White circular icon: Family Home */}
-                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shrink-0 shadow-md">
-                    <Home className="w-6 h-6 text-[#241F3C]" />
-                  </div>
+                  {/* Icono blanco como imagen independiente */}
+                  <img
+                    src="/assets/icons/icono_familia.svg"
+                    alt="Icono Dinámica Familiar"
+                    className="w-12 h-12 shrink-0 drop-shadow-md"
+                  />
                   <div className="space-y-1">
                     <h3 className="font-bold text-white text-base">Dinámica Familiar</h3>
                     <p className="text-white/85 text-xs sm:text-[13px] leading-relaxed">
@@ -617,7 +615,7 @@ export const IniciativaSocialPage: React.FC = () => {
 
             </div>
 
-            {/* Right Column: Independent Photo of Children Dancing on Patio (5 cols) */}
+            {/* Columna Derecha: Imagen al frente o debajo de Bocachica (5 cols) */}
             <div className="lg:col-span-5 relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group aspect-4/5 max-h-[580px] w-full bg-stone-900">
                 <img
@@ -627,13 +625,13 @@ export const IniciativaSocialPage: React.FC = () => {
                   referrerPolicy="no-referrer"
                 />
 
-                {/* Gradient vignette for readability and depth */}
+                {/* Degradado para dar profundidad visual */}
                 <div 
                   className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" 
                   aria-hidden="true" 
                 />
 
-                {/* Exact "Ampliar foto" button in bottom right corner */}
+                {/* Botón de ampliar foto */}
                 <button
                   type="button"
                   onClick={() =>
@@ -658,7 +656,7 @@ export const IniciativaSocialPage: React.FC = () => {
 
 
         {/* ========================================================================= */}
-        {/* BOTTOM ACTION & REDIRECTION TO OFFICIAL DONATION PORTAL                   */}
+        {/* BOTÓN Y REDIRECCIÓN DIRECTA A LA PLATAFORMA DE DONACIÓN OFICIAL           */}
         {/* ========================================================================= */}
         <section className="bg-gradient-to-br from-[#241F3C] via-[#2A2347] to-[#1E1B2E] rounded-3xl p-8 sm:p-12 border border-white/15 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="max-w-xl space-y-2 text-center md:text-left">
@@ -674,7 +672,7 @@ export const IniciativaSocialPage: React.FC = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 w-full sm:w-auto">
-            {/* Direct Donation URL redirection as requested */}
+            {/* Redirección directa al portal de donación */}
             <a
               href={OFFICIAL_DONATION_URL}
               target="_blank"
