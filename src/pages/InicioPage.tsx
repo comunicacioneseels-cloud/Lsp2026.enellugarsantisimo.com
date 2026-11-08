@@ -1,15 +1,15 @@
 import React from 'react';
-import { ArrowRight, MapPin, Sparkles, BookOpen, Building, Heart, Users, Layers, Award } from 'lucide-react';
+import { ArrowRight, MapPin } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
 export const InicioPage: React.FC = () => {
   const { navigateToPage } = useApp();
 
   return (
-    <div className="bg-[#181528] text-white min-h-[calc(100vh-5rem)]">
+    <div className="bg-[#181528] text-white min-h-[calc(100vh-5rem)] flex flex-col justify-center">
       
       {/* HERO SECTION - EXACT RECREATION OF LSP__Maqueta_web_2026_fb69b153.png */}
-      <section className="relative overflow-hidden min-h-[90vh] flex items-center border-b border-white/10">
+      <section className="relative overflow-hidden min-h-[calc(100vh-5rem)] flex items-center">
         
         {/* Subtle Topographic / Bathymetric Contour Lines SVG Background */}
         <div 
@@ -126,161 +126,6 @@ export const InicioPage: React.FC = () => {
           </div>
         </div>
 
-      </section>
-
-      {/* PORTAL TO INDEPENDENT PAGES (Navigation Hub) */}
-      <section className="py-20 bg-[#1E1B2E] border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="max-w-3xl mb-12">
-            <span className="text-xs font-semibold uppercase tracking-wider text-[#FF6B5E] block mb-2">
-              Explora Nuestro Sitio
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-normal tracking-tight text-white">
-              Páginas y áreas de Lives Saved Project
-            </h2>
-            <p className="mt-2 text-sm sm:text-base text-white/70">
-              Cada sección contiene información detallada e independiente sobre nuestra misión, programas y formas de participar.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            {/* 1. Iniciativa Social */}
-            <div 
-              onClick={() => navigateToPage('iniciativa-social')}
-              className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#FF6B5E]/50 hover:bg-white/[0.08] transition-all cursor-pointer group flex flex-col justify-between"
-            >
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-[#35D5C5]/20 text-[#35D5C5] flex items-center justify-center mb-4">
-                  <Users className="w-5 h-5" />
-                </div>
-                <h3 className="font-serif text-xl font-bold text-white group-hover:text-[#FF6B5E] transition-colors mb-2">
-                  Iniciativa Social
-                </h3>
-                <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-4">
-                  Más de 10 años de presencia con la Iglesia En el Lugar Santísimo. Conoce los 4 ejes: Educación, Familia, Bienestar y Fe.
-                </p>
-              </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-[#35D5C5]">
-                <span>Ver página</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-
-            {/* 2. Programas Actuales */}
-            <div 
-              onClick={() => navigateToPage('programas-actuales')}
-              className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#FF6B5E]/50 hover:bg-white/[0.08] transition-all cursor-pointer group flex flex-col justify-between"
-            >
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-[#FF8A00]/20 text-[#FF8A00] flex items-center justify-center mb-4">
-                  <BookOpen className="w-5 h-5" />
-                </div>
-                <h3 className="font-serif text-xl font-bold text-white group-hover:text-[#FF6B5E] transition-colors mb-2">
-                  Programas Actuales (1 a 7)
-                </h3>
-                <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-4">
-                  Refuerzo escolar, artes, discipulado cristiano, trabajo social, psicología, nutrición y escuela de padres.
-                </p>
-              </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-[#FF8A00]">
-                <span>Ver programas</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-
-            {/* 3. Nuevos Programas 2026 */}
-            <div 
-              onClick={() => navigateToPage('nuevos-programas')}
-              className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#FF6B5E]/50 hover:bg-white/[0.08] transition-all cursor-pointer group flex flex-col justify-between"
-            >
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-[#00E51B]/20 text-[#00E51B] flex items-center justify-center mb-4">
-                  <Sparkles className="w-5 h-5" />
-                </div>
-                <h3 className="font-serif text-xl font-bold text-white group-hover:text-[#FF6B5E] transition-colors mb-2">
-                  Nuevos Programas 2026
-                </h3>
-                <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-4">
-                  Formación técnica, herramientas digitales y emprendimiento comunitario para generar oportunidades reales de empleo.
-                </p>
-              </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-[#00E51B]">
-                <span>Ver novedades</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-
-            {/* 4. Proyectos Estratégicos */}
-            <div 
-              onClick={() => navigateToPage('proyectos')}
-              className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#FF6B5E]/50 hover:bg-white/[0.08] transition-all cursor-pointer group flex flex-col justify-between"
-            >
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-[#321078]/40 text-purple-300 flex items-center justify-center mb-4">
-                  <Building className="w-5 h-5" />
-                </div>
-                <h3 className="font-serif text-xl font-bold text-white group-hover:text-[#FF6B5E] transition-colors mb-2">
-                  Proyectos & Auditorio
-                </h3>
-                <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-4">
-                  Construcción de auditorio comunitario y nuevos salones, agua potable, planos arquitectónicos y metas de avance.
-                </p>
-              </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-purple-300">
-                <span>Ver proyectos</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-
-            {/* 5. Planes de Suscripción */}
-            <div 
-              onClick={() => navigateToPage('planes-suscripcion')}
-              className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#FF6B5E]/50 hover:bg-white/[0.08] transition-all cursor-pointer group flex flex-col justify-between"
-            >
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-[#FF6B5E]/20 text-[#FF6B5E] flex items-center justify-center mb-4">
-                  <Layers className="w-5 h-5" />
-                </div>
-                <h3 className="font-serif text-xl font-bold text-white group-hover:text-[#FF6B5E] transition-colors mb-2">
-                  Planes de Suscripción
-                </h3>
-                <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-4">
-                  Niveles de contribución mensual: Semilla, Esperanza, Transformación, Futuro, Salvavidas y Empresarial (COP y USD).
-                </p>
-              </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-[#FF6B5E]">
-                <span>Ver planes</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-
-            {/* 6. Plan Padrino & Apóyanos */}
-            <div 
-              onClick={() => navigateToPage('plan-padrino')}
-              className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#FF6B5E]/50 hover:bg-white/[0.08] transition-all cursor-pointer group flex flex-col justify-between"
-            >
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-[#E5C158]/20 text-[#E5C158] flex items-center justify-center mb-4">
-                  <Heart className="w-5 h-5" />
-                </div>
-                <h3 className="font-serif text-xl font-bold text-white group-hover:text-[#FF6B5E] transition-colors mb-2">
-                  Plan Padrino Salva Vidas
-                </h3>
-                <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-4">
-                  Invierte en el futuro de un niño y su comunidad. Acompañamiento a largo plazo con reportes e impacto verificable.
-                </p>
-              </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-[#E5C158]">
-                <span>Conocer apadrinamiento</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-
-          </div>
-
-        </div>
       </section>
 
     </div>
