@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
   X,
-  CheckCircle,
-  Clock,
-  Users,
-  Target,
   ArrowRight,
   Maximize2,
   ChevronLeft,
@@ -134,39 +130,19 @@ export const ProgramDetailModal: React.FC = () => {
             </p>
           </div>
 
-          {/* Modal Body */}
-          <div className="p-6 sm:p-8 space-y-7 flex-1">
-
-            {/* Bullet Points from Maqueta */}
-            {activeProgramModal.bulletPoints && activeProgramModal.bulletPoints.length > 0 && (
-              <div className="p-5 rounded-2xl bg-stone-50 border border-stone-200/80 space-y-2.5">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-stone-500 block">
-                  Enfoque del Programa
-                </span>
-                <ul className="space-y-2">
-                  {activeProgramModal.bulletPoints.map((bullet, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-stone-800 leading-relaxed">
-                      <span
-                        className="w-2 h-2 rounded-full shrink-0 mt-1.5"
-                        style={{ backgroundColor: activeProgramModal.color }}
-                      />
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+          {/* Modal Body: Únicamente las 4 fotografías verificadas del programa */}
+          <div className="p-6 sm:p-8 space-y-6 flex-1">
 
             {/* ================================================================= */}
             {/* SECCIÓN DE 4 IMÁGENES DEL PROGRAMA (POP-UP CON 4 FOTOS)           */}
             {/* ================================================================= */}
             {images.length > 0 && (
-              <div className="space-y-3.5 pt-1">
+              <div className="space-y-3.5">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <Images className="w-4 h-4" style={{ color: activeProgramModal.color }} />
                     <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-800">
-                      Galería del Programa (4 Fotografías)
+                      Galería de Evidencias (4 Fotografías)
                     </h4>
                   </div>
                   <span className="text-xs font-mono font-semibold text-stone-500">
@@ -265,41 +241,6 @@ export const ProgramDetailModal: React.FC = () => {
                 </div>
               </div>
             )}
-
-            {/* Descripción Completa */}
-            <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-stone-500 mb-2">
-                Descripción Detallada
-              </h4>
-              <p className="text-xs sm:text-sm text-stone-700 leading-relaxed">
-                {activeProgramModal.fullDescription}
-              </p>
-            </div>
-
-            {/* Horario y Beneficiarios */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 p-4 rounded-2xl bg-stone-50 border border-stone-200/80 text-xs sm:text-sm">
-              <div className="flex items-start gap-2.5">
-                <Clock className="w-4 h-4 text-stone-500 shrink-0 mt-0.5" />
-                <div>
-                  <span className="font-semibold block text-stone-800">Horario de Actividades:</span>
-                  <span className="text-stone-600">{activeProgramModal.schedule}</span>
-                </div>
-              </div>
-              <div className="flex items-start gap-2.5">
-                <Users className="w-4 h-4 text-stone-500 shrink-0 mt-0.5" />
-                <div>
-                  <span className="font-semibold block text-stone-800">Población Beneficiaria:</span>
-                  <span className="text-stone-600">{activeProgramModal.beneficiaries}</span>
-                </div>
-              </div>
-              <div className="sm:col-span-2 flex items-start gap-2.5 pt-2 border-t border-stone-200/60">
-                <Target className="w-4 h-4 text-stone-500 shrink-0 mt-0.5" />
-                <div>
-                  <span className="font-semibold block text-stone-800">Objetivo de Impacto:</span>
-                  <span className="text-stone-600">{activeProgramModal.impactObjective}</span>
-                </div>
-              </div>
-            </div>
 
             {/* Acciones del Footer del Modal */}
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3.5 border-t border-stone-100">

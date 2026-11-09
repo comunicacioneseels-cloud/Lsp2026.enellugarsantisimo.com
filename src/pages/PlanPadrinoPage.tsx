@@ -132,7 +132,13 @@ export const PlanPadrinoPage: React.FC = () => {
       {/* ========================================================================= */}
       <section className="py-8 sm:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-[#EBE7E0] p-6 sm:p-12 lg:p-14 relative">
+        <div
+          className="rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-[#EBE7E0] p-6 sm:p-12 lg:p-14 relative"
+          style={{
+            backgroundImage: 'url(/assets/aistudio/stucco_texture.png)',
+            backgroundRepeat: 'repeat',
+          }}
+        >
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
@@ -185,9 +191,9 @@ export const PlanPadrinoPage: React.FC = () => {
             <div className="lg:col-span-3 flex items-end justify-center lg:justify-end">
               <div className="max-w-[260px] sm:max-w-[320px] lg:max-w-none w-full">
                 <img
-                  src="/assets/aistudio/MAQUETA_Lsp_website_-_Espa_ol__15__d7b8ae2f.png"
+                  src="/assets/aistudio/nino_sonriendo_transparente.png"
                   alt="Niño de Bocachica con sonrisa amplia y radiante"
-                  className="w-full h-auto object-contain max-h-[380px] drop-shadow-xl"
+                  className="w-full h-auto object-contain max-h-[380px] drop-shadow-md"
                   referrerPolicy="no-referrer"
                 />
               </div>

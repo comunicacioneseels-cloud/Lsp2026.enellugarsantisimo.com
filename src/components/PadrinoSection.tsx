@@ -78,7 +78,13 @@ export const PadrinoSection: React.FC = () => {
         </div>
 
         {/* MÓDULO 2: APÓYANOS, CÓDIGO QR Y VERSÍCULO */}
-        <div className="rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-[#EBE7E0] p-6 sm:p-10 lg:p-12 relative">
+        <div
+          className="rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-[#EBE7E0] p-6 sm:p-10 lg:p-12 relative"
+          style={{
+            backgroundImage: 'url(/assets/aistudio/stucco_texture.png)',
+            backgroundRepeat: 'repeat',
+          }}
+        >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Código QR */}
@@ -125,9 +131,9 @@ export const PadrinoSection: React.FC = () => {
             <div className="lg:col-span-3 flex items-end justify-center lg:justify-end">
               <div className="max-w-[240px] sm:max-w-[300px] lg:max-w-none w-full">
                 <img
-                  src="/assets/aistudio/MAQUETA_Lsp_website_-_Espa_ol__15__d7b8ae2f.png"
+                  src="/assets/aistudio/nino_sonriendo_transparente.png"
                   alt="Niño de Bocachica con gran sonrisa"
-                  className="w-full h-auto object-contain max-h-[340px] drop-shadow-xl"
+                  className="w-full h-auto object-contain max-h-[340px] drop-shadow-md"
                   referrerPolicy="no-referrer"
                 />
               </div>
