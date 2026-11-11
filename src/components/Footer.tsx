@@ -33,7 +33,6 @@ export const Footer: React.FC = () => {
 
             <div className="text-xs text-white/50 space-y-1 pt-1">
               <p>Entidad: {organizationInfo.legalName}</p>
-              <p>NIT: {organizationInfo.nit}</p>
             </div>
           </div>
 
@@ -98,11 +97,16 @@ export const Footer: React.FC = () => {
                 <span>{organizationInfo.address}, {organizationInfo.city}</span>
               </div>
               
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#00E51B] shrink-0" />
-                <a href={organizationInfo.whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:underline text-white">
-                  {organizationInfo.whatsapp}
-                </a>
+              <div className="flex items-start gap-2.5">
+                <Phone className="w-4 h-4 text-[#00E51B] shrink-0 mt-0.5" />
+                <div className="flex flex-col gap-1">
+                  <a href="https://wa.me/573183308302" target="_blank" rel="noopener noreferrer" className="hover:underline text-white font-medium">
+                    +57 318 330 8302
+                  </a>
+                  <a href="tel:+17724757342" className="hover:underline text-white/80">
+                    +1 772 475 7342
+                  </a>
+                </div>
               </div>
 
               <div className="flex items-center gap-2.5">

@@ -87,8 +87,8 @@ interface AppContextType {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 const STORAGE_KEYS = {
-  FINANCIAL: 'lsp_financial_v1',
-  ORGANIZATION: 'lsp_org_v1',
+  FINANCIAL: 'lsp_financial_v2',
+  ORGANIZATION: 'lsp_org_v2',
   PROJECTS: 'lsp_projects_v1',
   PLANS: 'lsp_plans_v1',
   HISTORY: 'lsp_donations_v1',

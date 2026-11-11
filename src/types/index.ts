@@ -83,9 +83,10 @@ export interface FinancialProgress {
 export interface OrganizationInfo {
   legalName: string;
   churchName: string;
-  nit: string;
+  nit?: string;
   whatsapp: string;
   whatsappUrl: string;
+  phoneUs?: string;
   email: string;
   address: string;
   city: string;

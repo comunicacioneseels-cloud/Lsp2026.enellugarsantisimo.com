@@ -8,26 +8,26 @@ import {
 } from '../types';
 
 export const initialFinancialProgress: FinancialProgress = {
-  targetUSD: 50000,
-  raisedUSD: 18500,
+  targetUSD: 100000,
+  raisedUSD: 10000,
   lastUpdated: 'Noviembre 2026',
-  verifiedNotes: 'Cifra histórica de referencia sujeta a actualización por la administración.',
-  auditoriumPhase: 'Fase 1: Cimentación y muros estructurales aprobados.',
+  verifiedNotes: 'Meta actualizada: USD $100.000 con USD $10.000 recaudados y USD $90.000 por recaudar.',
+  auditoriumPhase: 'Fase 1: Cimentación y cerramiento perimetral en curso.',
 };
 
 export const initialOrganizationInfo: OrganizationInfo = {
   legalName: 'Iglesia Cristiana En el Lugar Santísimo',
   churchName: 'Iglesia En el Lugar Santísimo',
-  nit: '900.234.567-8', // Placeholder configurable en el panel
-  whatsapp: '+57 300 123 4567',
-  whatsappUrl: 'https://wa.me/573001234567?text=Hola,%20deseo%20apoyar%20a%20Lives%20Saved%20Project%20en%20Bocachica',
+  whatsapp: '+57 318 330 8302',
+  whatsappUrl: 'https://wa.me/573183308302?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Lives%20Saved%20Project',
+  phoneUs: '+1 772 475 7342',
   email: 'comunicaciones.eels@gmail.com',
   address: 'Sector El Fuerte, Bocachica',
   city: 'Cartagena de Indias, Bolívar, Colombia',
   bankName: 'Bancolombia',
   accountType: 'Cuenta de Ahorros',
-  accountNumber: '456-789012-34',
-  accountHolder: 'Iglesia En el Lugar Santísimo',
+  accountNumber: '171-0000-39-05',
+  accountHolder: 'Iglesia Comunidad Cristiano Carismática La Esperanza',
   wompiPublicKey: 'pub_test_wompi_lives_saved_bocachica',
   wompiActive: true,
 };
@@ -62,24 +62,24 @@ export const socialPrograms: SocialProgram[] = [
       'Elevar el rendimiento escolar, reducir la tasa de repitencia y abrir puertas a educación media y técnica.',
     images: [
       {
-        src: '/assets/aistudio/tutora_refuerzo_escolar.jpg',
-        title: 'Tutoría Personalizada en Cuadernos',
-        caption: 'Acompañamiento individual de tutores con libretas y guías de estudio.',
-      },
-      {
-        src: '/assets/aistudio/nina_refuerzo_paz.png',
+        src: '/assets/aistudio/IMG_6076.JPG',
         title: 'Motivación y Alegría Escolar',
-        caption: 'Niña de Bocachica feliz en su jornada de estudio y superación académica.',
+        caption: 'Estudiantes sonrientes compartiendo una jornada alegre de aprendizaje.',
       },
       {
-        src: '/assets/aistudio/20210223_144925_2ca24bc9.jpg',
-        title: 'Trabajo en Equipo y Cooperación',
-        caption: 'Grupo de niños compartiendo lápices de colores y realizando tareas juntos.',
+        src: '/assets/aistudio/20210223_144925.jpg',
+        title: 'Acompañamiento Pedagógico en Grupo',
+        caption: 'Clase al aire libre guiada por tutores con guías pedagógicas y pizarra de nivelación.',
       },
       {
-        src: '/assets/aistudio/regenerated_image_1794131942857.jpg',
-        title: 'Círculo de Refuerzo y Expresión',
-        caption: 'Jornada pedagógica continua para cerrar brechas de aprendizaje.',
+        src: '/assets/aistudio/WhatsApp_Image_2026-01-14_at_10.25.30_AM_3.jpeg',
+        title: 'Círculo de Tareas y Cuadernos',
+        caption: 'Niños y niñas de Bocachica realizando planas, caligrafía y dibujos en sus cuadernos.',
+      },
+      {
+        src: '/assets/aistudio/20210223_145004.jpg',
+        title: 'Jornada de Aprendizaje y Estudio',
+        caption: 'Tutorías y asesoría académica en pupitres escolares para cerrar brechas de aprendizaje.',
       },
     ],
   },

@@ -165,9 +165,6 @@ export const DonationSection: React.FC = () => {
                   <p className="text-xs sm:text-sm text-stone-600 mt-0.5 font-normal">
                     Iglesia Comunidad Cristiano Carismática La Esperanza
                   </p>
-                  <p className="text-xs text-stone-500 font-medium">
-                    NIT 830046692-6
-                  </p>
                 </div>
               </div>
 

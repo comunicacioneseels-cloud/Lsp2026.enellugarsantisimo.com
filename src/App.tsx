@@ -9,6 +9,8 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ProgramDetailModal } from './components/ProgramDetailModal';
 import { AdminModal } from './components/AdminModal';
+import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { InitialVideoModal } from './components/InitialVideoModal';
 
 // Independent Pages
 import { InicioPage } from './pages/InicioPage';
@@ -58,6 +60,12 @@ export default function App() {
 
         {/* Institutional Footer */}
         <Footer />
+
+        {/* Floating WhatsApp Button */}
+        <FloatingWhatsApp />
+
+        {/* Initial Welcome Video Pop-up */}
+        <InitialVideoModal />
 
         {/* Modals & Dialogs */}
         <ProgramDetailModal />

@@ -203,9 +203,6 @@ export const ApoyanosPage: React.FC = () => {
                   <p className="text-xs sm:text-sm text-stone-600 mt-0.5 font-normal">
                     Iglesia Comunidad Cristiano Carismática La Esperanza
                   </p>
-                  <p className="text-xs text-stone-500 font-medium">
-                    NIT 830046692-6
-                  </p>
                 </div>
               </div>
 
@@ -283,7 +280,7 @@ export const ApoyanosPage: React.FC = () => {
               <ShieldCheck className="w-6 h-6 text-[#00E51B]" />
               <h3 className="font-bold text-white text-base">Certificado Tributario</h3>
               <p className="leading-relaxed text-white/70">
-                La Iglesia Comunidad Cristiano Carismática La Esperanza (NIT 830046692-6) emite certificados oficiales de donación para deducciones legales.
+                La Iglesia Comunidad Cristiano Carismática La Esperanza emite certificados oficiales de donación para deducciones legales.
               </p>
             </div>
 

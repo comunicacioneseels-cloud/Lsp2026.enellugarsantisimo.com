@@ -12,22 +12,22 @@ Distribución oficial de fotografías para los 4 ejes de la sección **Iniciativ
 4. **regenerated_image_1794131957589.jpg**: Niña de Bocachica sonriendo alegremente mientras realiza sus ejercicios.
 
 ## 3. Eje Familia (4 Fotos de Familias)
-1. **IMG_0111.JPG**: Hermanos jugando en el umbral de su hogar en Bocachica con afecto y protección.
-2. **IMG_0121.JPG**: Madre comunitaria con sus hijos recibiendo mercado familiar y apoyo alimentario.
-3. **IMG_0125.JPG**: Padre de familia reunido con sus hijos en la mesa del hogar en diálogo y convivencia.
-4. **IMG_1303.jpg**: Madres y jóvenes de Bocachica en taller formativo de repostería y emprendimiento familiar.
+1. **IMG_0121.JPG**: Madre comunitaria con sus hijos recibiendo mercado familiar y apoyo alimentario en su hogar.
+2. **IMG_0111.JPG**: Hermanos jugando en el umbral de su hogar en Bocachica con afecto y protección.
+3. **IMG_1303.jpg**: Madres y jóvenes de Bocachica en taller formativo de repostería y emprendimiento familiar.
+4. **20210223_094913_1.jpg**: Retrato familiar de 5 integrantes frente a pared de tablas de madera en Bocachica.
 
-## 4. Eje Bienestar (4 Fotos de Niños Saltando)
-1. **IMG_0193.JPG**: Niños de Bocachica saltando con brazos en alto en la terraza al aire libre.
-2. **IMG_0198.JPG**: Niño saltando alto en el centro con entusiasmo y dinamismo en taller recreativo.
-3. **IMG_0192.JPG**: Niños cantando, bailando y saltando en ronda con alegría.
-4. **image_5938a5fc.png**: Niños saltando juntos con los brazos extendidos hacia el cielo.
+## 4. Eje Bienestar (4 Fotos de Niños en Danza y Recreación al Aire Libre)
+1. **IMG_0193_8a3f56aa.JPG**: Niños de Bocachica saltando con brazos en alto en la terraza al aire libre.
+2. **IMG_0194_99e4e3a7.JPG**: Taller guiado de danza y expresión rítmica en la terraza comunitaria.
+3. **IMG_0192_-_copia_289a356b.JPG**: Niños cantando y bailando en grupo con entusiasmo y risas.
+4. **IMG_0197_b78360da.JPG**: Niños y líderes con brazos en alto celebrando vida activa y salud integral.
 
-## 5. Eje Fe (4 Fotos de Niños Orando)
-1. **IMG_0211.JPG**: Niños reunidos en círculo orando a Dios con manitas juntas y corazones reverentes.
-2. **IMG_0220.JPG**: Niño con los ojos cerrados en reverencia, fe sincera y profunda devoción.
-3. **20210221_182243.jpg**: Alabanza y adoración con niños cantando e instrumentos musicales en la iglesia.
-4. **Inicio_Contruccion_ProyectoBocachicaETP160.jpg**: Comunidad e infancia congregadas frente a la Palabra de Dios en oración constante.
+## 5. Eje Fe (4 Fotos de Niños en Alabanza y Oración)
+1. **20210221_182243.jpg**: Alabanza y adoración con guitarra, batería, atril y cantantes infantiles en la terraza.
+2. **IMG_0220_1.JPG**: Niño con los ojos cerrados en reverencia, fe sincera y profunda devoción.
+3. **IMG_0209_1.JPG**: Niños sentados en la terraza en gran círculo de oración y reflexión.
+4. **IMG_0211.JPG**: Niña con manitas sobre el corazón y ojos cerrados en oración reverente junto a otros niños.
 
 ## 6. Programas Actuales (1 a 7) - Maquetas y Pop-up de 4 Fotos Cada Uno
 

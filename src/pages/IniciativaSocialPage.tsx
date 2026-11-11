@@ -54,115 +54,115 @@ export const IniciativaSocialPage: React.FC = () => {
     setLightboxData((prev) => ({ ...prev, isOpen: false }));
   };
 
-  // 1. EJE EDUCACIÓN (4 IMÁGENES)
+  // 1. EJE EDUCACIÓN (4 IMÁGENES EXACTAS DE LA MAQUETA Y REGISTRO)
   const educacionSlides: SlideImage[] = [
     {
-      src: '/assets/aistudio/regenerated_image_1794131942857.jpg',
-      alt: 'Niños de Bocachica sentados en círculo dibujando y escribiendo en sus cuadernos',
-      title: 'Taller de Creatividad y Lectoescritura',
-      caption: 'Niños de Bocachica concentrados en sus libretas durante la jornada de refuerzo escolar y expresión artística.',
+      src: '/assets/aistudio/IMG_6076.JPG',
+      alt: 'Estudiantes de Bocachica felices en su jornada de estudio con señal de paz (IMG_6076)',
+      title: 'Motivación y Alegría Escolar',
+      caption: 'Estudiantes sonrientes compartiendo una jornada alegre de aprendizaje y superación escolar en Bocachica.',
     },
     {
-      src: '/assets/aistudio/20210223_144925_2ca24bc9.jpg',
-      alt: 'Grupo de niños compartiendo lápices de colores y trabajando en equipo',
-      title: 'Acompañamiento Pedagógico y Trabajo en Equipo',
-      caption: 'Sesiones personalizadas de tutoría académica que fomentan la colaboración, la disciplina y el amor por el estudio.',
+      src: '/assets/aistudio/20210223_144925.jpg',
+      alt: 'Grupo de niños en mesa de estudio con tutores y pizarra de nivelación escolar (20210223_144925)',
+      title: 'Acompañamiento Pedagógico en Grupo',
+      caption: 'Clase grupal de refuerzo académico guiada por tutores con guías pedagógicas y pizarra de nivelación al aire libre.',
     },
     {
-      src: '/assets/aistudio/regenerated_image_1794131952643.jpg',
-      alt: 'Actividad formativa de desarrollo cognitivo y tareas escolares',
-      title: 'Refuerzo Escolar y Habilidades Básicas',
-      caption: 'Apoyo extracurricular continuo para cerrar las brechas educativas de lectura, escritura y matemáticas en la isla.',
+      src: '/assets/aistudio/WhatsApp_Image_2026-01-14_at_10.25.30_AM_3.jpeg',
+      alt: 'Niños sentados en círculo sobre el piso realizando planas y dibujos con lápices de colores',
+      title: 'Círculo de Tareas y Cuadernos',
+      caption: 'Niños y niñas de Bocachica realizando planas, caligrafía y dibujos en sus cuadernos durante la jornada de refuerzo escolar.',
     },
     {
-      src: '/assets/aistudio/regenerated_image_1794131957589.jpg',
-      alt: 'Niña de Bocachica sonriendo alegremente mientras realiza sus ejercicios escolares',
-      title: 'Alegría y Motivación en Cada Clase',
-      caption: 'Una sonrisa que refleja esperanza y entusiasmo por aprender cada semana en un espacio seguro y afectivo.',
+      src: '/assets/aistudio/20210223_145004.jpg',
+      alt: 'Estudiantes en pupitres de estudio recibiendo asesoría académica personalizada con vista a la bahía (20210223_145004)',
+      title: 'Jornada de Aprendizaje y Estudio',
+      caption: 'Tutorías y asesoría académica en pupitres escolares para cerrar brechas de aprendizaje y fortalecer hábitos de estudio.',
     },
   ];
 
-  // 2. EJE FAMILIA (4 IMÁGENES DE FAMILIAS)
+  // 2. EJE FAMILIA (4 IMÁGENES DE FAMILIAS: IMG_0121, IMG_0111, IMG_1303, 20210223_094913)
   const familiaSlides: SlideImage[] = [
     {
-      src: '/assets/aistudio/IMG_0111.JPG',
-      alt: 'Hermanos en el umbral de su hogar en Bocachica compartiendo juego con afecto y protección',
-      title: 'Hermanos y Hogar Seguro',
-      caption: 'Espacios afectivos y seguros donde los niños de Bocachica crecen protegidos en el seno de su familia.',
-    },
-    {
       src: '/assets/aistudio/IMG_0121.JPG',
-      alt: 'Madre comunitaria con sus hijos recibiendo mercado familiar y apoyo alimentario en su hogar',
+      alt: 'Madre comunitaria con sus hijos recibiendo mercado familiar y apoyo alimentario en su hogar (IMG_0121)',
       title: 'Madre con Hijos y Seguridad Alimentaria',
-      caption: 'Acompañamiento a madres cabeza de hogar con paquetes de nutrición y fortalecimiento de los lazos familiares.',
+      caption: 'Acompañamiento a madres cabeza de hogar con paquetes de nutrición, provisión básica y fortalecimiento de los lazos familiares en Bocachica.',
     },
     {
-      src: '/assets/aistudio/IMG_0125.JPG',
-      alt: 'Padre de familia reunido con sus hijos en la mesa del hogar en diálogo y convivencia pacífica',
-      title: 'Padre con Hijos en Convivencia Familiar',
-      caption: 'Presencia de los padres en el hogar, comunicación amorosa y respaldo emocional para cada miembro de la familia.',
+      src: '/assets/aistudio/IMG_0111.JPG',
+      alt: 'Hermanos en el umbral de su hogar en Bocachica jugando con afecto, alegría y protección (IMG_0111)',
+      title: 'Hermanos y Hogar Seguro',
+      caption: 'Espacios afectivos y seguros donde los niños y niñas de Bocachica crecen protegidos en el seno y calor de su familia.',
     },
     {
       src: '/assets/aistudio/IMG_1303.jpg',
-      alt: 'Madres y jóvenes de Bocachica en taller de repostería con bandejas de galletas horneadas',
-      title: 'Taller Comunitario de Repostería Familiar',
-      caption: 'Capacitación productiva para mujeres y familias, impulsando el sustento digno y el desarrollo económico.',
+      alt: 'Madres y jóvenes de Bocachica en taller comunitario de repostería con bandejas de galletas horneadas (IMG_1303)',
+      title: 'Taller Comunitario de Repostería y Emprendimiento',
+      caption: 'Capacitación productiva y gastronómica para mujeres y familias, impulsando el sustento digno y el desarrollo económico local.',
+    },
+    {
+      src: '/assets/aistudio/20210223_094913_1.jpg',
+      alt: 'Familia unida de Bocachica reunida en su hogar reflejando esperanza y acompañamiento integral (20210223_094913)',
+      title: 'Familia Unida en Bocachica',
+      caption: 'Restauración de vínculos familiares, apoyo psicosocial y acompañamiento integral para que cada hogar prospere con dignidad y amor.',
     },
   ];
 
-  // 3. EJE BIENESTAR (4 IMÁGENES DE LOS NIÑOS SALTANDO)
+  // 3. EJE BIENESTAR (4 IMÁGENES DE LOS NIÑOS EN ACTIVIDADES RECREATIVAS Y DEPORTIVAS: IMG_0193, IMG_0194, IMG_0192, IMG_0197)
   const bienestarSlides: SlideImage[] = [
     {
-      src: '/assets/aistudio/IMG_0193.JPG',
-      alt: 'Niños de Bocachica saltando con brazos en alto en la terraza al aire libre',
+      src: '/assets/aistudio/IMG_0193_8a3f56aa.JPG',
+      alt: 'Niños de Bocachica saltando con los brazos en alto en la terraza al aire libre frente al mar (IMG_0193)',
       title: 'Saltos de Alegría y Recreación al Aire Libre',
-      caption: 'Jornadas recreativas donde los niños saltan, bailan y expresan plenamente su alegría y energía en un espacio seguro.',
+      caption: 'Jornadas recreativas donde los niños saltan, bailan y expresan plenamente su alegría y energía en un espacio seguro con vista a la bahía.',
     },
     {
-      src: '/assets/aistudio/IMG_0198.JPG',
-      alt: 'Niño saltando alto en el centro con entusiasmo y dinamismo en taller recreativo',
-      title: 'Dinamismo, Movimiento y Salud Física',
-      caption: 'Actividades de expresión corporal y ejercicios físicos que promueven la salud cardiovascular y la autoestima.',
+      src: '/assets/aistudio/IMG_0194_99e4e3a7.JPG',
+      alt: 'Niños participando en taller de danza y expresión rítmica guiado en la terraza comunitaria (IMG_0194)',
+      title: 'Danza, Ritmo y Expresión Corporal',
+      caption: 'Actividades de danza, coordinación motriz y dinámicas musicales que fomentan la disciplina, la autoestima y la diversión saludable.',
     },
     {
-      src: '/assets/aistudio/IMG_0192.JPG',
-      alt: 'Niños cantando, bailando y saltando en ronda con alegría en la terraza',
-      title: 'Danza, Canto y Bienestar Emocional',
-      caption: 'Música y dinámicas grupales que refuerzan el compañerismo, la risa y el bienestar emocional de los niños.',
+      src: '/assets/aistudio/IMG_0192_-_copia_289a356b.JPG',
+      alt: 'Grupo de niños de Bocachica cantando y bailando juntos con gran entusiasmo y sonrisas (IMG_0192)',
+      title: 'Canto, Risa y Compañerismo',
+      caption: 'Encuentros grupales que fortalecen la amistad, el canto, la expresión de emociones positivas y la integración comunitaria.',
     },
     {
-      src: '/assets/aistudio/image_5938a5fc.png',
-      alt: 'Niños saltando juntos con los brazos extendidos hacia el cielo',
-      title: 'Celebración y Derecho a Jugar',
-      caption: 'Recuperando el derecho fundamental a la infancia, el juego espontáneo y la sonrisa de cada niño en la isla.',
+      src: '/assets/aistudio/IMG_0197_b78360da.JPG',
+      alt: 'Niños y monitores levantando las manos hacia el cielo en celebración y ejercicio activo (IMG_0197)',
+      title: 'Celebración, Vida Activa y Salud Física',
+      caption: 'Ejercicios de estiramiento, movimiento y celebración colectiva que promueven hábitos saludables y el bienestar integral de la niñez.',
     },
   ];
 
-  // 4. EJE FE (4 IMÁGENES DE LOS NIÑOS ORANDO)
+  // 4. EJE FE (4 IMÁGENES: 20210221_182243, IMG_0220, IMG_0209, IMG_0211)
   const feSlides: SlideImage[] = [
     {
-      src: '/assets/aistudio/IMG_0211.JPG',
-      alt: 'Niños reunidos en círculo orando a Dios con manitas juntas y corazones reverentes',
-      title: 'Niños Unidos en Oración Comunitaria',
-      caption: 'Tiempos devocionales donde los pequeños aprenden a orar juntos, pedir bendición y agradecer a Dios por sus vidas.',
-    },
-    {
-      src: '/assets/aistudio/IMG_0220.JPG',
-      alt: 'Niño con los ojos cerrados en reverencia, fe sincera y profunda devoción',
-      title: 'Fe Sincera y Oración Personal',
-      caption: 'Inculcando principios y valores cristianos que siembran fe viva, esperanza y amor al prójimo desde temprana edad.',
-    },
-    {
       src: '/assets/aistudio/20210221_182243.jpg',
-      alt: 'Alabanza y adoración con niños cantando e instrumentos musicales en la iglesia',
-      title: 'Alabanza y Adoración con Niños',
-      caption: 'Expresión musical y canto de los niños en la iglesia local, fortaleciendo su identidad y esperanza en Dios.',
+      alt: 'Grupo de alabanza con batería, guitarra y niños cantando en la terraza de la iglesia en Bocachica (20210221_182243)',
+      title: 'Alabanza y Adoración Musical',
+      caption: 'Alabanza y expresión musical en vivo con batería, guitarra acústica y coro infantil, celebrando la fe con alegría y gratitud comunitaria.',
     },
     {
-      src: '/assets/aistudio/Inicio_Contruccion_ProyectoBocachicaETP160.jpg',
-      alt: 'Comunidad e infancia congregadas frente a la Palabra de Dios en oración constante',
-      title: 'Principios Bíblicos y Esperanza para la Comunidad',
-      caption: 'Más de 10 años de discipulado y enseñanza de la Palabra que transforma vidas y familias enteras en Bocachica.',
+      src: '/assets/aistudio/IMG_0220_1.JPG',
+      alt: 'Niño con los ojos cerrados en profunda devoción, reverencia y oración sincera a Dios (IMG_0220)',
+      title: 'Fe Sincera y Oración Personal',
+      caption: 'Inculcando principios y valores cristianos donde cada niño aprende a orar con intimidad, fe sincera y profunda devoción.',
+    },
+    {
+      src: '/assets/aistudio/IMG_0209_1.JPG',
+      alt: 'Gran grupo de niños sentados en la terraza en momento solemne de oración y reflexión (IMG_0209)',
+      title: 'Comunidad Infantil en Oración',
+      caption: 'Tiempos devocionales grupales donde la niñez y sus líderes se congregan en oración unida, paz y comunión fraternal.',
+    },
+    {
+      src: '/assets/aistudio/IMG_0211.JPG',
+      alt: 'Niña con las manos sobre su corazón y ojos cerrados en reverente oración a Dios (IMG_0211)',
+      title: 'Manos al Corazón y Devoción Infantil',
+      caption: 'Corazones infantiles rindiendo gratitud y plegarias a Dios, aprendiendo a orar con amor, confianza y reverencia.',
     },
   ];
 

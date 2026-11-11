@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { ChevronDown, ArrowUpRight, Menu, X } from 'lucide-react';
+import { ChevronDown, ArrowUpRight, Menu, X, Globe } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { AppPage } from '../types';
 import { Logo } from './Logo';
+import { setGoogleLanguage } from '../utils/translate';
 
 export const Navbar: React.FC = () => {
   const { currentPage, navigateToPage, setIsAdminOpen, language, setLanguage, donationUrl } = useApp();
@@ -174,14 +175,29 @@ export const Navbar: React.FC = () => {
         </nav>
 
         {/* Right CTA Button & Utilities (Matching Mockup's DONA AHORA ↗) */}
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           
+          {/* Translate to English icon button */}
+          <button
+            onClick={() => {
+              const nextLang = language === 'es' ? 'en' : 'es';
+              setLanguage(nextLang);
+              setGoogleLanguage(nextLang);
+            }}
+            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 text-xs font-bold text-white transition-all cursor-pointer active:scale-95 shadow-sm"
+            title={language === 'es' ? 'Traducir al inglés (Translate to English)' : 'Cambiar a Español (Switch to Spanish)'}
+            aria-label="Traducir al inglés"
+          >
+            <Globe className="w-4 h-4 text-[#35D5C5]" />
+            <span className="uppercase tracking-wider">{language === 'es' ? 'EN' : 'ES'}</span>
+          </button>
+
           {/* DONA AHORA ↗ (Coral Button linking to official donation portal) */}
           <a
             href={donationUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-5 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white bg-[#FF6B5E] hover:bg-[#ff5747] active:scale-[0.98] rounded-xl shadow-md shadow-[#FF6B5E]/30 transition-all cursor-pointer whitespace-nowrap"
+            className="inline-flex items-center gap-1.5 px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white bg-[#FF6B5E] hover:bg-[#ff5747] active:scale-[0.98] rounded-xl shadow-md shadow-[#FF6B5E]/30 transition-all cursor-pointer whitespace-nowrap"
           >
             <span>DONA AHORA</span>
             <ArrowUpRight className="w-4 h-4" />
@@ -278,12 +294,25 @@ export const Navbar: React.FC = () => {
             APÓYANOS
           </button>
 
-          <div className="pt-3 border-t border-white/10">
+          <div className="pt-3 border-t border-white/10 flex items-center gap-2">
+            <button
+              onClick={() => {
+                const nextLang = language === 'es' ? 'en' : 'es';
+                setLanguage(nextLang);
+                setGoogleLanguage(nextLang);
+              }}
+              className="inline-flex items-center justify-center gap-1.5 py-3 px-4 text-xs font-bold uppercase tracking-wider text-white bg-white/10 hover:bg-white/20 active:scale-[0.98] rounded-xl border border-white/15 transition-all cursor-pointer shrink-0"
+              title="Traducir al inglés"
+            >
+              <Globe className="w-4 h-4 text-[#35D5C5]" />
+              <span>{language === 'es' ? 'EN' : 'ES'}</span>
+            </button>
+
             <a
               href={donationUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 text-xs font-bold uppercase tracking-wider text-white bg-[#FF6B5E] hover:bg-[#ff5747] active:scale-[0.98] rounded-xl shadow-md transition-all cursor-pointer"
+              className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 text-xs font-bold uppercase tracking-wider text-white bg-[#FF6B5E] hover:bg-[#ff5747] active:scale-[0.98] rounded-xl shadow-md transition-all cursor-pointer"
             >
               <span>DONA AHORA</span>
               <ArrowUpRight className="w-4 h-4" />

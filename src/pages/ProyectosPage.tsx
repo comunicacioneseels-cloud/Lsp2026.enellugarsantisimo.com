@@ -14,8 +14,8 @@ import { useApp } from '../context/AppContext';
 export const ProyectosPage: React.FC = () => {
   const { financialProgress, donationUrl, navigateToPage } = useApp();
 
-  const target = financialProgress.targetUSD || 50000;
-  const raised = financialProgress.raisedUSD || 18500;
+  const target = financialProgress.targetUSD || 100000;
+  const raised = financialProgress.raisedUSD || 10000;
   const pending = Math.max(0, target - raised);
   const percentage = Math.min(100, Math.round((raised / target) * 100));
 
@@ -38,16 +38,14 @@ export const ProyectosPage: React.FC = () => {
             <span className="text-[#35D5C5] font-semibold">PROYECTOS</span>
           </div>
 
-          <a
-            href={donationUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#FF6B5E] hover:bg-[#ff5747] text-white font-bold text-xs uppercase tracking-wider shadow-sm transition-all"
+          <button
+            onClick={() => navigateToPage('apoyanos')}
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#FF6B5E] hover:bg-[#ff5747] text-white font-bold text-xs uppercase tracking-wider shadow-sm transition-all cursor-pointer"
           >
             <Heart className="w-3.5 h-3.5 fill-white" />
             <span>Donar a los Proyectos</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
-          </a>
+          </button>
         </div>
       </section>
 
@@ -79,16 +77,14 @@ export const ProyectosPage: React.FC = () => {
               </p>
 
               <div className="pt-2">
-                <a
-                  href={donationUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => navigateToPage('apoyanos')}
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-[#FF6B5E] hover:bg-[#ff5747] text-white font-bold text-sm uppercase tracking-wider shadow-lg shadow-[#FF6B5E]/30 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
                 >
                   <Heart className="w-4 h-4 fill-white" />
-                  <span>Aportar a estas obras</span>
+                  <span>Donar a los Proyectos</span>
                   <ArrowUpRight className="w-4 h-4" />
-                </a>
+                </button>
               </div>
             </div>
 
@@ -438,7 +434,7 @@ export const ProyectosPage: React.FC = () => {
 
               {/* Párrafo Oficial de la Maqueta */}
               <p className="text-base sm:text-xl text-white/95 leading-relaxed font-normal">
-                Para concluir nuestro proyecto necesitamos un total de <strong className="font-bold text-[#FF6B5E]">USD 50.000</strong> que aún estamos recolectando. Sin embargo hemos logrado avanzar con actividades de cimentación y cerramiento. Pero aún es una fase preliminar y creemos que seguiremos avanzando con la ayuda de Dios y personas maravillosas como tú que soportan nuestro proyecto.
+                Para concluir nuestro proyecto tenemos una meta de <strong className="font-bold text-[#FF6B5E]">USD 100.000</strong>, con <strong className="font-bold text-[#00E51B]">USD 10.000</strong> recaudados y <strong className="font-bold text-[#35D5C5]">USD 90.000</strong> por recaudar. Sin embargo hemos logrado avanzar con actividades de cimentación y cerramiento. Aún es una fase preliminar y creemos que seguiremos avanzando con la ayuda de Dios y personas maravillosas como tú que respaldan este proyecto.
               </p>
 
               {/* Indicadores Financieros de Meta */}
@@ -489,18 +485,16 @@ export const ProyectosPage: React.FC = () => {
 
               </div>
 
-              {/* Botón de Donación Principal que lleva a la URL solicitada */}
+              {/* Botón de Donación Principal que lleva a la sección Apóyanos */}
               <div className="pt-2">
-                <a
-                  href={donationUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => navigateToPage('apoyanos')}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-[#FF6B5E] hover:bg-[#ff5747] active:scale-[0.98] text-white font-bold text-base uppercase tracking-wider shadow-xl shadow-[#FF6B5E]/30 transition-all cursor-pointer"
                 >
                   <Heart className="w-5 h-5 fill-white" />
-                  <span>Donar a esta obra en curso</span>
+                  <span>Donar a los Proyectos</span>
                   <ArrowUpRight className="w-5 h-5" />
-                </a>
+                </button>
               </div>
 
             </div>
