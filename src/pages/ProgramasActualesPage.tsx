@@ -174,15 +174,47 @@ export const ProgramasActualesPage: React.FC = () => {
                         ))}
                       </ul>
                     )}
+                    {/* Visualización directa de las 4 fotografías en la barra */}
+                    {prog.images && prog.images.length > 0 && (
+                      <div className="mt-5 pt-4 border-t border-white/20">
+                        <div className="flex items-center justify-between mb-2.5">
+                          <span className="text-[11px] font-bold uppercase tracking-wider text-white/95 flex items-center gap-1.5">
+                            <Images className="w-3.5 h-3.5" />
+                            <span>Evidencia Fotográfica ({prog.images.length} fotos)</span>
+                          </span>
+                          <span className="text-[10px] text-white/80 font-semibold bg-black/25 px-2 py-0.5 rounded-full">
+                            Toca para ver
+                          </span>
+                        </div>
+                        <div className="grid grid-cols-4 gap-2">
+                          {prog.images.slice(0, 4).map((img, i) => (
+                            <div
+                              key={i}
+                              className="aspect-4/3 rounded-xl overflow-hidden bg-black/30 border border-white/30 shadow-md relative group/thumb hover:ring-2 hover:ring-white transition-all"
+                            >
+                              <img
+                                src={img.src}
+                                alt={img.title}
+                                className="w-full h-full object-cover group-hover/thumb:scale-110 transition-transform duration-300"
+                                referrerPolicy="no-referrer"
+                              />
+                              <span className="absolute bottom-1 right-1 px-1.5 py-0.2 rounded text-[9px] font-mono font-bold bg-black/75 text-white">
+                                {i + 1}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   {/* Barra inferior del botón */}
                   <div className="pt-6 mt-4 border-t border-white/20 flex items-center justify-between text-white text-xs font-bold">
                     <span className="opacity-90">
-                      Toca para abrir pop-up con detalles
+                      Toca para abrir galería y detalles
                     </span>
                     <span className="inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                      <span>Abrir</span>
+                      <span>Ver Fotos</span>
                       <ArrowRight className="w-4 h-4" />
                     </span>
                   </div>
@@ -289,21 +321,21 @@ export const ProgramasActualesPage: React.FC = () => {
 
               </div>
 
-              {/* Foto Inferior Ancha: Grupo de niños sonrientes en sillas blancas (Maqueta 23) */}
+              {/* Foto Inferior Ancha: Taller de música y arte (20210225_112423__1__920064b8.jpg) */}
               <div className="relative rounded-2xl overflow-hidden bg-stone-900 border border-white/10 aspect-16/9 sm:aspect-21/9 group shadow-lg">
                 <img
-                  src="/assets/aistudio/ninos_evento_comunitario.png"
-                  alt="Grupo de niños y jóvenes de Bocachica sonrientes con camisetas del proyecto en evento comunitario (Maqueta 2)"
+                  src="/assets/aistudio/20210225_112423__1__920064b8.jpg"
+                  alt="Niño de Bocachica sonriendo con su guitarra en el taller de música y arte"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-3 left-4 right-4 text-white">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#00CDBE] block">
-                    Comunidad Unida
+                    Artes y Creatividad · Música
                   </span>
                   <p className="text-xs sm:text-sm font-semibold text-white/95">
-                    Más de una década transformando vidas y rompiendo ciclos de pobreza en la isla
+                    Descubriendo talentos y transformando vidas a través de la música y el arte en Bocachica
                   </p>
                 </div>
               </div>

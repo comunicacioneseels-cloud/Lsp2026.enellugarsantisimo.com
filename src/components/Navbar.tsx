@@ -184,11 +184,15 @@ export const Navbar: React.FC = () => {
               setLanguage(nextLang);
               setGoogleLanguage(nextLang);
             }}
-            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 text-xs font-bold text-white transition-all cursor-pointer active:scale-95 shadow-sm"
+            className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border text-xs font-bold transition-all cursor-pointer active:scale-95 shadow-sm ${
+              language === 'en'
+                ? 'bg-[#35D5C5] text-[#1E1B2E] border-[#35D5C5] ring-2 ring-[#35D5C5]/50'
+                : 'bg-white/10 hover:bg-white/20 border-white/15 text-white'
+            }`}
             title={language === 'es' ? 'Traducir al inglés (Translate to English)' : 'Cambiar a Español (Switch to Spanish)'}
             aria-label="Traducir al inglés"
           >
-            <Globe className="w-4 h-4 text-[#35D5C5]" />
+            <Globe className={`w-4 h-4 ${language === 'en' ? 'text-[#1E1B2E]' : 'text-[#35D5C5]'}`} />
             <span className="uppercase tracking-wider">{language === 'es' ? 'EN' : 'ES'}</span>
           </button>
 
@@ -199,7 +203,7 @@ export const Navbar: React.FC = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white bg-[#FF6B5E] hover:bg-[#ff5747] active:scale-[0.98] rounded-xl shadow-md shadow-[#FF6B5E]/30 transition-all cursor-pointer whitespace-nowrap"
           >
-            <span>DONA AHORA</span>
+            <span>{language === 'es' ? 'DONA AHORA' : 'DONATE NOW'}</span>
             <ArrowUpRight className="w-4 h-4" />
           </a>
 
@@ -301,10 +305,14 @@ export const Navbar: React.FC = () => {
                 setLanguage(nextLang);
                 setGoogleLanguage(nextLang);
               }}
-              className="inline-flex items-center justify-center gap-1.5 py-3 px-4 text-xs font-bold uppercase tracking-wider text-white bg-white/10 hover:bg-white/20 active:scale-[0.98] rounded-xl border border-white/15 transition-all cursor-pointer shrink-0"
-              title="Traducir al inglés"
+              className={`inline-flex items-center justify-center gap-1.5 py-3 px-4 text-xs font-bold uppercase tracking-wider rounded-xl border transition-all cursor-pointer shrink-0 ${
+                language === 'en'
+                  ? 'bg-[#35D5C5] text-[#1E1B2E] border-[#35D5C5]'
+                  : 'text-white bg-white/10 hover:bg-white/20 border-white/15'
+              }`}
+              title={language === 'es' ? 'Traducir al inglés' : 'Switch to Spanish'}
             >
-              <Globe className="w-4 h-4 text-[#35D5C5]" />
+              <Globe className={`w-4 h-4 ${language === 'en' ? 'text-[#1E1B2E]' : 'text-[#35D5C5]'}`} />
               <span>{language === 'es' ? 'EN' : 'ES'}</span>
             </button>
 
@@ -314,7 +322,7 @@ export const Navbar: React.FC = () => {
               rel="noopener noreferrer"
               className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 text-xs font-bold uppercase tracking-wider text-white bg-[#FF6B5E] hover:bg-[#ff5747] active:scale-[0.98] rounded-xl shadow-md transition-all cursor-pointer"
             >
-              <span>DONA AHORA</span>
+              <span>{language === 'es' ? 'DONA AHORA' : 'DONATE NOW'}</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>

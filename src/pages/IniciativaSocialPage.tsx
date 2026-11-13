@@ -82,19 +82,19 @@ export const IniciativaSocialPage: React.FC = () => {
     },
   ];
 
-  // 2. EJE FAMILIA (4 IMÁGENES DE FAMILIAS: IMG_0121, IMG_0111, IMG_1303, 20210223_094913)
+  // 2. EJE FAMILIA (4 IMÁGENES EXACTAS: IMG_0111, IMG_0121, IMG_1303, 20210223_094913)
   const familiaSlides: SlideImage[] = [
-    {
-      src: '/assets/aistudio/IMG_0121.JPG',
-      alt: 'Madre comunitaria con sus hijos recibiendo mercado familiar y apoyo alimentario en su hogar (IMG_0121)',
-      title: 'Madre con Hijos y Seguridad Alimentaria',
-      caption: 'Acompañamiento a madres cabeza de hogar con paquetes de nutrición, provisión básica y fortalecimiento de los lazos familiares en Bocachica.',
-    },
     {
       src: '/assets/aistudio/IMG_0111.JPG',
       alt: 'Hermanos en el umbral de su hogar en Bocachica jugando con afecto, alegría y protección (IMG_0111)',
       title: 'Hermanos y Hogar Seguro',
       caption: 'Espacios afectivos y seguros donde los niños y niñas de Bocachica crecen protegidos en el seno y calor de su familia.',
+    },
+    {
+      src: '/assets/aistudio/IMG_0121.JPG',
+      alt: 'Madre comunitaria con sus hijos recibiendo mercado familiar y apoyo alimentario en su hogar (IMG_0121)',
+      title: 'Madre con Hijos y Seguridad Alimentaria',
+      caption: 'Acompañamiento a madres cabeza de hogar con paquetes de nutrición, provisión básica y fortalecimiento de los lazos familiares en Bocachica.',
     },
     {
       src: '/assets/aistudio/IMG_1303.jpg',
@@ -103,7 +103,7 @@ export const IniciativaSocialPage: React.FC = () => {
       caption: 'Capacitación productiva y gastronómica para mujeres y familias, impulsando el sustento digno y el desarrollo económico local.',
     },
     {
-      src: '/assets/aistudio/20210223_094913_1.jpg',
+      src: '/assets/aistudio/20210223_094913.jpg',
       alt: 'Familia unida de Bocachica reunida en su hogar reflejando esperanza y acompañamiento integral (20210223_094913)',
       title: 'Familia Unida en Bocachica',
       caption: 'Restauración de vínculos familiares, apoyo psicosocial y acompañamiento integral para que cada hogar prospere con dignidad y amor.',
@@ -138,31 +138,31 @@ export const IniciativaSocialPage: React.FC = () => {
     },
   ];
 
-  // 4. EJE FE (4 IMÁGENES: 20210221_182243, IMG_0220, IMG_0209, IMG_0211)
+  // 4. EJE FE (4 IMÁGENES EXACTAS: IMG_0220 (1), IMG_0211, Inicio Contrucción, IMG_0209 (1))
   const feSlides: SlideImage[] = [
-    {
-      src: '/assets/aistudio/20210221_182243.jpg',
-      alt: 'Grupo de alabanza con batería, guitarra y niños cantando en la terraza de la iglesia en Bocachica (20210221_182243)',
-      title: 'Alabanza y Adoración Musical',
-      caption: 'Alabanza y expresión musical en vivo con batería, guitarra acústica y coro infantil, celebrando la fe con alegría y gratitud comunitaria.',
-    },
     {
       src: '/assets/aistudio/IMG_0220_1.JPG',
       alt: 'Niño con los ojos cerrados en profunda devoción, reverencia y oración sincera a Dios (IMG_0220)',
       title: 'Fe Sincera y Oración Personal',
-      caption: 'Inculcando principios y valores cristianos donde cada niño aprende a orar con intimidad, fe sincera y profunda devoción.',
-    },
-    {
-      src: '/assets/aistudio/IMG_0209_1.JPG',
-      alt: 'Gran grupo de niños sentados en la terraza en momento solemne de oración y reflexión (IMG_0209)',
-      title: 'Comunidad Infantil en Oración',
-      caption: 'Tiempos devocionales grupales donde la niñez y sus líderes se congregan en oración unida, paz y comunión fraternal.',
+      caption: 'Inculcando principios y valores cristianos donde cada niño aprende a orar con intimidad, fe sincera y devoción a Dios.',
     },
     {
       src: '/assets/aistudio/IMG_0211.JPG',
-      alt: 'Niña con las manos sobre su corazón y ojos cerrados en reverente oración a Dios (IMG_0211)',
+      alt: 'Niña con las manos sobre su corazón y ojos cerrados en reverente oración a Dios junto a otros niños (IMG_0211)',
       title: 'Manos al Corazón y Devoción Infantil',
-      caption: 'Corazones infantiles rindiendo gratitud y plegarias a Dios, aprendiendo a orar con amor, confianza y reverencia.',
+      caption: 'Corazones infantiles rindiendo gratitud y plegarias a Dios, aprendiendo a orar con amor, reverencia y confianza.',
+    },
+    {
+      src: '/assets/aistudio/Inicio_Contruccion_ProyectoBocachicaETP160.jpg',
+      alt: 'Pastor y congregación reunidos frente a la Palabra de Dios y el púlpito con velas en Bocachica',
+      title: 'Enseñanza de la Palabra y Comunidad de Fe',
+      caption: 'Familias, jóvenes y niños congregados para escuchar la Palabra de Dios, fortaleciendo la esperanza y los valores espirituales.',
+    },
+    {
+      src: '/assets/aistudio/IMG_0209_1.JPG',
+      alt: 'Grupo de niños sentados en el piso en gran círculo de oración y reflexión espiritual (IMG_0209)',
+      title: 'Círculo de Oración y Comunión Infantil',
+      caption: 'Encuentros de reflexión y comunión donde los niños se reúnen en el suelo a orar juntos, cultivando la fraternidad y la paz.',
     },
   ];
 
@@ -183,9 +183,17 @@ export const IniciativaSocialPage: React.FC = () => {
   const slides = getActiveSlides();
   const currentSlide = slides[currentSlideIndex] || slides[0];
 
-  const handlePillarChange = (pillar: PillarType) => {
+  const handlePillarChange = (pillar: PillarType, scrollToGallery = true) => {
     setActivePillar(pillar);
     setCurrentSlideIndex(0);
+    if (scrollToGallery) {
+      setTimeout(() => {
+        const el = document.getElementById('galeria-eje');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 50);
+    }
   };
 
   const nextSlide = () => {
@@ -389,7 +397,7 @@ export const IniciativaSocialPage: React.FC = () => {
           {/* ========================================================================= */}
           {/* SLIDER INDEPENDIENTE: 4 IMÁGENES PARA CADA UNO DE LOS 4 BOTONES           */}
           {/* ========================================================================= */}
-          <div className="mt-12 pt-10 border-t border-white/15">
+          <div id="galeria-eje" className="mt-12 pt-10 border-t border-white/15 scroll-mt-24">
             
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div>
