@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AppProvider, useApp } from './context/AppContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -11,6 +11,7 @@ import { ProgramDetailModal } from './components/ProgramDetailModal';
 import { AdminModal } from './components/AdminModal';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { InitialVideoModal } from './components/InitialVideoModal';
+import { setGoogleLanguage } from './utils/translate';
 
 // Independent Pages
 import { InicioPage } from './pages/InicioPage';
@@ -23,7 +24,14 @@ import { PlanPadrinoPage } from './pages/PlanPadrinoPage';
 import { ApoyanosPage } from './pages/ApoyanosPage';
 
 const PageRenderer: React.FC = () => {
-  const { currentPage } = useApp();
+  const { currentPage, language, activeProgramModal } = useApp();
+
+  useEffect(() => {
+    const id = requestAnimationFrame(() => {
+      setGoogleLanguage(language);
+    });
+    return () => cancelAnimationFrame(id);
+  }, [currentPage, language, activeProgramModal]);
 
   switch (currentPage) {
     case 'iniciativa-social':

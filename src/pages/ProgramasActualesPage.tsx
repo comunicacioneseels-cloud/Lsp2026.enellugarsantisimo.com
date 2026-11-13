@@ -5,7 +5,6 @@ import {
   Heart,
   Images,
   Sparkles,
-  Maximize2,
 } from 'lucide-react';
 import { useApp, OFFICIAL_DONATION_URL } from '../context/AppContext';
 import { SocialProgram } from '../types';
@@ -122,7 +121,7 @@ export const ProgramasActualesPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             
             {programs.map((prog: SocialProgram) => {
               const isFullWidth = prog.orderNumber === 7;
@@ -132,7 +131,7 @@ export const ProgramasActualesPage: React.FC = () => {
                   key={prog.id}
                   type="button"
                   onClick={() => setActiveProgramModal(prog)}
-                  className={`text-left p-6 sm:p-8 rounded-3xl transition-all duration-300 cursor-pointer shadow-xl relative overflow-hidden group flex flex-col justify-between hover:scale-[1.015] active:scale-[0.99] hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-white/40 ${
+                  className={`text-left p-7 sm:p-9 rounded-3xl transition-all duration-300 cursor-pointer shadow-xl relative overflow-hidden group flex flex-col justify-between border border-white/10 hover:scale-[1.015] active:scale-[0.99] hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-white/40 ${
                     isFullWidth ? 'md:col-span-2' : ''
                   }`}
                   style={{ backgroundColor: prog.color }}
@@ -144,7 +143,7 @@ export const ProgramasActualesPage: React.FC = () => {
 
                   <div>
                     {/* Número en círculo blanco según la maqueta */}
-                    <div className="flex items-center justify-between mb-4 sm:mb-6">
+                    <div className="flex items-center justify-between mb-5 sm:mb-7">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-white flex items-center justify-center text-white font-black text-xl sm:text-2xl shadow-md">
                         {prog.orderNumber}
                       </div>
@@ -174,46 +173,14 @@ export const ProgramasActualesPage: React.FC = () => {
                         ))}
                       </ul>
                     )}
-                    {/* Visualización directa de las 4 fotografías en la barra */}
-                    {prog.images && prog.images.length > 0 && (
-                      <div className="mt-5 pt-4 border-t border-white/20">
-                        <div className="flex items-center justify-between mb-2.5">
-                          <span className="text-[11px] font-bold uppercase tracking-wider text-white/95 flex items-center gap-1.5">
-                            <Images className="w-3.5 h-3.5" />
-                            <span>Evidencia Fotográfica ({prog.images.length} fotos)</span>
-                          </span>
-                          <span className="text-[10px] text-white/80 font-semibold bg-black/25 px-2 py-0.5 rounded-full">
-                            Toca para ver
-                          </span>
-                        </div>
-                        <div className="grid grid-cols-4 gap-2">
-                          {prog.images.slice(0, 4).map((img, i) => (
-                            <div
-                              key={i}
-                              className="aspect-4/3 rounded-xl overflow-hidden bg-black/30 border border-white/30 shadow-md relative group/thumb hover:ring-2 hover:ring-white transition-all"
-                            >
-                              <img
-                                src={img.src}
-                                alt={img.title}
-                                className="w-full h-full object-cover group-hover/thumb:scale-110 transition-transform duration-300"
-                                referrerPolicy="no-referrer"
-                              />
-                              <span className="absolute bottom-1 right-1 px-1.5 py-0.2 rounded text-[9px] font-mono font-bold bg-black/75 text-white">
-                                {i + 1}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
                   </div>
 
                   {/* Barra inferior del botón */}
-                  <div className="pt-6 mt-4 border-t border-white/20 flex items-center justify-between text-white text-xs font-bold">
-                    <span className="opacity-90">
+                  <div className="pt-6 mt-6 border-t border-white/20 flex items-center justify-between text-white text-xs font-semibold opacity-90">
+                    <span>
                       Toca para abrir galería y detalles
                     </span>
-                    <span className="inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                    <span className="inline-flex items-center gap-1 font-bold group-hover:translate-x-1 transition-transform">
                       <span>Ver Fotos</span>
                       <ArrowRight className="w-4 h-4" />
                     </span>
