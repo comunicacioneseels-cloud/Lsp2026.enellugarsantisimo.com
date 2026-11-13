@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { useApp, OFFICIAL_DONATION_URL } from '../context/AppContext';
 import { ImageLightbox } from '../components/ImageLightbox';
+import regeneratedBoyPrayerImg from '../assets/images/regenerated_image_1794116230391.jpg';
 
 export const NuevosProgramasPage: React.FC = () => {
   const { newPrograms, navigateToPage } = useApp();
@@ -296,8 +297,8 @@ export const NuevosProgramasPage: React.FC = () => {
             {/* =================================================================== */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl border border-white/15 bg-stone-900 group min-h-[340px] flex flex-col justify-end">
               <img
-                src="/assets/aistudio/IMG_0220.JPG"
-                alt="Niño de Bocachica con ojos cerrados en momento íntimo de oración y devoción (Maqueta 4)"
+                src={regeneratedBoyPrayerImg}
+                alt="Niño de Bocachica con ojos cerrados en momento íntimo de oración y devoción"
                 className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
@@ -324,7 +325,7 @@ export const NuevosProgramasPage: React.FC = () => {
                 type="button"
                 onClick={() =>
                   openLightbox(
-                    '/assets/aistudio/IMG_0220.JPG',
+                    regeneratedBoyPrayerImg,
                     'Niño de Bocachica en oración',
                     'Momento sincero de reverencia y oración de niños reunidos en el centro comunitario de Bocachica.'
                   )

@@ -136,7 +136,7 @@ export const ProgramasActualesPage: React.FC = () => {
                   }`}
                   style={{ backgroundColor: prog.color }}
                   aria-haspopup="dialog"
-                  aria-label={`Abrir pop-up con 4 fotos de ${prog.title}`}
+                  aria-label={`Abrir pop-up con ${prog.images?.length || 0} fotos de ${prog.title}`}
                 >
                   {/* Patrón de brillo superior en hover */}
                   <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors pointer-events-none" />
@@ -148,10 +148,10 @@ export const ProgramasActualesPage: React.FC = () => {
                         {prog.orderNumber}
                       </div>
 
-                      {/* Badge indicador de pop-up con 4 fotos */}
+                      {/* Badge indicador de pop-up con fotos */}
                       <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/25 text-white text-[11px] font-bold backdrop-blur-xs border border-white/20">
                         <Images className="w-3.5 h-3.5" />
-                        <span>Ver 4 Fotos</span>
+                        <span>Ver {prog.images?.length || 0} Fotos</span>
                       </span>
                     </div>
 
@@ -248,11 +248,11 @@ export const ProgramasActualesPage: React.FC = () => {
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 
-                {/* Foto Medio-Superior: Madre con hijos recibiendo huevos y mercados */}
+                {/* Foto Medio-Superior: Distribución de refrigerios nutritivos a los niños */}
                 <div className="relative rounded-2xl overflow-hidden bg-stone-900 border border-white/10 aspect-4/3 group shadow-lg">
                   <img
-                    src="/assets/aistudio/familia_huevos_mercado.jpg"
-                    alt="Familia de Bocachica con huevos y paquetes de mercado del programa de nutrición (Maqueta 2)"
+                    src="/assets/aistudio/IMG_0240_09d89d1d.JPG"
+                    alt="Voluntaria sirviendo refrigerios nutritivos con huevo a niños y niñas de Bocachica"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
                   />
@@ -262,16 +262,16 @@ export const ProgramasActualesPage: React.FC = () => {
                       Nutrición e Higiene
                     </span>
                     <p className="text-[11px] font-semibold text-white/95">
-                      Seguridad alimentaria para los hogares
+                      Refrigerios nutritivos y cuidado infantil
                     </p>
                   </div>
                 </div>
 
-                {/* Foto Derecha-Superior: Hermanitos en la entrada del hogar (IMG_0111) */}
+                {/* Foto Derecha-Superior: Círculo de diálogo en Escuela de Padres */}
                 <div className="relative rounded-2xl overflow-hidden bg-stone-900 border border-white/10 aspect-4/3 group shadow-lg">
                   <img
-                    src="/assets/aistudio/IMG_0111.JPG"
-                    alt="Hermanitos de Bocachica jugando con afecto en el umbral de su hogar (Maqueta 2)"
+                    src="/assets/aistudio/WhatsApp_Image_2026-11-04_at_6.04.38_PM_ef46fb7c.jpeg"
+                    alt="Madres y cuidadores de Bocachica en círculo de diálogo de la Escuela de Padres"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
                   />
@@ -288,21 +288,21 @@ export const ProgramasActualesPage: React.FC = () => {
 
               </div>
 
-              {/* Foto Inferior Ancha: Taller de música y arte (20210225_112423__1__920064b8.jpg) */}
+              {/* Foto Inferior Ancha: Expresión corporal, danza y alegría en la terraza */}
               <div className="relative rounded-2xl overflow-hidden bg-stone-900 border border-white/10 aspect-16/9 sm:aspect-21/9 group shadow-lg">
                 <img
-                  src="/assets/aistudio/20210225_112423__1__920064b8.jpg"
-                  alt="Niño de Bocachica sonriendo con su guitarra en el taller de música y arte"
+                  src="/assets/aistudio/IMG_0193_8a3f56aa.JPG"
+                  alt="Niños y niñas de Bocachica saltando con alegría en actividad artística y recreativa frente al mar"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-3 left-4 right-4 text-white">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#00CDBE] block">
-                    Artes y Creatividad · Música
+                    Artes y Creatividad · Recreación
                   </span>
                   <p className="text-xs sm:text-sm font-semibold text-white/95">
-                    Descubriendo talentos y transformando vidas a través de la música y el arte en Bocachica
+                    Jornadas de expresión corporal, alegría y bienestar integral frente a la bahía de Bocachica
                   </p>
                 </div>
               </div>

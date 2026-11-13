@@ -255,10 +255,14 @@ export const TRANSLATIONS: Record<string, string> = {
   'Apoyar los programas': 'Support the programs',
   'Tutoría escolar personalizada y disciplina de estudio': 'Personalized school tutoring and study discipline',
   'Seguridad alimentaria para los hogares': 'Food security for households',
+  'Refrigerios nutritivos y cuidado infantil': 'Nutritious snacks and child care',
   'Crianza respetuosa y hogares afectuosos': 'Respectful parenting and loving homes',
   'Artes y Creatividad · Música': 'Arts & Creativity · Music',
   'Descubriendo talentos y transformando vidas a través de la música y el arte en Bocachica':
     'Discovering talents and transforming lives through music and art in Bocachica',
+  'Artes y Creatividad · Recreación': 'Arts & Creativity · Recreation',
+  'Jornadas de expresión corporal, alegría y bienestar integral frente a la bahía de Bocachica':
+    'Sessions of physical expression, joy, and holistic well-being facing Bocachica Bay',
   'Innovación y Futuro': 'Innovation & Future',
   '¿Quieres conocer los nuevos programas para 2026?': 'Want to discover the new programs for 2026?',
   'Descubre nuestras iniciativas proyectadas de formación técnica virtual, cursos de sistemas, inglés aplicado y emprendimiento comunitario en la isla.':
@@ -358,6 +362,18 @@ export const TRANSLATIONS: Record<string, string> = {
   'Redes de Solidaridad Comunitaria': 'Community Solidarity Networks',
   'Trabajo colaborativo con mujeres líderes de la comunidad.':
     'Collaborative work with women leaders in the community.',
+  'Diagnóstico de Vivienda y Territorio': 'Housing & Territory Assessment',
+  'Recorrido comunitario para identificar necesidades de infraestructura, vivienda y entornos en Bocachica.':
+    'Community walkthrough to identify infrastructure, housing, and environmental needs in Bocachica.',
+  'Visitas en Sectores de la Comunidad': 'Community Neighborhood Visits',
+  'Acompañamiento social en las calles de Bocachica acercando orientación y apoyo a las familias.':
+    'Social outreach through the streets of Bocachica bringing guidance and support closer to families.',
+  'Territorio y Realidad Comunitaria': 'Territory & Community Reality',
+  'Trabajo de campo en los barrios de la isla para priorizar ayudas y rutas de atención integral.':
+    'Fieldwork in the island neighborhoods to prioritize aid and comprehensive care pathways.',
+  'Presencia Social en la Isla': 'Social Presence on the Island',
+  'Cercanía constante con vecinos y hogares de Bocachica para fortalecer la protección y el bienestar comunitario.':
+    'Consistent closeness with neighbors and homes in Bocachica to strengthen protection and community well-being.',
 
   // Program 5 Data
   'Apoyo psicológico profesional para ayudar a manejar y superar los traumas generados por diversas circunstancias.':
@@ -376,6 +392,12 @@ export const TRANSLATIONS: Record<string, string> = {
   'Acompañamiento Continuo': 'Ongoing Support',
   'Espacios de confianza y afecto para cada niño y adolescente.':
     'Spaces of trust and care for every child and teenager.',
+  'Atención Psicosocial en el Hogar': 'In-Home Psychosocial Care',
+  'Sesión de escucha activa, orientación familiar y acompañamiento emocional en los hogares de Bocachica.':
+    'Active listening session, family counseling, and emotional support inside Bocachica homes.',
+  'Diálogo y Resiliencia Familiar': 'Dialogue & Family Resilience',
+  'Espacio confidencial de apoyo psicológico para fortalecer la salud mental, el manejo de crisis y la paz familiar.':
+    'Confidential psychological support space to strengthen mental health, crisis management, and family peace.',
 
   // Program 6 Data
   'Refrigerios, suplementación alimentaria, mercados, implementos de aseo y monitoreo del crecimiento infantil.':
@@ -396,6 +418,18 @@ export const TRANSLATIONS: Record<string, string> = {
   'Monitoreo de Crecimiento y Salud Integral': 'Growth & Holistic Health Monitoring',
   'Seguimiento de peso, talla y hábitos de higiene preventiva en la isla.':
     'Monitoring weight, height, and preventive hygiene habits on the island.',
+  'Refrigerios Nutritivos en Comunidad': 'Nutritious Community Snacks',
+  'Niños y niñas de Bocachica disfrutando refrigerios con proteína y bebida durante la jornada formativa.':
+    'Boys and girls in Bocachica enjoying protein-rich snacks and drinks during the learning session.',
+  'Servicio y Cuidado Alimentario': 'Food Service & Care',
+  'Voluntarios entregando raciones saludables con afecto y atención personal a la primera infancia.':
+    'Volunteers serving healthy portions with warmth and personal care to young children.',
+  'Jornada Integral de Alimentación': 'Comprehensive Feeding Session',
+  'Espacio limpio y seguro en la terraza frente al mar donde decenas de niños reciben nutrición semanal.':
+    'Clean, safe space on the bayfront terrace where dozens of children receive weekly nutrition.',
+  'Suplementación y Hábitos Saludables': 'Supplementation & Healthy Habits',
+  'Distribución organizada de alimentos proteicos fomentando la higiene y el bienestar físico infantil.':
+    'Organized distribution of protein foods promoting hygiene and children’s physical well-being.',
 
   // Program 7 Data
   'Formación en herramientas de crianza respetuosa, comunicación asertiva, manejo de límites y restauración familiar.':
@@ -416,6 +450,15 @@ export const TRANSLATIONS: Record<string, string> = {
   'Comunidad y Familias Restauradas': 'Community & Restored Families',
   'Celebrando el impacto visible de hogares sanos en la transformación comunitaria.':
     'Celebrating the visible impact of healthy homes in community transformation.',
+  'Dinámica Grupal con Madres y Cuidadores': 'Group Activity with Mothers & Caregivers',
+  'Encuentro participativo con madres de Bocachica reflexionando sobre crianza respetuosa y liderazgo familiar.':
+    'Participatory gathering with Bocachica mothers reflecting on respectful parenting and family leadership.',
+  'Círculo de Diálogo y Escucha Familiar': 'Family Dialogue & Listening Circle',
+  'Sesión abierta de conversación y escucha activa para fortalecer la comunicación afectiva en el hogar.':
+    'Open conversation and active listening session to strengthen affectionate communication at home.',
+  'Taller de Herramientas de Crianza Positiva': 'Positive Parenting Tools Workshop',
+  'Capacitación comunitaria con padres y cuidadores sobre límites sanos, respeto y restauración familiar.':
+    'Community training with parents and caregivers on healthy boundaries, respect, and family restoration.',
 
   // =========================================================================
   // 5. NUEVOS PROGRAMAS 2026 PAGE & DATA
@@ -682,11 +725,32 @@ function translateDynamicPattern(normalized: string): string | null {
     return `Photo Gallery: Children in Prayer & Community Faith (${n} ${n === '1' ? 'Photo' : 'Photos'})`;
   }
 
+  // "Registro Fotográfico: Familias y Hogares de Bocachica (2 Fotos)"
+  const regFamMatch = normalized.match(/^Registro Fotográfico:\s*Familias y Hogares de Bocachica\s*\((\d+)\s+Fotos?\)$/i);
+  if (regFamMatch) {
+    const n = regFamMatch[1];
+    return `Photo Gallery: Families & Homes of Bocachica (${n} ${n === '1' ? 'Photo' : 'Photos'})`;
+  }
+
+  // "2 Fotos de Familias"
+  const famCountMatch = normalized.match(/^(\d+)\s+Fotos? de Familias$/i);
+  if (famCountMatch) {
+    const n = famCountMatch[1];
+    return `${n} Family ${n === '1' ? 'Photo' : 'Photos'}`;
+  }
+
   // "2 Fotos de Niños Orando"
   const feCountMatch = normalized.match(/^(\d+)\s+Fotos? de Niños Orando$/i);
   if (feCountMatch) {
     const n = feCountMatch[1];
     return `${n} Faith & Prayer ${n === '1' ? 'Photo' : 'Photos'}`;
+  }
+
+  // "Ver 2 Fotos" / "Ver 4 Fotos"
+  const viewPhotosMatch = normalized.match(/^Ver\s+(\d+)\s+Fotos?$/i);
+  if (viewPhotosMatch) {
+    const n = viewPhotosMatch[1];
+    return `View ${n} ${n === '1' ? 'Photo' : 'Photos'}`;
   }
 
   // "Foto 1 de 4"

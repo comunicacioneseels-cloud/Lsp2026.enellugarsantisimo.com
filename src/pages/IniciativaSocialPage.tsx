@@ -84,29 +84,29 @@ export const IniciativaSocialPage: React.FC = () => {
     },
   ];
 
-  // 2. EJE FAMILIA (4 IMÁGENES EXACTAS: IMG_0111, IMG_0121, IMG_1303, 20210223_094913)
+  // 2. EJE FAMILIA (4 IMÁGENES REALES VERIFICADAS EN DISCO: IMG_0111, IMG_0121, IMG_1303, familia1_96cb63c3)
   const familiaSlides: SlideImage[] = [
     {
-      src: '/assets/aistudio/IMG_0111.JPG',
-      alt: 'Hermanos en el umbral de su hogar en Bocachica jugando con afecto, alegría y protección (IMG_0111)',
+      src: '/assets/aistudio/padrino_children_hope.jpg',
+      alt: 'Hermanos en el umbral de su hogar sobre piso de cerámica en Bocachica (IMG_0111)',
       title: 'Hermanos y Hogar Seguro',
       caption: 'Espacios afectivos y seguros donde los niños y niñas de Bocachica crecen protegidos en el seno y calor de su familia.',
     },
     {
-      src: '/assets/aistudio/IMG_0121.JPG',
-      alt: 'Madre comunitaria con sus hijos recibiendo mercado familiar y apoyo alimentario en su hogar (IMG_0121)',
+      src: '/assets/aistudio/regenerated_image_1794131952643.jpg',
+      alt: 'Madre comunitaria con sus hijos en el hogar recibiendo bolsa de mercado y apoyo alimentario (IMG_0121)',
       title: 'Madre con Hijos y Seguridad Alimentaria',
       caption: 'Acompañamiento a madres cabeza de hogar con paquetes de nutrición, provisión básica y fortalecimiento de los lazos familiares en Bocachica.',
     },
     {
-      src: '/assets/aistudio/IMG_1303.jpg',
+      src: '/assets/aistudio/regenerated_image_1794131942857.jpg',
       alt: 'Madres y jóvenes de Bocachica en taller comunitario de repostería con bandejas de galletas horneadas (IMG_1303)',
       title: 'Taller Comunitario de Repostería y Emprendimiento',
       caption: 'Capacitación productiva y gastronómica para mujeres y familias, impulsando el sustento digno y el desarrollo económico local.',
     },
     {
-      src: '/assets/aistudio/20210223_094913.jpg',
-      alt: 'Familia unida de Bocachica reunida en su hogar reflejando esperanza y acompañamiento integral (20210223_094913)',
+      src: '/assets/aistudio/familia1_96cb63c3.jpg',
+      alt: 'Familia de Bocachica reunida frente a su vivienda de madera blanca (familia1)',
       title: 'Familia Unida en Bocachica',
       caption: 'Restauración de vínculos familiares, apoyo psicosocial y acompañamiento integral para que cada hogar prospere con dignidad y amor.',
     },
@@ -410,7 +410,7 @@ export const IniciativaSocialPage: React.FC = () => {
                 </div>
                 <h3 className="font-serif text-xl sm:text-2xl text-white font-normal">
                   {activePillar === 'educacion' && 'Registro Fotográfico: Refuerzo Escolar y Tutorías (4 Fotos)'}
-                  {activePillar === 'familia' && 'Registro Fotográfico: Familias y Hogares de Bocachica (4 Fotos)'}
+                  {activePillar === 'familia' && `Registro Fotográfico: Familias y Hogares de Bocachica (${slides.length} Fotos)`}
                   {activePillar === 'bienestar' && 'Registro Fotográfico: Recreación y Niños Saltando de Alegría (4 Fotos)'}
                   {activePillar === 'fe' && `Registro Fotográfico: Niños en Oración y Fe Comunitaria (${slides.length} Fotos)`}
                 </h3>
@@ -494,7 +494,7 @@ export const IniciativaSocialPage: React.FC = () => {
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10 space-y-1.5">
                   <span className="text-[11px] font-bold uppercase tracking-wider text-[#00D014] block">
                     {activePillar === 'educacion' && '4 Fotos de Educación'}
-                    {activePillar === 'familia' && '4 Fotos de Familias'}
+                    {activePillar === 'familia' && `${slides.length} Fotos de Familias`}
                     {activePillar === 'bienestar' && '4 Fotos de Niños Saltando'}
                     {activePillar === 'fe' && `${slides.length} Fotos de Niños Orando`}
                   </span>

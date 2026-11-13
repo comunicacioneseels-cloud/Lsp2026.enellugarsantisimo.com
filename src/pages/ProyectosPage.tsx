@@ -276,13 +276,15 @@ export const ProyectosPage: React.FC = () => {
             
             {/* Columna Izquierda: Isométrico Arquitectónico General (7 cols) */}
             <div className="lg:col-span-7">
-              <div className="bg-stone-200/90 rounded-3xl p-4 sm:p-6 shadow-2xl border border-white/20">
-                <img
-                  src="/assets/aistudio/MAQUETA_Lsp_website_-_Espa_ol__16__a0d32f7d.png"
-                  alt="Corte isométrico arquitectónico 3D del Auditorio Comunitario y las aulas formativas"
-                  className="w-full h-auto object-contain rounded-2xl max-h-[560px]"
-                  referrerPolicy="no-referrer"
-                />
+              <div className="bg-stone-200/90 rounded-3xl p-4 sm:p-6 shadow-2xl border border-white/20 group">
+                <div className="overflow-hidden rounded-2xl">
+                  <img
+                    src="/assets/aistudio/MAQUETA_Lsp_website_-_Espa_ol__16__a0d32f7d.png"
+                    alt="Corte isométrico arquitectónico 3D del Auditorio Comunitario y las aulas formativas"
+                    className="w-full h-auto object-contain rounded-2xl max-h-[560px] group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
                 <div className="mt-4 pt-3 border-t border-stone-300 flex items-center justify-between text-xs text-stone-700 font-medium">
                   <span>Plano 3D con distribución de auditorio, aula de informática, salón de artes y local comercial</span>
                   <span className="text-stone-900 font-bold">Distribución modular</span>
@@ -294,12 +296,12 @@ export const ProyectosPage: React.FC = () => {
             <div className="lg:col-span-5 space-y-6">
               
               {/* Espacio 1: Salón de Cómputo (Corte a la izquierda, Texto a la derecha) */}
-              <div className="bg-white/5 hover:bg-white/10 transition-colors p-4 sm:p-5 rounded-2xl border border-white/10 shadow-lg flex items-center gap-4 sm:gap-6">
+              <div className="bg-white/5 hover:bg-white/10 transition-colors p-4 sm:p-5 rounded-2xl border border-white/10 shadow-lg flex items-center gap-4 sm:gap-6 group">
                 <div className="w-36 sm:w-44 shrink-0 rounded-xl overflow-hidden bg-stone-900 border border-white/15 aspect-[4/3]">
                   <img
                     src="/assets/aistudio/MAQUETA_Lsp_website_-_Espa_ol__17__98f872b5.png"
                     alt="Corte isométrico del salón de cómputo para educación virtual"
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
                   />
                 </div>
@@ -314,7 +316,7 @@ export const ProyectosPage: React.FC = () => {
               </div>
 
               {/* Espacio 2: Salones de Clases Presenciales (Texto a la izquierda, Corte a la derecha) */}
-              <div className="bg-white/5 hover:bg-white/10 transition-colors p-4 sm:p-5 rounded-2xl border border-white/10 shadow-lg flex flex-row items-center gap-4 sm:gap-6">
+              <div className="bg-white/5 hover:bg-white/10 transition-colors p-4 sm:p-5 rounded-2xl border border-white/10 shadow-lg flex flex-row items-center gap-4 sm:gap-6 group">
                 <div className="flex-1 order-1">
                   <h3 className="font-sans font-bold text-base sm:text-lg text-white leading-snug">
                     Salones para clases presenciales en artes y refuerzo académico
@@ -327,19 +329,19 @@ export const ProyectosPage: React.FC = () => {
                   <img
                     src="/assets/aistudio/MAQUETA_Lsp_website_-_Espa_ol__19__a5ee995b.png"
                     alt="Corte isométrico de salones presenciales y biblioteca"
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
                   />
                 </div>
               </div>
 
               {/* Espacio 3: Local Comercial (Corte a la izquierda, Texto a la derecha) */}
-              <div className="bg-white/5 hover:bg-white/10 transition-colors p-4 sm:p-5 rounded-2xl border border-white/10 shadow-lg flex items-center gap-4 sm:gap-6">
+              <div className="bg-white/5 hover:bg-white/10 transition-colors p-4 sm:p-5 rounded-2xl border border-white/10 shadow-lg flex items-center gap-4 sm:gap-6 group">
                 <div className="w-36 sm:w-44 shrink-0 rounded-xl overflow-hidden bg-stone-900 border border-white/15 aspect-[4/3]">
                   <img
                     src="/assets/aistudio/MAQUETA_Lsp_website_-_Espa_ol__18__2357cb6b.png"
                     alt="Corte isométrico del local comercial para autosostenibilidad"
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
                   />
                 </div>
@@ -374,41 +376,41 @@ export const ProyectosPage: React.FC = () => {
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 
                 {/* Foto 1: Reja perimetral y columnas */}
-                <div className="rounded-2xl overflow-hidden border border-white/15 shadow-xl bg-stone-900 aspect-[4/3]">
+                <div className="rounded-2xl overflow-hidden border border-white/15 shadow-xl bg-stone-900 aspect-[4/3] group">
                   <img
                     src="/assets/aistudio/avance_obra_1.jpg"
                     alt="Cerramiento perimetral con reja metálica en el predio de Bocachica"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
                   />
                 </div>
 
                 {/* Foto 2: Cimentación y zanjas */}
-                <div className="rounded-2xl overflow-hidden border border-white/15 shadow-xl bg-stone-900 aspect-[4/3]">
+                <div className="rounded-2xl overflow-hidden border border-white/15 shadow-xl bg-stone-900 aspect-[4/3] group">
                   <img
                     src="/assets/aistudio/avance_obra_2.jpg"
                     alt="Cimentación y adecuación de zanjas del lote"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
                   />
                 </div>
 
                 {/* Foto 3: Muros de contención y acceso */}
-                <div className="rounded-2xl overflow-hidden border border-white/15 shadow-xl bg-stone-900 aspect-[4/3]">
+                <div className="rounded-2xl overflow-hidden border border-white/15 shadow-xl bg-stone-900 aspect-[4/3] group">
                   <img
                     src="/assets/aistudio/avance_obra_3.jpg"
                     alt="Levantamiento de muros de concreto y portón"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
                   />
                 </div>
 
                 {/* Foto 4: Longitud del cerramiento perimetral */}
-                <div className="rounded-2xl overflow-hidden border border-white/15 shadow-xl bg-stone-900 aspect-[4/3]">
+                <div className="rounded-2xl overflow-hidden border border-white/15 shadow-xl bg-stone-900 aspect-[4/3] group">
                   <img
                     src="/assets/aistudio/avance_obra_4.jpg"
                     alt="Vista panorámica de la reja y límites perimetrales"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
                   />
                 </div>

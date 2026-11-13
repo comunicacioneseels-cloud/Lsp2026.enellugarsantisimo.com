@@ -49,13 +49,13 @@ export const PlanPadrinoPage: React.FC = () => {
       {/* ========================================================================= */}
       <section className="py-8 sm:py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-[#EBE7E0] grid grid-cols-1 lg:grid-cols-12 min-h-[580px] items-center relative">
+        <div className="rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-[#EBE7E0] grid grid-cols-1 lg:grid-cols-12 min-h-[580px] items-stretch relative">
           
-          {/* Columna Izquierda: Textos Oficiales y Corazón Verde (7 cols) */}
-          <div className="lg:col-span-7 p-6 sm:p-12 lg:p-16 space-y-6 sm:space-y-8 z-10">
+          {/* Columna Izquierda: Textos Oficiales y Corazón Verde (6 cols) */}
+          <div className="lg:col-span-6 p-6 sm:p-10 lg:p-12 xl:p-14 space-y-6 sm:space-y-8 z-10 flex flex-col justify-center">
             
             <div className="space-y-4">
-              <h1 className="font-sans font-black text-3xl sm:text-5xl lg:text-6xl text-[#1A153A] tracking-tight leading-none">
+              <h1 className="font-sans font-black text-3xl sm:text-5xl lg:text-5xl xl:text-6xl text-[#1A153A] tracking-tight leading-none">
                 Conviértete en un Padrino
               </h1>
 
@@ -111,13 +111,13 @@ export const PlanPadrinoPage: React.FC = () => {
 
           </div>
 
-          {/* Columna Derecha: Fotografía Recortada del Niño con Regalo y Crocs (5 cols) */}
-          <div className="lg:col-span-5 flex items-end justify-center lg:justify-end px-4 pt-6 lg:pt-0 self-end">
-            <div className="relative max-w-[380px] sm:max-w-[440px] lg:max-w-none w-full">
+          {/* Columna Derecha: Fotografía Recortada del Niño con Regalo y Crocs (6 cols, alcanza altura del título) */}
+          <div className="lg:col-span-6 flex items-end justify-center lg:justify-end pt-4 lg:pt-8 pr-2 lg:pr-4 self-end">
+            <div className="relative w-full max-w-[460px] sm:max-w-[520px] lg:max-w-full flex justify-center lg:justify-end">
               <img
                 src="/assets/aistudio/MAQUETA_Lsp_website_-_Espa_ol__32__b4e69335.png"
                 alt="Niño de Bocachica sonriente sosteniendo su regalo de Toy Story y calzado nuevo"
-                className="w-full h-auto object-contain max-h-[580px] drop-shadow-2xl"
+                className="w-full h-auto max-h-[540px] lg:max-h-[590px] object-contain object-bottom drop-shadow-2xl lg:scale-105 origin-bottom"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -140,16 +140,16 @@ export const PlanPadrinoPage: React.FC = () => {
           }}
         >
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.35fr_1fr] gap-8 items-center">
             
-            {/* Columna Izquierda: Código QR y Enlace Directo (4 cols) */}
-            <div className="lg:col-span-4 flex flex-col items-center justify-center text-center space-y-4">
+            {/* Columna Izquierda: Código QR y Enlace Directo */}
+            <div className="flex flex-col items-center justify-center text-center space-y-4">
               
               <a
                 href={donationUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block p-4 bg-white rounded-3xl shadow-xl border border-stone-200 transition-transform hover:scale-105 active:scale-95 cursor-pointer max-w-[280px]"
+                className="group block p-4 bg-white rounded-3xl shadow-xl border border-stone-200 transition-transform hover:scale-105 active:scale-95 cursor-pointer w-full max-w-[270px]"
                 aria-label="Escanear o hacer clic en el código QR para donar"
               >
                 <img
@@ -173,8 +173,8 @@ export const PlanPadrinoPage: React.FC = () => {
 
             </div>
 
-            {/* Columna Centro: Tarjeta Ovalada/Píldora con el Versículo Bíblico (5 cols) */}
-            <div className="lg:col-span-5 flex items-center justify-center">
+            {/* Columna Centro: Tarjeta Ovalada/Píldora con el Versículo Bíblico */}
+            <div className="flex items-center justify-center">
               
               <div className="bg-[#1A153A] text-white p-7 sm:p-10 rounded-3xl sm:rounded-full shadow-2xl border border-white/10 max-w-xl text-center space-y-3">
                 <p className="font-serif italic text-sm sm:text-base lg:text-lg text-white/95 leading-relaxed">
@@ -187,13 +187,13 @@ export const PlanPadrinoPage: React.FC = () => {
 
             </div>
 
-            {/* Columna Derecha: Fotografía Recortada del Niño Sonriente en Camisilla (3 cols) */}
-            <div className="lg:col-span-3 flex items-end justify-center lg:justify-end">
-              <div className="max-w-[260px] sm:max-w-[320px] lg:max-w-none w-full">
+            {/* Columna Derecha: Fotografía Recortada del Niño Sonriente en Camisilla (mismo tamaño del QR) */}
+            <div className="flex items-end justify-center lg:justify-end">
+              <div className="w-full max-w-[300px] sm:max-w-[320px] flex justify-center">
                 <img
                   src="/assets/aistudio/nino_sonriendo_transparente.png"
                   alt="Niño de Bocachica con sonrisa amplia y radiante"
-                  className="w-full h-auto object-contain max-h-[380px] drop-shadow-md"
+                  className="w-full h-auto max-h-[340px] object-contain object-bottom drop-shadow-md scale-110 origin-bottom"
                   referrerPolicy="no-referrer"
                 />
               </div>
