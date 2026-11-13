@@ -9,6 +9,8 @@ import {
 } from 'lucide-react';
 import { useApp, OFFICIAL_DONATION_URL } from '../context/AppContext';
 import { ImageLightbox } from '../components/ImageLightbox';
+import regeneratedBoyPrayerImg from '../assets/images/regenerated_image_1794116230391.jpg';
+import regeneratedBiblicalTeachingImg from '../assets/images/regenerated_image_1794601753122.jpg';
 
 type PillarType = 'educacion' | 'familia' | 'bienestar' | 'fe';
 
@@ -138,29 +140,29 @@ export const IniciativaSocialPage: React.FC = () => {
     },
   ];
 
-  // 4. EJE FE (4 IMÁGENES EXACTAS: IMG_0220 (1), IMG_0211, Inicio Contrucción, IMG_0209 (1))
+  // 4. EJE FE (4 IMÁGENES REALES VERIFICADAS)
   const feSlides: SlideImage[] = [
     {
-      src: '/assets/aistudio/IMG_0220_1.JPG',
-      alt: 'Niño con los ojos cerrados en profunda devoción, reverencia y oración sincera a Dios (IMG_0220)',
+      src: regeneratedBoyPrayerImg,
+      alt: 'Niño con los ojos cerrados en profunda devoción, reverencia y oración sincera a Dios (IMG_0220 (1))',
       title: 'Fe Sincera y Oración Personal',
       caption: 'Inculcando principios y valores cristianos donde cada niño aprende a orar con intimidad, fe sincera y devoción a Dios.',
     },
     {
-      src: '/assets/aistudio/IMG_0211.JPG',
+      src: '/assets/aistudio/IMG_0211_383c754b.JPG',
       alt: 'Niña con las manos sobre su corazón y ojos cerrados en reverente oración a Dios junto a otros niños (IMG_0211)',
       title: 'Manos al Corazón y Devoción Infantil',
       caption: 'Corazones infantiles rindiendo gratitud y plegarias a Dios, aprendiendo a orar con amor, reverencia y confianza.',
     },
     {
-      src: '/assets/aistudio/Inicio_Contruccion_ProyectoBocachicaETP160.jpg',
+      src: regeneratedBiblicalTeachingImg,
       alt: 'Pastor y congregación reunidos frente a la Palabra de Dios y el púlpito con velas en Bocachica',
       title: 'Enseñanza de la Palabra y Comunidad de Fe',
       caption: 'Familias, jóvenes y niños congregados para escuchar la Palabra de Dios, fortaleciendo la esperanza y los valores espirituales.',
     },
     {
-      src: '/assets/aistudio/IMG_0209_1.JPG',
-      alt: 'Grupo de niños sentados en el piso en gran círculo de oración y reflexión espiritual (IMG_0209)',
+      src: '/assets/aistudio/IMG_0209__1__-_copia_9212ff54.JPG',
+      alt: 'Grupo de niños sentados en el piso en círculo de oración y reflexión espiritual (IMG_0209)',
       title: 'Círculo de Oración y Comunión Infantil',
       caption: 'Encuentros de reflexión y comunión donde los niños se reúnen en el suelo a orar juntos, cultivando la fraternidad y la paz.',
     },
@@ -410,7 +412,7 @@ export const IniciativaSocialPage: React.FC = () => {
                   {activePillar === 'educacion' && 'Registro Fotográfico: Refuerzo Escolar y Tutorías (4 Fotos)'}
                   {activePillar === 'familia' && 'Registro Fotográfico: Familias y Hogares de Bocachica (4 Fotos)'}
                   {activePillar === 'bienestar' && 'Registro Fotográfico: Recreación y Niños Saltando de Alegría (4 Fotos)'}
-                  {activePillar === 'fe' && 'Registro Fotográfico: Niños en Oración y Fe Comunitaria (4 Fotos)'}
+                  {activePillar === 'fe' && `Registro Fotográfico: Niños en Oración y Fe Comunitaria (${slides.length} Fotos)`}
                 </h3>
               </div>
 
@@ -463,7 +465,7 @@ export const IniciativaSocialPage: React.FC = () => {
                   {/* Texto de la diapositiva */}
                   <div className="absolute bottom-4 left-4 right-16 text-white z-10">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-[#00D014] block mb-0.5">
-                      EJE {activePillar.toUpperCase()} · FOTOGRAFÍA {currentSlideIndex + 1} DE 4
+                      EJE {activePillar.toUpperCase()} · FOTOGRAFÍA {currentSlideIndex + 1} DE {slides.length}
                     </span>
                     <h4 className="font-bold text-sm sm:text-base text-white drop-shadow-md">
                       {currentSlide.title}
@@ -494,7 +496,7 @@ export const IniciativaSocialPage: React.FC = () => {
                     {activePillar === 'educacion' && '4 Fotos de Educación'}
                     {activePillar === 'familia' && '4 Fotos de Familias'}
                     {activePillar === 'bienestar' && '4 Fotos de Niños Saltando'}
-                    {activePillar === 'fe' && '4 Fotos de Niños Orando'}
+                    {activePillar === 'fe' && `${slides.length} Fotos de Niños Orando`}
                   </span>
                   <p className="text-xs text-white/80 leading-relaxed">
                     {activePillar === 'educacion' && 'Refuerzo escolar semanal, tutorías de lectura, matemáticas y materiales pedagógicos continuos en Bocachica.'}

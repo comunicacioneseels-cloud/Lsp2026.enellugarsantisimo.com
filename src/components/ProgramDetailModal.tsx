@@ -142,7 +142,7 @@ export const ProgramDetailModal: React.FC = () => {
                   <div className="flex items-center gap-2">
                     <Images className="w-4 h-4" style={{ color: activeProgramModal.color }} />
                     <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-800">
-                      Galería de Evidencias (4 Fotografías)
+                      Galería de Evidencias ({images.length} {images.length === 1 ? 'Fotografía' : 'Fotografías'})
                     </h4>
                   </div>
                   <span className="text-xs font-mono font-semibold text-stone-500">
@@ -171,7 +171,7 @@ export const ProgramDetailModal: React.FC = () => {
                       className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-sm inline-block mb-1 text-white"
                       style={{ backgroundColor: activeProgramModal.color }}
                     >
-                      Foto {activeImageIndex + 1} de 4
+                      Foto {activeImageIndex + 1} de {images.length}
                     </span>
                     <h5 className="font-bold text-sm sm:text-base text-white drop-shadow-sm">
                       {currentImage.title}

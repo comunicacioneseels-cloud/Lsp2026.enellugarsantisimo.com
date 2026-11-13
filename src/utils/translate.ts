@@ -668,6 +668,27 @@ function translateDynamicPattern(normalized: string): string | null {
     return `PILLAR ${translatedPillar} · PHOTO ${num} OF ${total}`;
   }
 
+  // "Galería de Evidencias (4 Fotografías)" / "Galería de Evidencias (2 Fotografías)"
+  const galEvMatch = normalized.match(/^Galería de Evidencias\s*\((\d+)\s+Fotograf[íi]as?\)$/i);
+  if (galEvMatch) {
+    const n = galEvMatch[1];
+    return `Photo Gallery (${n} ${n === '1' ? 'Photo' : 'Photos'})`;
+  }
+
+  // "Registro Fotográfico: Niños en Oración y Fe Comunitaria (2 Fotos)"
+  const regFeMatch = normalized.match(/^Registro Fotográfico:\s*Niños en Oración y Fe Comunitaria\s*\((\d+)\s+Fotos?\)$/i);
+  if (regFeMatch) {
+    const n = regFeMatch[1];
+    return `Photo Gallery: Children in Prayer & Community Faith (${n} ${n === '1' ? 'Photo' : 'Photos'})`;
+  }
+
+  // "2 Fotos de Niños Orando"
+  const feCountMatch = normalized.match(/^(\d+)\s+Fotos? de Niños Orando$/i);
+  if (feCountMatch) {
+    const n = feCountMatch[1];
+    return `${n} Faith & Prayer ${n === '1' ? 'Photo' : 'Photos'}`;
+  }
+
   // "Foto 1 de 4"
   const photoOfMatch = normalized.match(/^Foto\s+(\d+)\s+de\s+(\d+)$/i);
   if (photoOfMatch) {

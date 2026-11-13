@@ -6,6 +6,8 @@ import {
   StrategicProject,
   SubscriptionPlan,
 } from '../types';
+import regeneratedBoyPrayerImg from '../assets/images/regenerated_image_1794116230391.jpg';
+import regeneratedBiblicalTeachingImg from '../assets/images/regenerated_image_1794601753122.jpg';
 
 export const initialFinancialProgress: FinancialProgress = {
   targetUSD: 100000,
@@ -160,24 +162,24 @@ export const socialPrograms: SocialProgram[] = [
       'Cimentar principios espirituales sólidos que restauren vidas y den un propósito trascendente a cada individuo.',
     images: [
       {
-        src: '/assets/aistudio/IMG_0211.JPG',
-        title: 'Niños Unidos en Oración Comunitaria',
-        caption: 'Tiempos devocionales con manitas juntas y corazones reverentes ante Dios.',
-      },
-      {
-        src: '/assets/aistudio/IMG_0220.JPG',
+        src: regeneratedBoyPrayerImg,
         title: 'Fe Sincera y Oración Personal',
         caption: 'Niño en reverencia y comunión espiritual sembrando principios eternos.',
       },
       {
-        src: '/assets/aistudio/20210221_182243.jpg',
-        title: 'Alabanza y Adoración Musical Infantil',
-        caption: 'Expresión musical de alabanza en la iglesia con niños e instrumentos.',
+        src: '/assets/aistudio/IMG_0211_383c754b.JPG',
+        title: 'Manos al Corazón y Devoción Infantil',
+        caption: 'Corazones infantiles rindiendo gratitud y plegarias a Dios, aprendiendo a orar con amor, reverencia y confianza.',
       },
       {
-        src: '/assets/aistudio/Inicio_Contruccion_ProyectoBocachicaETP160.jpg',
+        src: regeneratedBiblicalTeachingImg,
         title: 'Enseñanza Bíblica y Comunidad',
         caption: 'Comunidad e infancia congregadas frente a la Palabra de Dios y valores.',
+      },
+      {
+        src: '/assets/aistudio/IMG_0209__1__-_copia_9212ff54.JPG',
+        title: 'Círculo de Oración y Comunión Infantil',
+        caption: 'Encuentros de reflexión y comunión donde los niños se reúnen en el suelo a orar juntos, cultivando la fraternidad y la paz.',
       },
     ],
   },
