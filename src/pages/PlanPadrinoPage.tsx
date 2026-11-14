@@ -113,11 +113,11 @@ export const PlanPadrinoPage: React.FC = () => {
 
           {/* Columna Derecha: Fotografía Recortada del Niño con Regalo y Crocs (6 cols, alcanza altura del título) */}
           <div className="lg:col-span-6 flex items-end justify-center lg:justify-end pt-4 lg:pt-8 pr-2 lg:pr-4 self-end">
-            <div className="relative w-full max-w-[460px] sm:max-w-[520px] lg:max-w-full flex justify-center lg:justify-end">
+            <div className="group relative w-full max-w-[460px] sm:max-w-[520px] lg:max-w-full flex justify-center lg:justify-end cursor-pointer">
               <img
                 src="/assets/aistudio/MAQUETA_Lsp_website_-_Espa_ol__32__b4e69335.png"
                 alt="Niño de Bocachica sonriente sosteniendo su regalo de Toy Story y calzado nuevo"
-                className="w-full h-auto max-h-[540px] lg:max-h-[590px] object-contain object-bottom drop-shadow-2xl lg:scale-105 origin-bottom"
+                className="w-full h-auto max-h-[540px] lg:max-h-[590px] object-contain object-bottom drop-shadow-2xl lg:scale-105 origin-bottom transition-transform duration-500 ease-out group-hover:scale-105 lg:group-hover:scale-110 group-hover:-translate-y-1"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -189,11 +189,11 @@ export const PlanPadrinoPage: React.FC = () => {
 
             {/* Columna Derecha: Fotografía Recortada del Niño Sonriente en Camisilla (mismo tamaño del QR) */}
             <div className="flex items-end justify-center lg:justify-end">
-              <div className="w-full max-w-[300px] sm:max-w-[320px] flex justify-center">
+              <div className="group w-full max-w-[300px] sm:max-w-[320px] flex justify-center cursor-pointer">
                 <img
                   src="/assets/aistudio/nino_sonriendo_transparente.png"
                   alt="Niño de Bocachica con sonrisa amplia y radiante"
-                  className="w-full h-auto max-h-[340px] object-contain object-bottom drop-shadow-md scale-110 origin-bottom"
+                  className="w-full h-auto max-h-[340px] object-contain object-bottom drop-shadow-md scale-110 origin-bottom transition-transform duration-500 ease-out group-hover:scale-[1.16] group-hover:-translate-y-1"
                   referrerPolicy="no-referrer"
                 />
               </div>

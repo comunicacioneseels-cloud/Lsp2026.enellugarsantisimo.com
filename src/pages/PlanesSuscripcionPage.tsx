@@ -102,11 +102,11 @@ export const PlanesSuscripcionPage: React.FC = () => {
           {/* ===================================================================== */}
           {/* COLUMNA IZQUIERDA: FOTOGRAFÍA (VOLUNTARIA Y NIÑA DE BOCACHICA)         */}
           {/* ===================================================================== */}
-          <div className="lg:col-span-5 relative bg-stone-900 overflow-hidden min-h-[400px] lg:min-h-full">
+          <div className="lg:col-span-5 relative bg-stone-900 overflow-hidden min-h-[400px] lg:min-h-full group">
             <img
               src="/assets/aistudio/IMG_5824_f17a108d.JPG"
               alt="Voluntaria y niña de Bocachica sonrientes en jornada comunitaria"
-              className="w-full h-full object-cover object-top sm:object-center"
+              className="w-full h-full object-cover object-top sm:object-center transition-transform duration-700 group-hover:scale-105"
               referrerPolicy="no-referrer"
             />
             {/* Subtle gradient overlay */}

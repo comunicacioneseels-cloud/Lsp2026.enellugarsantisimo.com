@@ -108,18 +108,14 @@ export const NuevosProgramasPage: React.FC = () => {
               <p className="text-white text-base sm:text-lg leading-relaxed max-w-xl font-normal">
                 Nuestro plan estratégico 2026 busca <strong className="font-bold text-white">ampliar el impacto y generar oportunidades reales de movilidad social</strong>.
               </p>
-
-              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-white/70">
-                <span>Toca cualquiera de los 3 cuadros para abrir su pop-up con 4 imágenes:</span>
-              </div>
             </div>
 
-            {/* Columna Derecha: Foto de los niños saltando de alegría (IMG_0198.JPG de la Maqueta 4) */}
+            {/* Columna Derecha: Foto real de los niños saltando de alegría */}
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/15 aspect-4/3 sm:aspect-16/11 bg-stone-900 group">
                 <img
-                  src="/assets/aistudio/IMG_0198.JPG"
-                  alt="Niños de Bocachica saltando con los brazos en alto celebrando con alegría (Maqueta 4)"
+                  src="/assets/aistudio/IMG_0193_8a3f56aa.JPG"
+                  alt="Niños de Bocachica saltando con los brazos en alto celebrando con alegría"
                   className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
@@ -143,8 +139,8 @@ export const NuevosProgramasPage: React.FC = () => {
                   type="button"
                   onClick={() =>
                     openLightbox(
-                      '/assets/aistudio/IMG_0198.JPG',
-                      'Niños de Bocachica saltando (Maqueta 4)',
+                      '/assets/aistudio/IMG_0193_8a3f56aa.JPG',
+                      'Niños de Bocachica saltando',
                       'Jornadas de recreación activa y expresión corporal de niños y jóvenes en la terraza comunitaria.'
                     )
                   }
