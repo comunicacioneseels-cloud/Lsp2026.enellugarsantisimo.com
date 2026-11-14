@@ -271,7 +271,7 @@ export const IniciativaSocialPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => handlePillarChange('educacion')}
-                  className={`w-full flex items-center justify-between px-6 py-4 rounded-full text-white font-black tracking-wider uppercase text-base sm:text-lg transition-all duration-200 cursor-pointer shadow-md ${
+                  className={`group w-full flex items-center justify-between px-6 py-4 rounded-full text-white font-black tracking-wider uppercase text-base sm:text-lg transition-all duration-200 cursor-pointer shadow-md ${
                     activePillar === 'educacion'
                       ? 'ring-4 ring-white/50 scale-[1.02] shadow-lg shadow-[#00D014]/40'
                       : 'hover:brightness-110 active:scale-[0.99] opacity-95'
@@ -285,7 +285,7 @@ export const IniciativaSocialPage: React.FC = () => {
                   <img
                     src="/assets/icons/icono_barra_educacion.svg"
                     alt="Icono Educación"
-                    className="w-10 h-10 shrink-0 drop-shadow-sm"
+                    className="w-10 h-10 shrink-0 drop-shadow-sm transition-transform duration-300 ease-out group-hover:scale-110 group-hover:rotate-3"
                   />
                 </button>
 
@@ -293,7 +293,7 @@ export const IniciativaSocialPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => handlePillarChange('familia')}
-                  className={`w-full flex items-center justify-between px-6 py-4 rounded-full text-white font-black tracking-wider uppercase text-base sm:text-lg transition-all duration-200 cursor-pointer shadow-md ${
+                  className={`group w-full flex items-center justify-between px-6 py-4 rounded-full text-white font-black tracking-wider uppercase text-base sm:text-lg transition-all duration-200 cursor-pointer shadow-md ${
                     activePillar === 'familia'
                       ? 'ring-4 ring-white/50 scale-[1.02] shadow-lg shadow-[#7000FF]/40'
                       : 'hover:brightness-110 active:scale-[0.99] opacity-95'
@@ -307,7 +307,7 @@ export const IniciativaSocialPage: React.FC = () => {
                   <img
                     src="/assets/icons/icono_barra_familia.svg"
                     alt="Icono Familia"
-                    className="w-10 h-10 shrink-0 drop-shadow-sm"
+                    className="w-10 h-10 shrink-0 drop-shadow-sm transition-transform duration-300 ease-out group-hover:scale-110 group-hover:rotate-3"
                   />
                 </button>
 
@@ -315,7 +315,7 @@ export const IniciativaSocialPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => handlePillarChange('bienestar')}
-                  className={`w-full flex items-center justify-between px-6 py-4 rounded-full text-white font-black tracking-wider uppercase text-base sm:text-lg transition-all duration-200 cursor-pointer shadow-md ${
+                  className={`group w-full flex items-center justify-between px-6 py-4 rounded-full text-white font-black tracking-wider uppercase text-base sm:text-lg transition-all duration-200 cursor-pointer shadow-md ${
                     activePillar === 'bienestar'
                       ? 'ring-4 ring-white/50 scale-[1.02] shadow-lg shadow-[#FF5A00]/40'
                       : 'hover:brightness-110 active:scale-[0.99] opacity-95'
@@ -329,7 +329,7 @@ export const IniciativaSocialPage: React.FC = () => {
                   <img
                     src="/assets/icons/icono_barra_bienestar.svg"
                     alt="Icono Bienestar"
-                    className="w-10 h-10 shrink-0 drop-shadow-sm"
+                    className="w-10 h-10 shrink-0 drop-shadow-sm transition-transform duration-300 ease-out group-hover:scale-110 group-hover:rotate-3"
                   />
                 </button>
 
@@ -337,7 +337,7 @@ export const IniciativaSocialPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => handlePillarChange('fe')}
-                  className={`w-full flex items-center justify-between px-6 py-4 rounded-full text-[#241F3C] font-black tracking-wider uppercase text-base sm:text-lg transition-all duration-200 cursor-pointer shadow-md ${
+                  className={`group w-full flex items-center justify-between px-6 py-4 rounded-full text-[#241F3C] font-black tracking-wider uppercase text-base sm:text-lg transition-all duration-200 cursor-pointer shadow-md ${
                     activePillar === 'fe'
                       ? 'ring-4 ring-[#00D014] scale-[1.02] shadow-lg shadow-white/30'
                       : 'hover:bg-stone-100 active:scale-[0.99]'
@@ -351,7 +351,7 @@ export const IniciativaSocialPage: React.FC = () => {
                   <img
                     src="/assets/icons/icono_barra_fe.svg"
                     alt="Icono Fe"
-                    className="w-10 h-10 shrink-0 drop-shadow-sm"
+                    className="w-10 h-10 shrink-0 drop-shadow-sm transition-transform duration-300 ease-out group-hover:scale-110 group-hover:rotate-3"
                   />
                 </button>
 
@@ -452,7 +452,7 @@ export const IniciativaSocialPage: React.FC = () => {
                   <img
                     src={currentSlide.src}
                     alt={currentSlide.alt}
-                    className="w-full h-full object-cover object-center transition-all duration-500"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
 
@@ -594,12 +594,12 @@ export const IniciativaSocialPage: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 pt-2">
                 
                 {/* 1. Economía */}
-                <div className="flex items-start gap-4">
+                <div className="group flex items-start gap-4 p-2.5 -m-2.5 rounded-2xl transition-colors duration-300 hover:bg-white/[0.04]">
                   {/* Icono blanco como imagen independiente */}
                   <img
                     src="/assets/icons/icono_economia.svg"
                     alt="Icono Economía"
-                    className="w-12 h-12 shrink-0 drop-shadow-md"
+                    className="w-12 h-12 shrink-0 drop-shadow-md transition-transform duration-500 ease-out group-hover:scale-115 group-hover:-translate-y-1 group-hover:rotate-3"
                   />
                   <div className="space-y-1">
                     <h3 className="font-bold text-white text-base">Economía</h3>
@@ -610,12 +610,12 @@ export const IniciativaSocialPage: React.FC = () => {
                 </div>
 
                 {/* 2. Educación */}
-                <div className="flex items-start gap-4">
+                <div className="group flex items-start gap-4 p-2.5 -m-2.5 rounded-2xl transition-colors duration-300 hover:bg-white/[0.04]">
                   {/* Icono blanco como imagen independiente */}
                   <img
                     src="/assets/icons/icono_educacion.svg"
                     alt="Icono Educación"
-                    className="w-12 h-12 shrink-0 drop-shadow-md"
+                    className="w-12 h-12 shrink-0 drop-shadow-md transition-transform duration-500 ease-out group-hover:scale-115 group-hover:-translate-y-1 group-hover:rotate-3"
                   />
                   <div className="space-y-1">
                     <h3 className="font-bold text-white text-base">Educación</h3>
@@ -626,12 +626,12 @@ export const IniciativaSocialPage: React.FC = () => {
                 </div>
 
                 {/* 3. Nutrición y Salud */}
-                <div className="flex items-start gap-4">
+                <div className="group flex items-start gap-4 p-2.5 -m-2.5 rounded-2xl transition-colors duration-300 hover:bg-white/[0.04]">
                   {/* Icono blanco como imagen independiente */}
                   <img
                     src="/assets/icons/icono_salud.svg"
                     alt="Icono Nutrición y Salud"
-                    className="w-12 h-12 shrink-0 drop-shadow-md"
+                    className="w-12 h-12 shrink-0 drop-shadow-md transition-transform duration-500 ease-out group-hover:scale-115 group-hover:-translate-y-1 group-hover:rotate-3"
                   />
                   <div className="space-y-1">
                     <h3 className="font-bold text-white text-base">Nutrición y Salud</h3>
@@ -642,12 +642,12 @@ export const IniciativaSocialPage: React.FC = () => {
                 </div>
 
                 {/* 4. Dinámica Familiar */}
-                <div className="flex items-start gap-4">
+                <div className="group flex items-start gap-4 p-2.5 -m-2.5 rounded-2xl transition-colors duration-300 hover:bg-white/[0.04]">
                   {/* Icono blanco como imagen independiente */}
                   <img
                     src="/assets/icons/icono_familia.svg"
                     alt="Icono Dinámica Familiar"
-                    className="w-12 h-12 shrink-0 drop-shadow-md"
+                    className="w-12 h-12 shrink-0 drop-shadow-md transition-transform duration-500 ease-out group-hover:scale-115 group-hover:-translate-y-1 group-hover:rotate-3"
                   />
                   <div className="space-y-1">
                     <h3 className="font-bold text-white text-base">Dinámica Familiar</h3>
