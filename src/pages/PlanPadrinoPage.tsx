@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Heart,
   ArrowUpRight,
@@ -9,8 +9,27 @@ import {
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
+const GIFT_CHILDREN_PHOTOS = [
+  {
+    src: '/assets/aistudio/MAQUETA_Lsp_website_-_Espa_ol__32__b4e69335.png',
+    alt: 'Niño de Bocachica sonriente sosteniendo su regalo de Toy Story y calzado nuevo',
+  },
+  {
+    src: '/assets/aistudio/nina_regalo_transparente.png',
+    alt: 'Niña de Bocachica sonriente sosteniendo su regalo de Navidad y sandalias nuevas',
+  },
+];
+
 export const PlanPadrinoPage: React.FC = () => {
   const { donationUrl, navigateToPage } = useApp();
+  const [activeGiftIndex, setActiveGiftIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveGiftIndex((prev) => (prev + 1) % GIFT_CHILDREN_PHOTOS.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="bg-[#18162B] text-[#1E1B2E] min-h-screen">
@@ -111,15 +130,30 @@ export const PlanPadrinoPage: React.FC = () => {
 
           </div>
 
-          {/* Columna Derecha: Fotografía Recortada del Niño con Regalo y Crocs (6 cols, alcanza altura del título) */}
+          {/* Columna Derecha: 2 Fotografías Recortadas (Niño y Niña con Regalo) alternando automáticamente */}
           <div className="lg:col-span-6 flex items-end justify-center lg:justify-end pt-4 lg:pt-8 pr-2 lg:pr-4 self-end">
-            <div className="group relative w-full max-w-[460px] sm:max-w-[520px] lg:max-w-full flex justify-center lg:justify-end cursor-pointer">
-              <img
-                src="/assets/aistudio/MAQUETA_Lsp_website_-_Espa_ol__32__b4e69335.png"
-                alt="Niño de Bocachica sonriente sosteniendo su regalo de Toy Story y calzado nuevo"
-                className="w-full h-auto max-h-[540px] lg:max-h-[590px] object-contain object-bottom drop-shadow-2xl lg:scale-105 origin-bottom transition-transform duration-500 ease-out group-hover:scale-105 lg:group-hover:scale-110 group-hover:-translate-y-1"
-                referrerPolicy="no-referrer"
-              />
+            <div
+              onClick={() =>
+                setActiveGiftIndex((prev) => (prev + 1) % GIFT_CHILDREN_PHOTOS.length)
+              }
+              className="group relative w-full h-[440px] sm:h-[520px] lg:h-[570px] flex items-end justify-center lg:justify-end cursor-pointer"
+            >
+              {GIFT_CHILDREN_PHOTOS.map((photo, idx) => {
+                const isActive = idx === activeGiftIndex;
+                return (
+                  <img
+                    key={photo.src}
+                    src={photo.src}
+                    alt={photo.alt}
+                    className={`absolute bottom-0 left-0 right-0 mx-auto lg:left-auto lg:right-0 h-full w-auto max-w-full object-contain object-bottom drop-shadow-2xl origin-bottom transition-all duration-700 ease-in-out ${
+                      isActive
+                        ? 'opacity-100 scale-100 lg:scale-105 group-hover:scale-105 lg:group-hover:scale-110 group-hover:-translate-y-1 z-10'
+                        : 'opacity-0 scale-95 pointer-events-none z-0'
+                    }`}
+                    referrerPolicy="no-referrer"
+                  />
+                );
+              })}
             </div>
           </div>
 
